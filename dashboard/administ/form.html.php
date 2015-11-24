@@ -70,7 +70,7 @@
         <div class="body-login">
           <div class="center-login">
             <a href="#" class="logo pull-left hidden-xs">
-              <img src="assets/img/logo.png" height="45" alt="Clemson Jail" />
+              <img src="../assets/img/logo.png" height="45" alt="Clemson Jail" />
             </a>
 
             <div class="panel panel-login">
