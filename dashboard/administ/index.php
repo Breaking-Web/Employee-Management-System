@@ -52,7 +52,7 @@ body{
         //------1. database backup------------------------------------------------------------
         //The values below are host address, username, password, name of database, charset respectively
             $db->backup ('','','');
-            header('Location: .')
+            header('Location: .');
         }
         // if (isset($_GET['restore']))
     foreach( $files1 as &$file1)
