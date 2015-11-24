@@ -35,7 +35,7 @@ body{
 <body>
     <?php
     require 'DbManage.class.php';
-    session_start();
+    // session_start();
     include '/home/jingyam/public_html/662/project/includes/db.inc.php';
     //echo "administ"."<br>";
     switch ($_SESSION["position"])
