@@ -311,7 +311,7 @@
 							<li><a href="index.php#">About</a></li>
 						</ul>
 						<div class="copyright text-center">
-							<small>Nadhif <i class="fa fa-coffee"></i> Collect from <a href="http://www.clemson.com/" title="clemson" target="_blank">clemson University</a></small>
+							<small><i class="fa fa-coffee"></i> Collect from <a href="http://www.clemson.com/" title="clemson" target="_blank">clemson University</a></small>
 						</div>					
 					</div>
 					<!-- End Sidebar Footer-->
@@ -442,17 +442,6 @@
 							</div>
 						</div>		
 					</div>
-					
-					<div class="row">
-						<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-							<div class="panel bk-widget bk-border-off bk-noradius">
-								<div class="bk-border-primary bk-bg-white bk-fg-primary bk-ltr bk-padding-15">
-									<?php include "user/index.php"; ?>
-								</div>
-							</div>
-						</div>						
-					</div>
-
 					<div class="row">
 						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 							<div class="panel bk-widget bk-webkit-fix">

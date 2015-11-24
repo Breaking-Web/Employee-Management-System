@@ -48,33 +48,6 @@
 					    <?php  echo $_SESSION["states"];  $_SESSION["states"] = ""; ?>
 					</div>
 				</div>	
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left bk-vcenter text-center">
-					<hr class="bk-margin-off" />
-					<small>HTML: 60%</small>
-					<div class="progress bk-margin-bottom-10" style="height: 8px;">
-						<div class="progress thin progress-striped active">
-							<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-								<span class="sr-only">60% Complete</span>
-							</div>
-						</div>
-					</div>
-					<small>CSS: 88%</small>
-					<div class="progress bk-margin-bottom-10" style="height: 8px;">
-						<div class="progress thin progress-striped active">
-							<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 88%;">
-								<span class="sr-only">88% Complete</span>
-							</div>
-						</div>
-					</div>
-					<small>JS: 35%</small>
-					<div class="progress bk-margin-off-bottom" style="height: 8px;">
-						<div class="progress thin progress-striped active">
-							<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 35%;">
-								<span class="sr-only">35% Complete</span>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
 		<hr class="bk-margin-off" />

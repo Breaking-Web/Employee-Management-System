@@ -300,7 +300,7 @@
 							<li><a href="index.php#">About</a></li>
 						</ul>
 						<div class="copyright text-center">
-							<small>Nadhif <i class="fa fa-coffee"></i> Collect from <a href="http://www.clemson.com/" title="clemson" target="_blank">Clemson University</a></small>
+							<small> <i class="fa fa-coffee"></i> Collect from <a href="http://www.clemson.com/" title="clemson" target="_blank">Clemson University</a></small>
 						</div>					
 					</div>
 					<!-- End Sidebar Footer-->

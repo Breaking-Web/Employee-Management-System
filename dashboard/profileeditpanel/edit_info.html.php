@@ -120,12 +120,6 @@
 											<label for="profileBio">Biographical Info</label>
 											<textarea class="form-control" rows="5" id="profileBio" placeholder="Start typing"></textarea>
 										</div>
-										<div class="form-group">
-											<div class="checkbox-custom checkbox-default bk-margin-bottom-10">
-												<input type="checkbox" id="profilePublish" name="profilePublish" value="profilePublish"/>
-												<label for="profilePublish"> Publish</label>
-											</div>
-										</div>
 									</fieldset>
 									<hr />
 									<h4>Change Password</h4>
