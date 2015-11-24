@@ -275,33 +275,15 @@
 								<ul class="nav nav-sidebar">
 									<?php include "./icon/index.php"; ?>
 									<div class="divider2"></div>
-									<li>
+									<li >
 										<a href="index.php">
 											<i class="fa fa-laptop" aria-hidden="true"></i><span>Dashboard</span>
 										</a>
 									</li>
-									<li>
-										<a href="page-inbox.html">
-											<span class="pull-right label label-primary">165</span>
-											<i class="fa fa-envelope" aria-hidden="true"></i><span>Mail</span>
+									<li class="active">
+										<a href="page-profile.html.php">
+											<i class="fa fa-tasks" aria-hidden="true"></i><span>Profile</span>
 										</a>
-									</li>
-									<li class="nav-parent nav-expanded active">
-										<a>
-											<i class="fa fa-copy" aria-hidden="true"></i><span>Pages</span>
-										</a>
-										<ul class="nav nav-children">
-											<li><a href="page-activity.html"><span class="text"> Activity</span></a></li>
-											<li><a href="page-invoice.html"><span class="text"> Invoice</span></a></li>						
-											<li><a href="page-profile.html"><span class="text"> Profile</span></a></li>
-											<li><a href="page-pricing-tables.html"><span class="text"> Pricing Tables</span></a></li>
-											<li><a href="page-404.html"><span class="text"> 404</span></a></li>
-											<li><a href="page-500.html"><span class="text"> 500</span></a></li>
-											<li><a href="page-lockscreen.html"><span class="text"> LockScreen1</span></a></li>
-											<li><a href="page-lockscreen2.html"><span class="text"> LockScreen2</span></a></li>
-											<li><a href="page-login.html"><span class="text"> Login Page</span></a></li>
-											<li><a href="page-register.html"><span class="text"> Register Page</span></a></li>											
-										</ul>
 									</li>
 									
 								</ul>
@@ -312,13 +294,13 @@
 					<!-- Sidebar Footer-->
 					<div class="sidebar-footer">	
 						<ul class="sidebar-terms">
-							<li><a href="index.html#">Terms</a></li>
-							<li><a href="index.html#">Privacy</a></li>
-							<li><a href="index.html#">Help</a></li>
-							<li><a href="index.html#">About</a></li>
+							<li><a href="index.php#">Terms</a></li>
+							<li><a href="index.php#">Privacy</a></li>
+							<li><a href="index.php#">Help</a></li>
+							<li><a href="index.php#">About</a></li>
 						</ul>
 						<div class="copyright text-center">
-							<small>Nadhif <i class="fa fa-coffee"></i> Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a> - More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a></small>
+							<small>Nadhif <i class="fa fa-coffee"></i> Collect from <a href="http://www.clemson.com/" title="clemson" target="_blank">Clemson University</a></small>
 						</div>					
 					</div>
 					<!-- End Sidebar Footer-->
@@ -331,7 +313,7 @@
 					<div class="page-header">
 						<div class="pull-left">
 							<ol class="breadcrumb visible-sm visible-md visible-lg">								
-								<li><a href="index.html"><i class="icon fa fa-home"></i>Home</a></li>
+								<li><a href="index.php"><i class="icon fa fa-home"></i>Home</a></li>
 								<li><a href="#"><i class="fa fa-file-text"></i>Pages</a></li>
 								<li class="active"><i class="fa fa-reddit"></i>Profile</li>
 							</ol>						

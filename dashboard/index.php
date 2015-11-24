@@ -57,8 +57,19 @@
 		<!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->		
-		
+		<![endif]-->	
+		<script src="http://maps.googleapis.com/maps/api/js"></script>	
+		<script>
+		function initialize() {
+		  var mapProp = {
+		    center:new google.maps.LatLng(34.6850,-82.8147),
+		    zoom:13,
+		    mapTypeId:google.maps.MapTypeId.ROADMAP
+		  };
+		  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+		}
+		google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
 	</head>
 	
 	<body>
@@ -68,8 +79,8 @@
 			<div class="container-fluid container-nav">				
 				<!-- Navbar Action -->
 				<ul class="nav navbar-nav navbar-actions navbar-left">
-					<li class="visible-md visible-lg"><a href="index.html#" id="main-menu-toggle"><i class="fa fa-th-large"></i></a></li>
-					<li class="visible-xs visible-sm"><a href="index.html#" id="sidebar-menu"><i class="fa fa-navicon"></i></a></li>			
+					<li class="visible-md visible-lg"><a href="index.php#" id="main-menu-toggle"><i class="fa fa-th-large"></i></a></li>
+					<li class="visible-xs visible-sm"><a href="index.php#" id="sidebar-menu"><i class="fa fa-navicon"></i></a></li>			
 				</ul>
 				<!-- Navbar Left -->
 				<div class="navbar-left">
@@ -258,7 +269,7 @@
 			</div>		
 		</div>
 		<!-- End: Header -->
-		<div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >企业网站模板</a></div>
+		<div class="copyrights">Collect from <a href="http://www.clemson.com/" ></a></div>
 		<!-- Start: Content -->
 		<div class="container-fluid content">	
 			<div class="row">
@@ -277,32 +288,14 @@
 									<?php include "icon/index.php"; ?>
 									<div class="divider2"></div>
 									<li class="active">
-										<a href="index.html">
+										<a href="index.php">
 											<i class="fa fa-laptop" aria-hidden="true"></i><span>Dashboard</span>
 										</a>
 									</li>
-									<li>
-										<a href="page-inbox.html">
-											<span class="pull-right label label-primary">165</span>
-											<i class="fa fa-envelope" aria-hidden="true"></i><span>Mail</span>
+									<li >
+										<a href="page-profile.html.php">
+											<i class="fa fa-tasks" aria-hidden="true"></i><span>Profile</span>
 										</a>
-									</li>
-									<li class="nav-parent">
-										<a>
-											<i class="fa fa-copy" aria-hidden="true"></i><span>Pages</span>
-										</a>
-										<ul class="nav nav-children">
-											<li><a href="page-activity.html"><span class="text"> Activity</span></a></li>
-											<li><a href="page-invoice.html"><span class="text"> Invoice</span></a></li>						
-											<li><a href="page-profile.html.php"><span class="text"> Profile</span></a></li>
-											<li><a href="page-pricing-tables.html"><span class="text"> Pricing Tables</span></a></li>
-											<li><a href="page-404.html"><span class="text"> 404</span></a></li>
-											<li><a href="page-500.html"><span class="text"> 500</span></a></li>
-											<li><a href="page-lockscreen.html"><span class="text"> LockScreen1</span></a></li>
-											<li><a href="page-lockscreen2.html"><span class="text"> LockScreen2</span></a></li>
-											<li><a href="page-login.html"><span class="text"> Login Page</span></a></li>
-											<li><a href="page-register.html"><span class="text"> Register Page</span></a></li>											
-										</ul>
 									</li>
 								</ul>
 							</nav>
@@ -312,10 +305,10 @@
 					<!-- Sidebar Footer-->
 					<div class="sidebar-footer">	
 						<ul class="sidebar-terms">
-							<li><a href="index.html#">Terms</a></li>
-							<li><a href="index.html#">Privacy</a></li>
-							<li><a href="index.html#">Help</a></li>
-							<li><a href="index.html#">About</a></li>
+							<li><a href="index.php#">Terms</a></li>
+							<li><a href="index.php#">Privacy</a></li>
+							<li><a href="index.php#">Help</a></li>
+							<li><a href="index.php#">About</a></li>
 						</ul>
 						<div class="copyright text-center">
 							<small>Nadhif <i class="fa fa-coffee"></i> Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a> - More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a></small>
@@ -331,7 +324,7 @@
 					<div class="page-header">
 						<div class="pull-left">
 							<ol class="breadcrumb visible-sm visible-md visible-lg">								
-								<li><a href="index.html"><i class="icon fa fa-home"></i>Home</a></li>
+								<li><a href="index.php"><i class="icon fa fa-home"></i>Home</a></li>
 								<li class="active"><i class="fa fa-laptop"></i>Dashboard</li>
 							</ol>						
 						</div>
@@ -593,7 +586,7 @@
 									</div>
 								</div>
 								<div class="panel-body bk-bg-white bk-border-white text-center bk-padding-off">
-									<div id="gmap-marker" class="bk-radius-top" style="height: 237px"></div>
+									<div id="googleMap" class="bk-radius-top" style="height: 237px"></div>
 								</div>
 								<div class="panel-body bk-bg-white bk-border-white bk-padding-off-top bk-padding-off-bottom">
 									<div class="row">
@@ -608,883 +601,15 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-							<div class="panel bk-widget bk-border-off bk-noradius">
-								<div class="panel-body bk-bg-white text-center bk-fg-info bk-padding-top-15 bk-padding-bottom-15">
-									<div class="row">
-										<div class="col-xs-8 text-left bk-vcenter">
-											<div class="">
-												<h4 class="bk-margin-off">TOP COUNTRIES</h4>
-												RANKED BY VISITS
-											</div>
-										</div>
-										<div class="col-xs-4 bk-vcenter text-right">
-											<i class="fa fa-globe fa-4x"></i>
-										</div>
-									</div>
-								</div>
-								<div class="list-group">
-									<a href="#" class="list-group-item">
-										<div class="row">
-											<div class="col-xs-6">
-												INDONESIA
-											</div>
-											<div class="col-xs-6 text-right">
-												<span class="label label-success bk-noradius">1,526,596</span>
-											</div>
-										</div>
-									</a>
-									<a href="#" class="list-group-item">
-										<div class="row">
-											<div class="col-xs-6">
-												JAPAN
-											</div>
-											<div class="col-xs-6 text-right">
-												<span class="label label-warning bk-noradius">1,326,895</span>
-											</div>
-										</div>
-									</a>
-									<a href="#" class="list-group-item">
-										<div class="row">
-											<div class="col-xs-6">
-												AUSTRALIA
-											</div>
-											<div class="col-xs-6 text-right">
-												<span class="label label-danger bk-noradius">1,126,659</span>
-											</div>
-										</div>
-									</a>                        
-								</div>
-							</div>
-							<div class="panel bk-widget bk-border-off bk-webkit-fix">
-								<div class="panel-body bk-bg-very-light-gray text-center bk-padding-top-10 bk-padding-bottom-10">
-									<div class="row">
-										<div class="col-xs-8 text-left bk-vcenter">
-											<h5 class="bk-margin-off"><em>BEST SELLER</em></h5>
-										</div>
-										<div class="col-xs-4 bk-vcenter text-right">
-											<i class="fa fa-thumbs-o-up fa-2x"></i>
-										</div>
-									</div>
-								</div>
-								<hr class="bk-margin-off" />
-								<div class="bs-example">
-									<div id="carousel-example-generic3" class="carousel bk-carousel-fade slide" data-ride="carousel">
-										<div class="carousel-inner">
-											<div class="item active">
-												<a class="panel-body bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
-													<div class="pull-left bk-margin-top-10 bk-margin-right-10">
-														<div class="bk-round bk-bg-darken bk-border-off bk-icon bk-icon-2x bk-icon-default bk-bg-warning">
-															<i class="fa fa-gift fa-2x"></i>
-														</div>
-													</div>
-													<h5 class="bk-fg-warning bk-fg-darken bk-margin-off-bottom"><strong>CREATIVE</strong></h5>
-													<p>
-														<small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-													</p>
-												</a>
-												<hr class="bk-margin-off" />
-												<div class="panel-body bk-bg-very-light-gray bk-padding-5 text-center">
-													<a href="#" class="bk-fg-warning bk-fg-lighten"><small><i class="fa fa-file-text-o"></i> FIND OUT MORE</small></a>
-												</div>
-											</div>
-											<div class="item">
-												<a class="panel-body bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
-													<div class="pull-left bk-margin-top-10 bk-margin-right-10">
-														<div class="bk-round bk-bg-darken bk-border-off bk-icon bk-icon-2x bk-icon-default bk-bg-info">
-															<i class="fa fa-send-o fa-2x"></i>
-														</div>
-													</div>
-													<h5 class="bk-fg-info bk-fg-darken bk-margin-off-bottom"><strong>PORTFOLIO</strong></h5>
-													<p>
-														<small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-													</p>
-												</a>
-												<hr class="bk-margin-off" />
-												<div class="panel-body bk-bg-very-light-gray bk-padding-5 text-center">
-													<a href="#" class="bk-fg-info bk-fg-lighten"><small><i class="fa fa-file-text-o"></i> FIND OUT MORE</small></a>
-												</div>
-											</div>
-											<div class="item">
-												<a class="panel-body bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
-													<div class="pull-left bk-margin-top-10 bk-margin-right-10">
-														<div class="bk-round bk-bg-darken bk-border-off bk-icon bk-icon-2x bk-icon-default bk-bg-primary">
-															<i class="fa fa-map-marker fa-2x"></i>
-														</div>
-													</div>
-													<h5 class="bk-fg-primary bk-fg-darken bk-margin-off-bottom"><strong>ADMIN TEMPLATE</strong></h5>
-													<p>
-														<small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-													</p>
-												</a>
-												<hr class="bk-margin-off" />
-												<div class="panel-body bk-bg-very-light-gray bk-padding-5 text-center">
-													<a href="#" class="bk-fg-primary bk-fg-lighten"><small><i class="fa fa-file-text-o"></i> FIND OUT MORE</small></a>
-												</div>
-											</div>
-										</div>
-										<a class="left carousel-control bk-carousel-control bk-carousel-control-white bk-carousel-hide-init" href="#carousel-example-generic3" role="button" data-slide="prev">
-											<span class="fa fa-angle-left icon-prev bk-bg-very-light-gray"></span>
-										</a>
-										<a class="right carousel-control bk-carousel-control bk-carousel-control-white bk-carousel-hide-init" href="#carousel-example-generic3" role="button" data-slide="next">
-											<span class="fa fa-angle-right icon-next"></span>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="row">
-						<div class="col-sm-4">
-							<div class="panel bk-widget bk-border-off bk-webkit-fix">
-								<div class="bs-example">
-									<div id="carousel-example-generic10b" class="carousel bk-carousel-fade slide" data-ride="carousel">
-										<div class="carousel-inner">
-											<div class="item">
-												<div class="panel-body bk-bg-primary">
-													<h6 class="bk-margin-off bk-docs-font-weight-300">JAKARTA PUSAT <small>(GMT +1)</small></h6>
-												</div>
-												<a class="panel-body bk-bg-white bk-bg-darken text-center bk-padding-top-20 bk-padding-bottom-20">
-													<h6 class="bk-docs-font-weight-300">Humidity: 40%</h6>
-													<h1 class="bk-margin-off-top bk-docs-font-weight-700"> 26</h1>
-													<canvas class="partly-cloudy-day bk-padding-top-10 bk-padding-bottom-10" width="60" height="60"></canvas>
-												</a>
-											</div>                                
-											<div class="item active">
-												<div class="panel-body bk-bg-primary">
-													<h6 class="bk-margin-off bk-docs-font-weight-300">JAKARTA TIMUR <small>(EDT)</small></h6>
-												</div>
-												<a class="panel-body bk-bg-white bk-bg-darken text-center bk-padding-top-20 bk-padding-bottom-20">
-													<h6 class="bk-docs-font-weight-300">Humidity: 56%</h6>
-													<h1 class="bk-margin-off-top bk-docs-font-weight-700"> 26</h1>
-													<canvas class="clear-day bk-padding-top-10 bk-padding-bottom-10" width="60" height="60"></canvas>
-												</a>
-											</div>
-											<div class="item">
-												<div class="panel-body bk-bg-primary">
-													<h6 class="bk-margin-off bk-docs-font-weight-300">JAKARTA SELATAN <small>(IST)</small></h6>
-												</div>
-												<a class="panel-body bk-bg-white bk-bg-darken text-center bk-padding-top-20 bk-padding-bottom-20">
-													<h6 class="bk-docs-font-weight-300">Humidity: 72%</h6>
-													<h1 class="bk-margin-off-top bk-docs-font-weight-700"> 80</h1>
-													<canvas class="partly-cloudy-night bk-padding-top-10 bk-padding-bottom-10" width="60" height="60"></canvas>
-												</a>
-											</div>
-											<div class="item">
-												<div class="panel-body bk-bg-primary">
-													<h6 class="bk-margin-off bk-docs-font-weight-300">JAKARTA UTARA <small>(PDT)</small></h6>
-												</div>
-												<a class="panel-body bk-bg-white bk-bg-darken text-center bk-padding-top-20 bk-padding-bottom-20">
-													<h6 class="bk-docs-font-weight-300">Humidity: 77%</h6>
-													<h1 class="bk-margin-off-top bk-docs-font-weight-700"> 88</h1>
-													<canvas class="cloudy bk-padding-top-10 bk-padding-bottom-10" width="60" height="60"></canvas>
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="panel-body bk-padding-off">
-									<div class="row">
-										<a href="#carousel-example-generic10b" class="col-xs-6 pull-left bk-bg-primary bk-bg-darken bk-padding-top-5 bk-padding-bottom-5 text-center" data-slide="prev">
-											<h6><i class="fa fa-angle-left"></i> PREVIOUS</h6>
-										</a>
-										<a href="#carousel-example-generic10b" class="col-xs-6 pull-left bk-bg-primary bk-bg-darken bk-padding-top-5 bk-padding-bottom-5 text-center" data-slide="next">
-											<h6>NEXT <i class="fa fa-angle-right"></i></h6>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>					
-						
-					<div class="row">
-						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-							<div class="panel">
-								<div class="panel-body text-center" style="height:230px">
-									<h5 class="bk-fg-warning">ADMIN TEMPLATE</h5>
-									<div style="width:300px;left:50%;position:absolute;margin-left:-150px;">
-										<canvas id="gauge1"></canvas>
-									</div>
-									<span class="pull-left">$ 356.256,25</span>
-									<span class="pull-right"><i class="fa fa-arrow-circle-o-up bk-fg-warning"></i> 92%</span>
-								</div>
-							</div>				
-						</div>
-						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-							<div class="panel">
-								<div class="panel-body text-center" style="height:230px">
-									<h5 class="bk-fg-success">PORTFOLIO</h5>
-									<div style="width:300px;left:50%;position:absolute;margin-left:-150px;">
-										<canvas id="gauge2"></canvas>
-									</div>
-									<span class="pull-left">$ 125.365,56</span>
-									<span class="pull-right"><i class="fa fa-arrow-circle-o-up bk-fg-success"></i> 70%</span>
-								</div>
-							</div>			
-						</div>
-						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-							<div class="panel">
-								<div class="panel-body text-center" style="height:230px">
-									<h5 class="bk-fg-danger">WORDPRESS</h5>
-									<div style="width:300px;left:50%;position:absolute;margin-left:-150px;">
-										<canvas id="gauge3"></canvas>
-									</div>
-									<span class="pull-left">$ 98.256,25</span>
-									<span class="pull-right"><i class="fa fa-arrow-circle-o-up bk-fg-danger"></i> 52%</span>
-								</div>
-							</div>				
-						</div>
-					</div>
-						
-					<div class="row">
-						<div class="col-sm-12">
-							<div class="panel">
-								<div class="panel-heading bk-bg-primary">
-									<h6><i class="fa fa-bar-chart-o red"></i>CHART STATS</h6>
-									<div class="panel-actions">
-										<a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
-										<a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
-										<a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
-									</div>	
-								</div>						
-								<div class="panel-body">
-									<figure class="demo" id="chart" style="height: 300px"></figure>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="panel">
-								<div class="panel-heading bk-bg-white">
-									<h6><i class="fa fa-random red"></i>INTERACTING STATS</h6>							
-								</div>						
-								<div class="panel-body">
-									<figure class="demo" id="example4" style="height: 300px"></figure>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-6">					
-							<div class="panel">
-								<div class="panel-heading bk-bg-white">
-									<h6><i class="fa fa-retweet red"></i>CUSTOM STATS</h6>							
-								</div>
-								<div class="panel-body">
-									<figure class="demo" id="exampleVis" style="height: 300px"></figure>
-								</div>
-							</div>
-						</div>
-					</div>		
-				
-					<div class="row">
-						<div class="col-md-6">
-							<div class="panel bk-widget bk-border-off bk-noradius bk-webkit-fix">
-								<div class="panel-body bk-bg-very-light-gray text-center bk-padding-top-10 bk-padding-bottom-10">
-									<div class="row">
-										<div class="col-xs-8 text-left bk-vcenter">
-											<h6 class="bk-margin-off"><i class="fa fa-bullhorn"></i> SOCIAL UPDATE</h6>
-										</div>
-										<div class="col-xs-4 bk-vcenter text-right">
-											<a class="right carousel-control bk-carousel-control bk-carousel-control-white bk-carousel-left" href="#carousel-example-generic2" role="button" data-slide="prev">
-												<span class="fa fa-arrow-circle-o-left icon-prev"></span>
-											</a>
-											<a class="right carousel-control bk-carousel-control bk-carousel-control-white bk-carousel-right" href="#carousel-example-generic2" role="button" data-slide="next">
-												<span class="fa fa-angle-right icon-next"></span>
-											</a>
-										</div>
-									</div>
-								</div>
-								<hr class="bk-margin-off" />
-								<div class="bs-example">
-									<div id="carousel-example-generic2" class="carousel slide" data-ride="carousel">
-										<div class="carousel-inner">
-											<div class="item active">
-												<a class="panel-body bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
-													<div class="pull-left bk-margin-top-10 bk-margin-right-10">
-														<div class="bk-round bk-bg-darken bk-border-off bk-icon bk-icon-2x bk-icon-default bk-bg-primary">
-															<i class="fa fa-facebook fa-2x"></i>
-														</div>
-													</div>
-													<h5 class="bk-fg-primary bk-fg-darken bk-margin-off-bottom"><strong>FACEBOOK</strong></h5>
-													<p>
-														<small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-													</p>
-												</a>
-												<hr class="bk-margin-off" />
-												<div class="panel-body bk-bg-very-light-gray bk-padding-5 text-center">
-													<a href="#" class="bk-fg-primary bk-fg-lighten"><small><i class="fa fa-file-text-o"></i> MORE UPDATE</small></a>
-												</div>
-											</div>
-											<div class="item">
-												<a class="panel-body bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
-													<div class="pull-left bk-margin-top-10 bk-margin-right-10">
-														<div class="bk-round bk-bg-darken bk-border-off bk-icon bk-icon-2x bk-icon-default bk-bg-info">
-															<i class="fa fa-twitter fa-2x"></i>
-														</div>
-													</div>
-													<h5 class="bk-fg-info bk-fg-darken bk-margin-off-bottom"><strong>TWITTER</strong></h5>
-													<p>
-														<small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-													</p>
-												</a>
-												<hr class="bk-margin-off" />
-												<div class="panel-body bk-bg-very-light-gray bk-padding-5 text-center">
-													<a href="#" class="bk-fg-info bk-fg-lighten"><small><i class="fa fa-file-text-o"></i> MORE UPDATE</small></a>
-												</div>
-											</div>
-											<div class="item">
-												<a class="panel-body bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
-													<div class="pull-left bk-margin-top-10 bk-margin-right-10">
-														<div class="bk-round bk-bg-darken bk-border-off bk-icon bk-icon-2x bk-icon-default bk-bg-danger">
-															<i class="fa fa-google-plus fa-2x"></i>
-														</div>
-													</div>
-													<h5 class="bk-fg-danger bk-fg-darken bk-margin-off-bottom"><strong>GOOGLE PLUS</strong></h5>
-													<p>
-														<small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-													</p>
-												</a>
-												<hr class="bk-margin-off" />
-												<div class="panel-body bk-bg-very-light-gray bk-padding-5 text-center">
-													<a href="#" class="bk-fg-danger bk-fg-lighten"><small><i class="fa fa-file-text-o"></i> MORE UPDATE</small></a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="panel bk-widget bk-border-off bk-webkit-fix">
-								<div class="panel-body bk-bg-very-light-gray text-center bk-padding-top-10 bk-padding-bottom-10">
-									<div class="row">
-										<div class="col-xs-8 text-left bk-vcenter">
-											<h6 class="bk-margin-off">NEW COMMENTS</h6>
-										</div>
-										<div class="col-xs-4 bk-vcenter text-right">
-											<i class="fa fa-comment-o"></i>
-										</div>
-									</div>
-								</div>
-								<hr class="bk-margin-off" />
-								<div class="bs-example">
-									<div id="carousel-example-generic3" class="carousel bk-carousel-fade slide" data-ride="carousel">
-										<div class="carousel-inner">
-											<div class="item active">
-												<a class="panel-body bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
-													<div class="pull-left bk-margin-top-10 bk-margin-right-10 bk-margin-bottom-15">
-														<div class="bk-avatar">
-															<img src="assets/img/avatar1.jpg" alt="" class="img-circle bk-img-60 bk-border-off" />
-														</div>
-													</div>
-													<h6 class="bk-fg-warning bk-fg-darken bk-margin-off-bottom"><strong>Adam</strong></h6>
-													<p>
-														<small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-													</p>
-												</a>                                   
-											</div>
-											<div class="item">
-												<a class="panel-body bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
-													<div class="pull-left bk-margin-top-10 bk-margin-right-10 bk-margin-bottom-15">
-														<div class="bk-avatar">
-															<img src="assets/img/avatar2.jpg" alt="" class="img-circle bk-img-60 bk-border-off" />
-														</div>
-													</div>
-													<h6 class="bk-fg-warning bk-fg-darken bk-margin-off-bottom"><strong>Ferry</strong></h6>
-													<p>
-														<small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-													</p>
-												</a>                                    
-											</div>
-											<div class="item">
-												<a class="panel-body bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
-													<div class="pull-left bk-margin-top-10 bk-margin-right-10 bk-margin-bottom-15">
-														<div class="bk-avatar">
-															<img src="assets/img/avatar3.jpg" alt="" class="img-circle bk-img-60 bk-border-off" />
-														</div>
-													</div>
-													<h6 class="bk-fg-warning bk-fg-darken bk-margin-off-bottom"><strong>Ashley</strong></h6>
-													<p>
-														<small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-													</p>
-												</a>                                    
-											</div>
-										</div>
-										<a class="left carousel-control bk-carousel-control bk-carousel-control-white bk-carousel-hide-init" href="#carousel-example-generic3" role="button" data-slide="prev">
-											<span class="fa fa-angle-left icon-prev bk-bg-very-light-gray"></span>
-										</a>
-										<a class="right carousel-control bk-carousel-control bk-carousel-control-white bk-carousel-hide-init" href="#carousel-example-generic3" role="button" data-slide="next">
-											<span class="fa fa-angle-right icon-next"></span>
-										</a>
-									</div>
-								</div>
-							</div>
-							<div class="panel bk-widget bk-border-off bk-noradius">
-								<div class="panel-heading bk-bg-primary">
-									<div class="row">
-										<div class="col-xs-8 text-left bk-vcenter">
-											<h6 class="bk-margin-off">LATEST ITEM</h6>
-										</div>
-										<div class="col-xs-4 bk-vcenter text-right">
-											<i class="fa fa-umbrella"></i>
-										</div>
-									</div>
-								</div>
-								<div class="panel-body bk-bg-white bk-padding-off-top bk-padding-off-bottom">
-									<div class="row">
-										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 bk-vcenter bk-padding-10">
-											<a class="pull-left bk-border-danger">
-												<div class="bk-avatar">
-													<img src="assets/img/gallery/photo6.jpg" alt="" class="img-responsive bk-img-60 bk-border-off" />
-												</div>
-											</a>
-										</div>
-										<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 bk-vcenter">
-											<h6 class="bk-fg-danger bk-margin-off-bottom"><strong>RESPONSIVE MULTIPURPOSE</strong></h6>
-											<p>
-												<small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-											</p>
-										</div>
-										<hr class="bk-margin-off" />
-									</div>
-									<div class="row">
-										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 bk-vcenter bk-padding-10">
-											<a class="pull-left bk-border-primary">
-												<div class="bk-avatar">
-													<img src="assets/img/gallery/photo7.jpg" alt="" class="img-responsive bk-img-60 bk-border-off" />
-												</div>
-											</a>
-										</div>
-										<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 bk-vcenter">
-											<h6 class="bk-fg-primary bk-margin-off-bottom"><strong>PARALLAX ONE PAGE</strong></h6>
-											<p>
-												<small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-											</p>
-										</div>
-									</div>
-									<div class="row">
-										<hr class="bk-margin-off" />
-										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 bk-vcenter bk-padding-10">
-											<a class="pull-left bk-border-info">
-												<div class="bk-avatar">
-													<img src="assets/img/gallery/photo8.jpg" alt="" class="img-responsive bk-img-60 bk-border-off" />
-												</div>
-											</a>
-										</div>
-										<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 bk-vcenter">
-											<h6 class="bk-fg-info bk-margin-off-bottom"><strong>ONE PAGE SLIDER HOME</strong></h6>
-											<p>
-												<small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-											</p>
-										</div>
-									</div>
-									<div class="row">
-										<hr class="bk-margin-off" />
-										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 bk-vcenter bk-padding-10">
-											<a class="pull-left bk-border-warning">
-												<div class="bk-avatar">
-													<img src="assets/img/gallery/photo9.jpg" alt="" class="img-responsive bk-img-60 bk-border-off" />
-												</div>
-											</a>
-										</div>
-										<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 bk-vcenter">
-											<h6 class="bk-fg-warning bk-margin-off-bottom"><strong>ONE PAGE PORTFOLIO</strong></h6>
-											<p>
-												<small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-											</p>
-										</div>
-									</div>
-								</div>
-								<div class="panel-body bk-bg-very-light-gray bk-padding-top-5 bk-padding-bottom-5 ">
-									<div class="row">
-										<div class="col-xs-6">
-											<a href="#" class="bk-fg-textcolor"><small><i class="fa fa-angle-left"></i> PREVIOUS</small></a>
-										</div>
-										<div class="col-xs-6 text-right">
-											<a href="#" class="bk-fg-textcolor"><small>NEXT <i class="fa fa-angle-right"></i></small></a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="panel bk-widget bk-border-off">
-								<div class="panel-heading bk-bg-primary">
-									<h6><i class="fa fa-book red"></i>TO DO</h6>
-									<div class="panel-actions">
-										<a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
-											<a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
-										<a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
-									</div>	
-								</div>
-								<div class="panel-body bk-bg-white no-padding">
-									<div class="todo-list">									
-										<div class="header">Today</div>
-										<ul id="todo-2" class="todo-list-tasks">
-											<li>
-												<label class="custom-checkbox-item pull-left">
-													<input class="custom-checkbox" type="checkbox"/>
-													<span class="custom-checkbox-mark"></span>
-												</label>
-												<span class="desc">Add slider home to creative template</span> 
-											</li>
-											<li>
-												<label class="custom-checkbox-item pull-left">
-													<input class="custom-checkbox" type="checkbox"/>
-													<span class="custom-checkbox-mark"></span>
-												</label>
-												<span class="desc">Change portfolio image with new animation</span> 
-											</li>
-											<li>
-												<label class="custom-checkbox-item pull-left">
-													<input class="custom-checkbox" type="checkbox"/>
-													<span class="custom-checkbox-mark"></span>
-												</label>
-												<span class="desc">Fixed JavaScript problem for index page</span> 
-											</li>
-										</ul>
-										<div class="header">Tommorow</div>
-										<ul id="todo-3" class="todo-list-tasks">
-											<li>
-												<label class="custom-checkbox-item pull-left">
-													<input class="custom-checkbox" type="checkbox"/>
-													<span class="custom-checkbox-mark"></span>
-												</label>
-												<span class="desc">Update sliding menu with newest</span> 
-											</li>
-											<li>
-												<label class="custom-checkbox-item pull-left">
-													<input class="custom-checkbox" type="checkbox"/>
-													<span class="custom-checkbox-mark"></span>
-												</label>
-												<span class="desc">Change navigation structure on header</span> 
-											</li>
-										</ul>
-										<div class="header">Completed</div>
-										<ul class="completed"></ul>		
-									</div>
-								</div>
-								<div class="panel-body bk-bg-white bk-padding-top-10 bk-padding-bottom-10">
-									<form role="form" action="#">
-										<div class="input-group">
-											<input type="text" class="form-control bk-noradius" />
-											<span class="input-group-btn">
-												<button class="btn btn-primary bk-noradius" type="button">Submit</button>
-											</span>
-										</div><!-- /input-group -->
-										<div class="btn-group">
-											<button type="button" class="btn btn-link"><i class="fa fa-wheelchair"></i></button>
-											<button type="button" class="btn btn-link"><i class="fa fa-file-text"></i></button>
-											<button type="button" class="btn btn-link"><i class="fa fa-heart"></i></button>
-										</div>							
-									</form>
-								</div>											
-							</div>						
-						</div>
-						<div class="col-md-6">
-							<div class="panel bk-widget bk-border-off bk-noradius">
-								<div class="panel-body bk-bg-white text-center bk-padding-top-10 bk-padding-bottom-10">
-									<div class="row">
-										<div class="col-xs-8 text-left bk-vcenter">
-											<h6 class="bk-margin-off">CHATROOM</h6>
-										</div>
-										<div class="col-xs-4 bk-vcenter text-right">
-											<i class="fa fa-comments-o"></i>
-										</div>
-									</div>
-								</div>
-								<hr class="bk-margin-off" />
-								<div class="bk-docs-scroll-hidden">
-									<a class="panel-body bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
-										<div class="pull-left bk-margin-top-10 bk-margin-right-10">
-											<div class="bk-avatar">
-												<img src="assets/img/avatar4.jpg" alt="" class="img-circle bk-img-60 bk-border-off" />
-											</div>
-										</div>
-										<div class="bk-fg-inverse bk-margin-top-10">
-											<strong class="bk-fg-primary">Tommy</strong>
-											<span class="pull-right bk-fg-primary"><i class="fa fa-clock-o"></i><small> 30 minutes ago</small></span>
-										</div>
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-										</p>
-									</a>
-									<hr class="bk-margin-off" />
-									<a class="panel-body bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
-										<div class="pull-right bk-margin-top-10 bk-margin-left-10">
-											<div class="bk-avatar">
-												<img src="assets/img/avatar5.jpg" alt="" class="img-circle bk-img-60 bk-border-off" />
-											</div>
-										</div>
-										<div class="bk-fg-inverse bk-margin-top-10">
-											<strong class="pull-right bk-fg-warning">Romi</strong>
-											<span class="bk-fg-primary"><i class="fa fa-clock-o"></i><small> 20 minutes ago</small></span>
-										</div>
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-										</p>
-									</a>
-									<hr class="bk-margin-off" />
-									<a class="panel-body bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
-										<div class="pull-left bk-margin-top-10 bk-margin-right-10">
-											<div class="bk-avatar">
-												<img src="assets/img/avatar6.jpg" alt="" class="img-circle bk-img-60 bk-border-off" />
-											</div>
-										</div>
-										<div class="bk-fg-inverse bk-margin-top-10">
-											<strong class="bk-fg-danger">Jack</strong>
-											<span class="pull-right bk-fg-primary"><i class="fa fa-clock-o"></i><small> 10 minutes ago</small></span>
-										</div>
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-										</p>
-									</a>
-									<hr class="bk-margin-off" />
-									<a class="panel-body bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
-										<div class="pull-right bk-margin-top-10 bk-margin-left-10">
-											<div class="bk-avatar">
-												<img src="assets/img/avatar7.jpg" alt="" class="img-circle bk-img-60 bk-border-off" />
-											</div>
-										</div>
-										<div class="bk-fg-inverse bk-margin-top-10">
-											<strong class="pull-right bk-fg-info">Arline</strong>
-											<span class="bk-fg-primary"><i class="fa fa-clock-o"></i><small> 3 minutes ago</small></span>
-										</div>
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-										</p>
-									</a>
-									<hr class="bk-margin-off" />
-									<a class="panel-body bk-bg-very-light-gray bk-bg-lighten bk-padding-off-top bk-padding-off-bottom">
-										<div class="pull-left bk-margin-top-10 bk-margin-right-10">
-											<div class="bk-avatar">
-												<img src="assets/img/avatar6.jpg" alt="" class="img-circle bk-img-60 bk-border-off" />
-											</div>
-										</div>
-										<div class="bk-fg-inverse bk-margin-top-10">
-											<strong class="bk-fg-success">Jack</strong>
-											<span class="pull-right bk-fg-primary"><i class="fa fa-clock-o"></i><small> just now</small></span>
-										</div>
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-										</p>
-									</a>
-								</div>
-								<hr class="bk-margin-off" />
-								<div class="panel-body bk-bg-white bk-padding-top-15 bk-padding-bottom-15">
-									<form role="form" action="#">
-										<div class="input-group">
-											<input type="text" class="form-control bk-noradius" />
-											  <span class="input-group-btn">
-												<button class="btn btn-default bk-noradius" type="button"><i class="fa fa-send-o"></i></button>
-											  </span>
-										</div>
-									</form>
-								</div>
-							</div>
-							<div class="panel bk-widget bk-border-off">
-								<div class="panel-body text-left bk-bg-white bk-padding-top-15 bk-padding-bottom-15">
-									<div class="row">
-										<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 bk-vcenter">
-											<h4 class="bk-margin-off">James Freedy</h4>
-											<small>EXECUTIVE DIRECTOR</small>
-											<div>
-												<div class="btn-group">
-													<a href="#" class="btn btn-info btn-xs">profile</a>
-													<a href="#" class="btn btn-primary btn-xs">contact</a>
-												</div>
-											</div>								
-										</div>
-										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 bk-vcenter text-right">
-											<div class="bk-avatar bk-padding-top-5">
-												<img src="assets/img/avatar.jpg" alt="" class="img-circle bk-img-80 bk-border-primary bk-border-2x" />
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="panel-body bk-bg-white bk-padding-15">
-									<blockquote class="bk-margin-off-bottom">
-										<small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-									</blockquote>
-								</div>
-								<div class="panel-body bk-ltr bk-bg-white bk-padding-off">
-									<div class="row text-center">
-										<a class="col-xs-3 bk-bg-darken bk-fg-success bk-padding-top-20 bk-padding-bottom-20">
-											<i class="fa fa-linkedin fa-2x"></i><br>
-											<small>Linkedin</small>
-										</a>
-										<a class="col-xs-3 bk-bg-darken bk-fg-primary bk-padding-top-20 bk-padding-bottom-20">
-											<i class="fa fa-facebook fa-2x"></i><br>
-											<small>Facebook</small>
-										</a>
-										<a class="col-xs-3 bk-bg-darken bk-fg-info bk-padding-top-20 bk-padding-bottom-20">
-											<i class="fa fa-twitter fa-2x"></i><br>
-											<small>Twitter</small>
-										</a>
-										<a class="col-xs-3 bk-bg-darken bk-fg-danger bk-padding-top-20 bk-padding-bottom-20">
-											<i class="fa fa-google-plus fa-2x"></i><br>
-											<small>Google+</small>
-										</a>
-									</div>
-								</div>                    				
-							</div>
-							<div class="panel bk-widget bk-border-off">
-								<div class="panel-body text-left bk-bg-white bk-padding-top-15 bk-padding-bottom-15">
-									<div class="row">
-										<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 bk-vcenter">
-											<h4 class="bk-margin-off">John Doe</h4>
-											<small>WEB DEVELOPER</small>
-											<div class="bk-padding-bottom-20">
-												<div class="btn-group">
-													<a href="#" class="btn btn-info btn-xs">profile</a>
-													<a href="#" class="btn btn-primary btn-xs">contact</a>
-												</div>
-											</div>								
-										</div>
-										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 bk-vcenter text-right">
-											<div class="bk-avatar bk-padding-top-5">
-												<img src="assets/img/avatar.jpg" alt="" class="img-circle bk-img-80 bk-border-primary bk-border-2x" />
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="panel-body bk-bg-white bk-padding-15">
-									<blockquote class="bk-margin-off-bottom">
-										<small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-									</blockquote>
-								</div>
-								<div class="panel-body bk-ltr bk-bg-white bk-padding-off">
-									<div class="row text-center">
-										<a class="col-xs-3 bk-bg-darken bk-fg-success bk-padding-top-20 bk-padding-bottom-20">
-											<i class="fa fa-linkedin fa-2x"></i><br>
-											<small>Linkedin</small>
-										</a>
-										<a class="col-xs-3 bk-bg-darken bk-fg-primary bk-padding-top-20 bk-padding-bottom-20">
-											<i class="fa fa-facebook fa-2x"></i><br>
-											<small>Facebook</small>
-										</a>
-										<a class="col-xs-3 bk-bg-darken bk-fg-info bk-padding-top-20 bk-padding-bottom-20">
-											<i class="fa fa-twitter fa-2x"></i><br>
-											<small>Twitter</small>
-										</a>
-										<a class="col-xs-3 bk-bg-darken bk-fg-danger bk-padding-top-20 bk-padding-bottom-20">
-											<i class="fa fa-google-plus fa-2x"></i><br>
-											<small>Google+</small>
-										</a>
-									</div>
-								</div>                    				
-							</div>
-							<div class="panel bk-widget bk-border-off">
-								<div class="panel-body text-left bk-bg-white bk-padding-top-15 bk-padding-bottom-15">
-									<div class="row">
-										<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 bk-vcenter">
-											<h4 class="bk-margin-off">Jennifer Doe</h4>
-											<small>STAFF OFFICER</small>
-											<div>
-												<div class="btn-group">
-													<a href="#" class="btn btn-info btn-xs">profile</a>
-													<a href="#" class="btn btn-primary btn-xs">contact</a>
-												</div>
-											</div>								
-										</div>
-										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 bk-vcenter text-right">
-											<div class="bk-avatar bk-padding-top-5">
-												<img src="assets/img/avatar.jpg" alt="" class="img-circle bk-img-80 bk-border-primary bk-border-2x" />
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="panel-body bk-bg-white bk-padding-15">
-									<blockquote class="bk-margin-off-bottom">
-										<small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-									</blockquote>
-								</div>
-								<div class="panel-body bk-ltr bk-bg-white bk-padding-off">
-									<div class="row text-center">
-										<a class="col-xs-3 bk-bg-darken bk-fg-success bk-padding-top-20 bk-padding-bottom-20">
-											<i class="fa fa-linkedin fa-2x"></i><br>
-											<small>Linkedin</small>
-										</a>
-										<a class="col-xs-3 bk-bg-darken bk-fg-primary bk-padding-top-20 bk-padding-bottom-20">
-											<i class="fa fa-facebook fa-2x"></i><br>
-											<small>Facebook</small>
-										</a>
-										<a class="col-xs-3 bk-bg-darken bk-fg-info bk-padding-top-20 bk-padding-bottom-20">
-											<i class="fa fa-twitter fa-2x"></i><br>
-											<small>Twitter</small>
-										</a>
-										<a class="col-xs-3 bk-bg-darken bk-fg-danger bk-padding-top-20 bk-padding-bottom-20">
-											<i class="fa fa-google-plus fa-2x"></i><br>
-											<small>Google+</small>
-										</a>
-									</div>
-								</div>					
-							</div>				
-						</div>
-					</div>
+					</div>				
 				</div>
 				<!-- End Main Page -->			
 		
-				<!-- Usage -->
-				<div id="usage">
-					<ul>
-						<li>
-							<div class="title">Memory</div>
-							<div class="bar">
-								<div class="progress progress-md  progress-striped active">
-									<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
-								</div>
-							</div>			
-							<div class="desc">4GB of 8GB</div>
-						</li>
-						<li>
-							<div class="title">HDD</div>
-							<div class="bar">
-								<div class="progress progress-md  progress-striped active">
-									<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
-								</div>
-							</div>			
-							<div class="desc">250GB of 1TB</div>
-						</li>
-						<li>
-							<div class="title">SSD</div>
-							<div class="bar">
-								<div class="progress progress-md  progress-striped active">
-									<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%"></div>
-								</div>
-							</div>			
-							<div class="desc">700GB of 1TB</div>
-						</li>
-						<li>
-							<div class="title">Bandwidth</div>
-							<div class="bar">
-								<div class="progress progress-md  progress-striped active">
-									<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div>
-								</div>
-							</div>			
-							<div class="desc">90TB of 100TB</div>
-						</li>				
-					</ul>	
-				</div>
-				<!-- End Usage -->
 			
 			</div>
 		</div><!--/container-->
 		
 		
-		<!-- Modal Dialog -->
-		<div class="modal fade" id="myModal">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h4 class="modal-title bk-fg-primary">Modal title</h4>
-					</div>
-					<div class="modal-body">
-						<p class="bk-fg-danger">Here settings can be configured...</p>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Save changes</button>
-					</div>
-				</div>
-			</div>
-		</div><!-- End Modal Dialog -->		
 		
 		<div class="clearfix"></div>		
 		
@@ -1507,7 +632,7 @@
 		<script src="assets/plugins/touchpunch/js/jquery.ui.touch-punch.min.js"></script>
 		<script src="assets/plugins/flot/js/jquery.flot.min.js"></script>
 		<script src="assets/plugins/flot/js/jquery.flot.pie.min.js"></script>
-		<script src="assets/plugins/flot/js/jquery.flot.resize.min.js"></script>
+		<script src="assets/plugins/flot/js/jquery.flot.resize.miSn.js"></script>
 		<script src="assets/plugins/flot/js/jquery.flot.stack.min.js"></script>
 		<script src="assets/plugins/flot/js/jquery.flot.time.min.js"></script>
 		<script src="assets/plugins/xcharts/js/xcharts.min.js"></script>
@@ -1519,7 +644,7 @@
 		<script src="assets/plugins/morris/js/morris.min.js"></script>
 		<script src="assets/plugins/gauge/js/gauge.min.js"></script>		
 		<script src="assets/plugins/d3/js/d3.min.js"></script>		
-		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>
 		
 		<!-- Theme JS -->		
 		<script src="assets/js/jquery.mmenu.min.js"></script>
