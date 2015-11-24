@@ -324,7 +324,7 @@
 					</div>
 					<!-- End Page Header -->
 					<div class="row profile">
-						<div class="col-lg-5 col-md-7 col-sm-7">
+						<div class="col-lg-5 col-md-5 col-sm-5">
 							<div class="panel">
 							<?php include "./profileeditpanel/info.php";?>
 							</div>							

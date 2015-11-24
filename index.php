@@ -29,10 +29,31 @@ if(isset($_POST['action']) and $_POST['action'] == 'Signin'){
 	exit(); 
 	}
 	$row = $s->fetch();
+	try
+	{
+	$sql = 'SELECT * FROM user_info WHERE userid = :userid';
+	$s = $pdo->prepare($sql);
+	$s->bindValue(':userid',$_POST['login_name']);	
+	$s->execute();
+	}
+	catch (PDOException $e){
+	$error = 'Error select.';
+	header("Location: /includes/error.html.php");
+	exit(); 
+	}
 
-
+	$dashrow = $s->fetch();
+	$_SESSION["groupid"] = $dashrow['groupid'] ;
+	$_SESSION["position"] = $dashrow['position'] ;
+	switch ($dashrow['position'])
+	{
+	case 'admin':
+	  header("Location: ./dashboard/administ");
+	  break;  
+	default:
 	if($row['userid']){
 		$_SESSION["userid"] = $row['userid'];
+
 		if(test_input($_POST['login_psw']) == '123456'){
 			$_SESSION["firstlogin"] = "Please edit your profile";
 			header("Location: newuser.php");
@@ -42,6 +63,10 @@ if(isset($_POST['action']) and $_POST['action'] == 'Signin'){
 		$loginfo = "Fail login";
 		header("Location: .");
 	}
+	  break;
+	}
+
+
 }
 include 'login.html.php';
 
