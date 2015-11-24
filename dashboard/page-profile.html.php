@@ -6,7 +6,7 @@
 		<!-- Basic -->
     	<meta charset="UTF-8" />
     	<?php session_start();?>
-		<title>Profile | Nadhif - Responsive Admin Template</title>
+		<title>Clemson Jail</title>
 		
 		<!-- Mobile Metas -->
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -324,210 +324,23 @@
 					</div>
 					<!-- End Page Header -->
 					<div class="row profile">
-						<div class="col-lg-4 col-md-5 col-sm-5">
+						<div class="col-lg-5 col-md-5 col-sm-5">
 							<div class="panel">
 							<?php include "./profileeditpanel/info.php";?>
 							</div>							
 						</div>
 						
-						<div class="col-lg-5 col-md-7 col-sm-7">
+						<div class="col-lg-7 col-md-7 col-sm-7">
 							
 
 							<?php include "./profileeditpanel/edit_info.php"; ?>
 
-						</div>
-						<div class="col-lg-3 col-md-12">
-							<h4>Weekly Stats</h4>
-							<div class="panel bk-widget bk-border-off">
-								<div class="panel-body bk-bg-very-light-gray">
-									<div class="row bk-fg-gray">
-										<div class="col-lg-5 col-md-6 col-sm-6 col-xs-6">
-											<h3 class="bk-margin-off bk-docs-font-weight-300 bk-fg-primary">$ 25,232</h3>
-											EARNINGS
-										</div>
-										<div class="col-lg-7 col-md-6 col-sm-6 col-xs-6">
-											<div class="small-chart-wrapper bk-padding-right-40">
-												<div class="small-chart" id="sparklineLineEarnings"></div>
-												<script type="text/javascript">
-													var sparklineLineEarningsData = [15, 16, 17, 19, 15, 25, 23, 35, 29, 15, 30, 45];
-												</script>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="panel bk-widget bk-border-off">
-								<div class="panel-body bk-bg-very-light-gray">
-									<div class="row bk-fg-gray">
-										<div class="col-lg-5 col-md-6 col-sm-6 col-xs-6">
-											<h3 class="bk-margin-off bk-docs-font-weight-300 bk-fg-primary">598</h3>
-											SALE ITEMS
-										</div>
-										<div class="col-lg-7 col-md-6 col-sm-6 col-xs-6">
-											<div class="small-chart-wrapper bk-padding-right-40">
-												<div class="small-chart" id="sparklineLineSale"></div>
-												<script type="text/javascript">
-													var sparklineLineSaleData = [20, 30, 15, 40, 30, 45, 60, 40, 50, 32, 65, 70];
-												</script>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="panel bk-widget bk-border-off">
-								<div class="panel-body bk-bg-very-light-gray">
-									<div class="row bk-fg-gray">
-										<div class="col-lg-5 col-md-6 col-sm-6 col-xs-6">
-											<h3 class="bk-margin-off bk-docs-font-weight-300 bk-fg-primary">1,958</h3>
-											DOWNLOAD
-										</div>
-										<div class="col-lg-7 col-md-6 col-sm-6 col-xs-6">
-											<div class="small-chart-wrapper bk-padding-right-40">
-												<div class="small-chart" id="sparklineLineDownload"></div>
-												<script type="text/javascript">
-													var sparklineLineDownloadData = [19, 5, 25, 40, 35, 90, 60, 70, 30, 15, 80, 90];
-												</script>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading bk-bg-white">									
-									<h6><span class="label label-danger bk-margin-5">165</span>Friends</h6>
-									<div class="panel-actions">
-										<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
-										<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
-									</div>
-								</div>
-								<div class="panel-body bk-noradius">									
-									<a class="bk-bg-white bk-padding-off-top bk-padding-off-bottom">
-										<div class="row">
-											<div class="col-xs-3 bk-vcenter text-center bk-padding-10">
-												<div class="bk-avatar">
-													<img src="assets/img/avatar1.jpg" alt="" class="img-circle bk-img-40 bk-border-primary bk-border-2x bk-border-darken">
-												</div>
-											</div>
-											<div class="col-xs-9 bk-vcenter">
-												<h5 class="bk-fg-primary bk-fg-darken bk-margin-off-bottom">John Doe</h5>
-												<p>
-													Nullam vitae arcu in leo molestie hendrerit at quis sem.
-												</p>
-											</div>
-										</div>
-									</a>
-									<hr class="bk-margin-off">
-									<a class="bk-bg-white bk-padding-off-top bk-padding-off-bottom">
-										<div class="row">
-											<div class="col-xs-3 bk-vcenter text-center bk-padding-10">
-												<div class="bk-avatar">
-													<img src="assets/img/avatar2.jpg" alt="" class="img-circle bk-img-40 bk-border-warning bk-border-2x bk-border-darken">
-												</div>
-											</div>
-											<div class="col-xs-9 bk-vcenter">
-												<h5 class="bk-fg-warning bk-fg-darken bk-margin-off-bottom">John Doe</h5>
-												<p>
-													Nunc vitae porttitor purus.
-												</p>
-											</div>
-										</div>
-									</a>
-									<hr class="bk-margin-off">
-									<a class="bk-bg-white bk-padding-off-top bk-padding-off-bottom">
-										<div class="row">
-											<div class="col-xs-3 bk-vcenter text-center bk-padding-10">
-												<div class="bk-avatar">
-													<img src="assets/img/avatar2.jpg" alt="" class="img-circle bk-img-40 bk-border-danger bk-border-2x bk-border-darken">
-												</div>
-											</div>
-											<div class="col-xs-9 bk-vcenter">
-												<h5 class="bk-fg-danger bk-fg-darken bk-margin-off-bottom">John Doe</h5>
-												<p>
-													Morbi interdum posuere ultricies. Aliquam sit amet neque nisi.
-												</p>
-											</div>
-										</div>
-									</a>
-									<hr class="bk-margin-off">									
-								</div>
-								<div class="panel-footer bk-bg-white">
-									<div class="bk-padding-top-5 bk-padding-bottom-5 ">
-										<div class="row">
-											<div class="col-xs-6">
-												<a href="#" class="bk-fg-textcolor"><small><i class="fa fa-angle-left"></i> PREVIOUS</small></a>
-											</div>
-											<div class="col-xs-6 text-right">
-												<a href="#" class="bk-fg-textcolor"><small>NEXT <i class="fa fa-angle-right"></i></small></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<h4>Last Projects</h4>
-							<ul class="bulletList">
-								<li class="red">
-									<span class="title">Admin Template</span>
-									<span class="description truncate">Lorem ipsom dolor sit.</span>
-								</li>
-								<li class="green">
-									<span class="title">HTML5 Template</span>
-									<span class="description truncate">Lorem ipsom dolor sit amet</span>
-								</li>
-								<li class="blue">
-									<span class="title">HTML5 Template</span>
-									<span class="description truncate">Lorem ipsom dolor sit.</span>
-								</li>
-								<li class="orange">
-									<span class="title">Template</span>
-									<span class="description truncate">Lorem ipsom dolor sit.</span>
-								</li>
-							</ul>
 						</div>
 					</div>	
 				</div>
 				<!-- End Main Page -->		
 		
 				<!-- Usage -->
-				<div id="usage">
-					<ul>
-						<li>
-							<div class="title">Memory</div>
-							<div class="bar">
-								<div class="progress progress-md  progress-striped active">
-									<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
-								</div>
-							</div>			
-							<div class="desc">4GB of 8GB</div>
-						</li>
-						<li>
-							<div class="title">HDD</div>
-							<div class="bar">
-								<div class="progress progress-md  progress-striped active">
-									<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
-								</div>
-							</div>			
-							<div class="desc">250GB of 1TB</div>
-						</li>
-						<li>
-							<div class="title">SSD</div>
-							<div class="bar">
-								<div class="progress progress-md  progress-striped active">
-									<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%"></div>
-								</div>
-							</div>			
-							<div class="desc">700GB of 1TB</div>
-						</li>
-						<li>
-							<div class="title">Bandwidth</div>
-							<div class="bar">
-								<div class="progress progress-md  progress-striped active">
-									<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div>
-								</div>
-							</div>			
-							<div class="desc">90TB of 100TB</div>
-						</li>				
-					</ul>	
-				</div>
 				<!-- End Usage -->
 			
 			</div>
