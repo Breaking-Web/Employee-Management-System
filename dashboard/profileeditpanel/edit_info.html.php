@@ -114,14 +114,6 @@
 										</div> -->
 									</fieldset>
 									<hr />
-									<h4>About Yourself</h4>
-									<fieldset>
-										<div class="form-group">
-											<label for="profileBio">Biographical Info</label>
-											<textarea class="form-control" rows="5" id="profileBio" placeholder="Start typing"></textarea>
-										</div>
-									</fieldset>
-									<hr />
 									<h4>Change Password</h4>
 									<fieldset>
 										<div class="form-group">
