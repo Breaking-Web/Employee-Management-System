@@ -80,48 +80,6 @@
 		<!-- Pages JS -->
 		<script src="assets/js/pages/calendar.js"></script>
 		<script language="javascript">
-		// $('#calendar').fullCalendar({
-		// height: 320,
-		// header: {
-		// 	left: 'title',
-		// 	right: 'prev,today,next,basicDay,basicWeek,month'
-		// },
-
-		// timeFormat: 'h:mm',
-
-		// themeButtonIcons: {
-		// 	prev: 'fa fa-caret-left',
-		// 	next: 'fa fa-caret-right',
-		// },
-
-		// editable: false,
-		// droppable: false, // this allows things to be dropped onto the calendar !!!
-	 //    eventSources: [
-
-	 //        // your event source
-	 //        {
-	 //            events: [ // put the array in the `events` property
-
-	 //                // {
-	 //                //     title  : 'work',
-	 //                //     start  : <?php echo json_encode($workdata1_1); ?>
-	 //                //     //end    : <?php echo json_encode($workdata1_2); ?>
-	 //                // },
-	 //                {
-	 //                    title  : 'work',
-	 //                    start  : '2015-11-15'
-	 //                    //end    : <?php echo json_encode($workdata2_2); ?>
-	 //                }
-	 //            ],
-	 //            color: 'orange',     // an option!
-	 //            textColor: 'purple' // an option!
-	 //        }
-
-	 //        // any other event sources...
-
-	 //    ]
-
-		// });	$('#calendar').fullCalendar({
 
 $('#calendar').fullCalendar({
 		height: 350,

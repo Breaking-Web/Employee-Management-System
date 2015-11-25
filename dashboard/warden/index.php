@@ -212,11 +212,11 @@ try
 			      	if($numofstaff['membernumber'] == 0 ){
 						$s2->bindValue(':position','leader');
 			      		$s2->bindValue(':typeid','3');
-			      		echo "firsttime 0";
+			      		//echo "firsttime 0";
 			      	}else{
 			      		$s2->bindValue(':position','staff');
 			      		$s2->bindValue(':typeid','4');
-			      		echo "firsttime not 0";
+			      		//echo "firsttime not 0";
 			      	}
 			      	$s2->bindValue(':groupid',$_POST['groupid']);
 			      	$s2->execute();
