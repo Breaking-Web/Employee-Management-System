@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
+    include '/home/jingyam/public_html/662/project/includes/db.inc.php';
 
     $target_dir =  "uploadfile";
 

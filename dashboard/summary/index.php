@@ -1,7 +1,7 @@
 <?php
-	session_start();
+	//session_start();
 
-	include $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
+	include '/home/jingyam/public_html/662/project/includes/db.inc.php';
 
 	echo "summary"."<br>";
    	if(isset($_GET['page'])){
