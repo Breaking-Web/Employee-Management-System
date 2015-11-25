@@ -70,7 +70,7 @@ unset($_SESSION["edit"]);
 			}
 		}
 	}
-
+}
 include 'login.html.php';
 
 	function test_input($data) {
