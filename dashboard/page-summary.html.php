@@ -149,12 +149,12 @@
 											<i class="fa fa-laptop" aria-hidden="true"></i><span>Dashboard</span>
 										</a>
 									</li>
-									<li class="active">
+									<li >
 										<a href="page-profile.html.php">
 											<i class="fa fa-tasks" aria-hidden="true"></i><span>Profile</span>
 										</a>
 									</li>
-									<li >
+									<li class="active">
 										<a href="page-summary.html.php">
 											<i class="glyphicon glyphicon-pencil" aria-hidden="true"></i><span>Summary</span>
 										</a>
@@ -163,7 +163,7 @@
 										<a href="page-evaluation.html.php">
 											<i class="glyphicon glyphicon-eye-open" aria-hidden="true"></i><span>Evaluation</span>
 										</a>
-									</li>
+									</li>									
 									<li >
 										<a href="../index.php">
 											<i class="glyphicon glyphicon-off" aria-hidden="true"></i><span>Log Out</span>
@@ -210,7 +210,7 @@
 					<div class="row profile">
 						<div class="col-lg-5 col-md-5 col-sm-5">
 							<div class="panel">
-							<?php include "./profileeditpanel/info.php";?>
+							<?php include "./summary";?>
 							</div>							
 						</div>
 						
