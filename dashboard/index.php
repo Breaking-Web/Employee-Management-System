@@ -167,8 +167,8 @@
 										</a>
 									</li>
 									<li >
-										<a href="page-profile.html.php">
-											<i class="fa glyphicon-off" aria-hidden="true"></i><span>Log Out</span>
+										<a href="../index.php">
+											<i class="glyphicon glyphicon-off" aria-hidden="true"></i><span>Log Out</span>
 										</a>
 									</li>
 								</ul>
