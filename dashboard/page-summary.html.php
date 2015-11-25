@@ -84,43 +84,6 @@
 				</div>
 				<!-- Navbar Right -->
 				<div class="navbar-right">
-					<!-- Userbox -->
-					<div class="userbox">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<div class="profile-info">
-								<span class="name">John Smith Doe</span>
-								<span class="role">Developer</span>
-							</div>			
-							<i class="fa custom-caret"></i>
-						</a>
-						<div class="dropdown-menu">
-							<ul class="list-unstyled">
-								<li class="dropdown-menu-header bk-bg-white bk-margin-top-15">						
-									<div class="progress progress-xs  progress-striped active">
-										<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-											60%
-										</div>
-									</div>							
-								</li>	
-								<li>
-									<a href="page-profile.html.php"><i class="fa fa-user"></i> Profile</a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-wrench"></i> Settings</a>
-								</li>
-								<li>
-									<a href="page-invoice"><i class="fa fa-usd"></i> Payments</a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-file"></i> File</a>
-								</li>
-								<li>
-									<a href="../.."><i class="fa fa-power-off"></i> Logout</a>
-								</li>
-							</ul>
-						</div>						
-					</div>
-					<!-- End Userbox -->
 				</div>
 				<!-- End Navbar Right -->
 			</div>		
