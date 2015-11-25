@@ -173,34 +173,6 @@ $('#calendar').fullCalendar({
                 {
                     title  : '8 hours',
                     start  : <?php echo json_encode($workdata18_1); ?>
-                },
-                {
-                    title  : '8 hours',
-                    start  : <?php echo json_encode($workdata19_1); ?>
-                },
-                {
-                    title  : '8 hours',
-                    start  : <?php echo json_encode($workdata20_1); ?>
-                },
-                {
-                    title  : '8 hours',
-                    start  : <?php echo json_encode($workdata21_1); ?>
-                },
-                {
-                    title  : '8 hours',
-                    start  : <?php echo json_encode($workdata22_1); ?>
-                },
-                {
-                    title  : '8 hours',
-                    start  : <?php echo json_encode($workdata23_1); ?>
-                },
-                {
-                    title  : '8 hours',
-                    start  : <?php echo json_encode($workdata24_1); ?>
-                },
-                {
-                    title  : '8 hours',
-                    start  : <?php echo json_encode($workdata25_1); ?>
                 }
 
 

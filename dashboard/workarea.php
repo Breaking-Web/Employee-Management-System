@@ -32,7 +32,7 @@
 	try
 	{
 	$sql = 'SELECT * FROM work_info INNER JOIN time_info ON time_info.timeid = work_info.timeid WHERE userid = :userid 
-	AND timedate >= DATE_SUB(CURDATE(),INTERVAL 14 DAY) 
+	AND timedate >= DATE_SUB(CURDATE(),INTERVAL 7 DAY) 
 	AND timedate <= DATE_ADD(CURDATE(), INTERVAL 14 DAY)';
 	$s = $pdo->prepare($sql);
 	$s->bindValue(':userid',$UID);	
