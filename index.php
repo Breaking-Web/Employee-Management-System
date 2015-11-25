@@ -6,7 +6,6 @@ session_start();
 //$_SESSION["userid"]=0;
 unset($_SESSION["userid"]);
 unset($_SESSION["edit"]);
-unset($_SESSION["logintimes"]);
 
 
 	include '/home/jingyam/public_html/662/project/includes/db.inc.php';
