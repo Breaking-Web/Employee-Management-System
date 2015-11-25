@@ -11,7 +11,7 @@ unset($_SESSION["edit"]);
 	
 	
 	if (!isset($_SESSION["logintimes"])) {
-    $_SESSION["logintimes"] = "";
+    $_SESSION["logintimes"] = " ";
 	}
 	if(isset($_POST['action']) and $_POST['action'] == 'Signin'){
 	  	try
