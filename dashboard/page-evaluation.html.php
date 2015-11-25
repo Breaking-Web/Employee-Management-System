@@ -154,12 +154,12 @@
 											<i class="fa fa-tasks" aria-hidden="true"></i><span>Profile</span>
 										</a>
 									</li>
-									<li class="active">
+									<li >
 										<a href="page-summary.html.php">
 											<i class="glyphicon glyphicon-pencil" aria-hidden="true"></i><span>Summary</span>
 										</a>
 									</li>
-									<li >
+									<li class="active">
 										<a href="page-evaluation.html.php">
 											<i class="glyphicon glyphicon-eye-open" aria-hidden="true"></i><span>Evaluation</span>
 										</a>
@@ -210,7 +210,7 @@
 					<div class="row profile">
 						<div class="col-lg-5 col-md-5 col-sm-5">
 							<div class="panel">
-							<?php include "./summary/index.php";?>
+							<?php include "./evaluation/index.php";?>
 							</div>							
 						</div>
 						
