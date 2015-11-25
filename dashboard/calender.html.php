@@ -169,67 +169,7 @@ $('#calendar').fullCalendar({
                 {
                     title  : '8 hours',
                     start  : <?php echo json_encode($workdata17_1); ?>
-                },
-                {
-                    title  : '8 hours',
-                    start  : <?php echo json_encode($workdata18_1); ?>
-                },
-                {
-                    title  : '8 hours',
-                    start  : <?php echo json_encode($workdata19_1); ?>
-                },
-                {
-                    title  : '8 hours',
-                    start  : <?php echo json_encode($workdata20_1); ?>
-                },
-                {
-                    title  : '8 hours',
-                    start  : <?php echo json_encode($workdata21_1); ?>
-                },
-                {
-                    title  : '8 hours',
-                    start  : <?php echo json_encode($workdata22_1); ?>
-                },
-                {
-                    title  : '8 hours',
-                    start  : <?php echo json_encode($workdata23_1); ?>
-                },
-                {
-                    title  : '8 hours',
-                    start  : <?php echo json_encode($workdata24_1); ?>
-                },
-                {
-                    title  : '8 hours',
-                    start  : <?php echo json_encode($workdata25_1); ?>
-                },
-                {
-                    title  : '8 hours',
-                    start  : <?php echo json_encode($workdata26_1); ?>
-                },
-                {
-                    title  : '8 hours',
-                    start  : <?php echo json_encode($workdata27_1); ?>
-                },
-                {
-                    title  : '8 hours',
-                    start  : <?php echo json_encode($workdata28_1); ?>
-                },
-                {
-                    title  : '8 hours',
-                    start  : <?php echo json_encode($workdata29_1); ?>
-                },
-                {
-                    title  : '8 hours',
-                    start  : <?php echo json_encode($workdata30_1); ?>
-                },
-                {
-                    title  : '8 hours',
-                    start  : <?php echo json_encode($workdata31_1); ?>
-                },
-                {
-                    title  : '8 hours',
-                    start  : <?php echo json_encode($workdata32_1); ?>
-                },
+                }
 
 
 
