@@ -113,7 +113,7 @@
 			if(!$_POST['s2']) $_SESSION["error3"] = "Please choose number.";
 		}
 
-	  	header('Location: .');
+	  	//header('Location: .');
 	  	//echo "<script>alert('修改成功');location.href='.';</script>";
 	}
 
@@ -248,7 +248,7 @@ try
 				if(!$_POST['username'])	$_SESSION["error1"] = "Please input username!";
 				if(!$_POST['groupid'])	$_SESSION["error2"] = "Please choose a group!";
 			}
-	  	header('Location: .');
+	  	//header('Location: .');
 	}
 // add group
 	try
@@ -292,7 +292,7 @@ try
 			exit(); 
 		}
 
-	  	header('Location: .');
+	  	//header('Location: .');
 	}
 
 
