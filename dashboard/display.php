@@ -85,7 +85,7 @@ if (isset($_POST['action']) and $_POST['action'] == 'switch')
 
 		// $rows2[] = array($row2[timedate]." ".$row2[starttime]."-".$row2[endtime],"root",$row2[timedate]." ".$row2[starttime]."-".$row2[endtime]);
 		// $rows2[] = array($row2[username],$row2[timedate]." ".$row2[starttime]."-".$row2[endtime],$row2[username]);
-		$rows2[] = array($row2[timeid],"root",$row2[timedate]." ".$row2[starttime]."-".$row2[endtime]);
+		$rows2[] = array($row2['timeid'],"root",$row2['timedate']." ".$row2['starttime']."-".$row2['endtime']);
 		// $rows2[] = array($row2[userid],$row2[timeid],$row2[username]);
 	}
 
@@ -108,7 +108,7 @@ if (isset($_POST['action']) and $_POST['action'] == 'switch')
 	}
 
 	while(	$row2 = $s2->fetch() ){	
-		$rows2[] = array($row2[userid],$row2[timeid],$row2[username]);
+		$rows2[] = array($row2['userid'],$row2['timeid'],$row2['username']);
 	}
 
 

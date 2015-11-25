@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    // session_start();
     include '/home/jingyam/public_html/662/project/includes/db.inc.php';
 
     $target_dir =  "uploadfile";

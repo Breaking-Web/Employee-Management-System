@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    // session_start();
     include '/home/jingyam/public_html/662/project/includes/db.inc.php';
 
     try
@@ -41,7 +41,7 @@
 		exit(); 
 	}
 	
-	$switchapp = array();
+	$switchapps = array();
 	while(	$switchapp = $s->fetch() ){	
 		$switchapps[] = $switchapp;
 	}
@@ -73,7 +73,7 @@
 			AND group_time.requestvalue>0 INNER JOIN user_info ON user_info.userid = work_info.userid WHERE user_info.groupid = :groupid)';	
 			$s2 = $pdo->prepare($sql2);
 			$s2->bindValue(':groupid',$_SESSION["groupid"]);	
-			$s2->bindValue(':ttid',$moreemployee[timeid]);	
+			$s2->bindValue(':ttid',$moreemployee['timeid']);	
 			$s2->execute();
 
 
@@ -83,9 +83,9 @@
 			header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
 			exit(); 
 		}
-		$moreemployees[] = array($moreemployee[timeid],"root",$moreemployee[timedate]." ".$moreemployee[starttime]."-".$moreemployee[endtime]);
+		$moreemployees[] = array($moreemployee['timeid'],"root",$moreemployee['timedate']." ".$moreemployee['starttime']."-".$moreemployee['endtime']);
 		while(	$freeemployee = $s2->fetch() ){	
-			$moreemployees[] = array($freeemployee[userid],$moreemployee[timeid],$freeemployee[username]);
+			$moreemployees[] = array($freeemployee['userid'],$moreemployee['timeid'],$freeemployee['username']);
 		}
 	}
 
