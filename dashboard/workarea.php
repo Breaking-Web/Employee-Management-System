@@ -237,7 +237,7 @@
 		if(!$_POST['s2']) $_SESSION["error3"] = "Please choose a person.";
 	}
 
-  	header('Location: .');
+  	//header('Location: .');
 	// echo "UID is " . $UID . "<br>";
 	// echo "s2 is " . $_POST['s2'] . "<br>";
 	// echo "timeid is " . $_POST['timeid'] . "<br>";
