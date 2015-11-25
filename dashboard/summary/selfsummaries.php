@@ -19,12 +19,12 @@
 	}
 	catch (PDOException $e){
 		$error = 'Error select.';
-		header("Location: /includes/error.html.php");
+		header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
 		exit(); 
 	}
 	$summarypreview = array();
 	while($eachtitle = $s->fetch()){
-		$summarypreview[] = searchFile($target_dir, $eachtitle["title"] ); 
+		$summarypreview[] = searchFileinsum($target_dir, $eachtitle["title"] ); 
 	}
 
 
@@ -32,6 +32,41 @@
 
 
 
+
+	function searchFileinsum($dir, $keyword) {
+	  $sFile = getFileinsum($dir);
+	  if (count($sFile) <= 0) {
+	    return false;
+	  }
+	  // $sResult = array();
+	  foreach ($sFile as $file) {
+	    if(strstr($file, $keyword) !== false ){
+	      	// $sResult[] = $file;
+	    	$sResult = $file;
+	    }
+	  }
+	  if (count($sResult) <= 0) {
+	    return false;
+	  } else {
+	    return $sResult;
+	  }
+
+	}
+
+	function getFileinsum($dir){
+	  $dp = opendir($dir);
+	  $fileArr = array();
+	  while (!false == $curFile = readdir($dp)) {
+	    if ($curFile!="." && $curFile!=".." && $curFile!="") {
+	      if (is_dir($curFile)) {
+	        $fileArr = getFileinsum($dir."/".$curFile);
+	      } else {
+	        $fileArr[] = $dir."/".$curFile;
+	      }
+	    }
+	  }
+	  return $fileArr;
+	}
 
 
 ?>

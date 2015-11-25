@@ -29,7 +29,7 @@
 	}
 	catch (PDOException $e){
 		$error = 'Error select.';
-		header("Location: /includes/error.html.php");
+		header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
 		exit(); 
 	}
 	$namefilter[] = array("all","all");
@@ -63,7 +63,7 @@
 	}
 	catch (PDOException $e){
 		$error = 'Error select.';
-		header("Location: /includes/error.html.php");
+		header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
 		exit(); 
 	}
 
