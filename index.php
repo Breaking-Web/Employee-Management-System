@@ -8,7 +8,11 @@ unset($_SESSION["userid"]);
 unset($_SESSION["edit"]);
 
 	include '/home/jingyam/public_html/662/project/includes/db.inc.php';
-	$_SESSION["logintimes"] = " ";
+	
+	
+	if (!isset($_SESSION["logintimes"])) {
+    $_SESSION["logintimes"] = "";
+	}
 	if(isset($_POST['action']) and $_POST['action'] == 'Signin'){
 	  	try
 		{
