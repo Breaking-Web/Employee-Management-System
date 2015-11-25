@@ -23,7 +23,7 @@ unset($_SESSION["edit"]);
 		}
 		$row = $s->fetch();
 
-
+		$_SESSION["logintimes"] = " "
 		if(!$row['userid']){
 			$_SESSION["logintimes"] = "Account doesn't exist!";
 			header("Location: .");
