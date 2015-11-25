@@ -8,13 +8,9 @@ unset($_SESSION["userid"]);
 unset($_SESSION["edit"]);
 
 	include '/home/jingyam/public_html/662/project/includes/db.inc.php';
-
-
-
 	if(isset($_POST['action']) and $_POST['action'] == 'Signin'){
 	  	try
 		{
-
 		$sql = 'SELECT userid FROM user_info WHERE userid = :userid';
 		$s = $pdo->prepare($sql);
 		$s->bindValue(':userid',$_POST['login_name']);	
@@ -86,8 +82,3 @@ include 'login.html.php';
 
 
 ?>
-
-
-
-
-
