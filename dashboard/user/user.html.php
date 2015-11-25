@@ -7,7 +7,8 @@
   </head>
   <body>
 
-
+	<?php if($switchapps == "")
+	{echo "<br/><br/><br/>No swtich request!<br/><br/><br/>";}?>
     <?php foreach ($switchapps as $switchapp): ?>
       <form action="" method="post">
 			username: <input type="hidden" name="userid1" value="<?=$switchapp[userid1]?>"><?=$switchapp[un1]?><br>

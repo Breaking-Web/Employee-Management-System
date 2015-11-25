@@ -473,7 +473,7 @@
 								<div class="panel-heading bk-bg-primary bk-border-info">
 									<div class="row">
 										<div class="col-xs-8 text-left bk-vcenter">
-											<h6 class="bk-margin-off">GOOGLE MAP</h6>
+											<h6 class="bk-margin-off">SWITCH REQUEST</h6>
 										</div>							
 									</div>
 								</div>
@@ -484,20 +484,13 @@
 									<div class="row">
 										<div class="col-xs-8 bk-vcenter bk-padding-20">
 											<h6 class="bk-margin-off bk-docs-font-weight-300">Clemson University jail, clemson, South Carolina</h6>
-											<h4 class="bk-fg-info bk-padding-top-10 bk-margin-off bk-docs-font-weight-300">Hanyu Guo</h4>
+											<h4 class="bk-fg-info bk-padding-top-10 bk-margin-off bk-docs-font-weight-300"></h4>
 										</div>
 										<div class="col-xs-4 text-right bk-vcenter bk-padding-20 bk-fg-danger">
-											<i class="fa fa-map-marker fa-3x"></i>
+											
 										</div>
 									</div>
 								</div>
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-							<div class="panel bk-widget bk-border-off bk-noradius">
-								<div class="bk-border-primary bk-bg-white bk-fg-primary bk-ltr bk-padding-15">
-									<?php include "user/index.php"; ?>
-								</div>							
 							</div>
 						</div>
 					</div>				
