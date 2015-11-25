@@ -106,8 +106,7 @@
 									<div class="row">
 										<div class="col-sm-8">
 											<div class="checkbox-custom checkbox-default bk-margin-bottom-10">
-												<input id="RememberMe" name="rememberme" type="checkbox"/>
-												<label for="RememberMe">Remember Me</label>
+												<label><?php echo $_SESSION["logintimes"];?></label>
 											</div>
 										</div>
 										<div class="col-sm-4 text-right">
