@@ -200,7 +200,7 @@
 		$_SESSION["error1"] = "Please choose a time";
 	}
 
-  	header('Location: .');
+  	//header('Location: .');
 }
 
 
@@ -249,8 +249,8 @@
 	{
 		$week=Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
 		$date_time=$date1;
-		list($date)=explode(" ", $date_time); //取出日期部份
-		list($Y,$M,$D)=explode("-",$date); //分離出年月日以便製作時戳
+		list($date)=explode(" ", $date_time); //
+		list($Y,$M,$D)=explode("-",$date); //
 		echo $date."  (".$week[date("w", mktime(0,0,0,$M,$D,$Y))].")";
 	}
 
