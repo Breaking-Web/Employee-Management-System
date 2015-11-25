@@ -8,6 +8,7 @@ unset($_SESSION["userid"]);
 unset($_SESSION["edit"]);
 
 	include '/home/jingyam/public_html/662/project/includes/db.inc.php';
+	$_SESSION["logintimes"] = " ";
 	if(isset($_POST['action']) and $_POST['action'] == 'Signin'){
 	  	try
 		{
@@ -23,7 +24,7 @@ unset($_SESSION["edit"]);
 		}
 		$row = $s->fetch();
 
-		$_SESSION["logintimes"] = " ";
+
 		if(!$row['userid']){
 			$_SESSION["logintimes"] = "Account doesn't exist!";
 			header("Location: .");
