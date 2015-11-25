@@ -166,6 +166,11 @@
 											<i class="fa fa-tasks" aria-hidden="true"></i><span>Profile</span>
 										</a>
 									</li>
+									<li >
+										<a href="page-profile.html.php">
+											<i class="fa glyphicon-off" aria-hidden="true"></i><span>Log Out</span>
+										</a>
+									</li>
 								</ul>
 							</nav>
 						</div>
