@@ -23,7 +23,7 @@
 				<?php foreach ($memberinfo as $one): ?>
 
 				<div class="row">
-					<div class="col-xs-3 bk-vcenter text-center bk-padding-top-10 bk-padding-bottom-10">
+					<div class="col-xs-3 bk-vcenter text-center bk-padding-top-15 bk-padding-bottom-14">
 						<a href="#" class="bk-avatar">
 							<img src="<?php echo $one[3]; ?>" alt="" class="img-circle bk-img-60 bk-border-primary bk-border-2x bk-border-darken">
 						</a>
@@ -35,7 +35,7 @@
 						</p>
 					</div>
 				</div>
-				
+
    			 	<?php endforeach; ?>
 
 			</div>
