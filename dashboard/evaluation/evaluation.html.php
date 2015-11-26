@@ -41,9 +41,16 @@
           onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999" /> -->
 
 
-<input type="radio" name="sex" value="male" /> Male
-<input type="radio" name="sex" value="female" /> Female
-
+    <input type="radio" name="evaluation" value="1" /> 1
+    <input type="radio" name="evaluation" value="2" /> 2
+    <input type="radio" name="evaluation" value="3" /> 3
+    <input type="radio" name="evaluation" value="4" /> 4
+    <input type="radio" name="evaluation" value="5" /> 5
+    <input type="radio" name="evaluation" value="6" /> 6
+    <input type="radio" name="evaluation" value="7" /> 7
+    <input type="radio" name="evaluation" value="8" /> 8
+    <input type="radio" name="evaluation" value="9" /> 9
+    <input type="radio" name="evaluation" value="10" /> 10
 
     <button type="submit"  value="Submitevaluation" name="action">Submit</button>
     </form>
