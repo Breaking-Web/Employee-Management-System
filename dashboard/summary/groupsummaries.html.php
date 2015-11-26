@@ -5,8 +5,7 @@
     <title>group summaries page</title>
   </head>
   <body>
-    <br><br><br>
-    <p>group summaries page</p>
+    <h4>Group Summary</h4>
 
 
     <form action="summary/setfilter.php" method="post">
@@ -29,7 +28,7 @@
         <?php endforeach; ?>
       </select>
 
-      <input type="submit" name="changefilter" value="changefilter" />
+      <input type="submit" name="changefilter" value="changefilter" class="btn btn-primary hidden-xs" />
     </form>
 
 
