@@ -33,12 +33,17 @@
       ?></p>
     </div>
 
-    <form name = "evaluationform" action="insert.php" method="post" onsubmit="return confirm_info()">
+    <form name = "evaluationform" action="evaluation/insert.php" method="post" onsubmit="return confirm_info()">
     <input hidden name = "evaluatedone" id = "evaluatedone" value = "<?php echo $name[0];?>">
-    <input name="evaluation" type="text" id="evaluation" value="evaluation 0-10" size="30"   
+<!--     <input name="evaluation" type="text" id="evaluation" value="evaluation 0-10" size="30"   
           onmouseover=this.focus();this.select();   
           onclick="if(value==defaultValue){value='';this.style.color='#000'}"   
-          onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999" />
+          onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999" /> -->
+
+
+<input type="radio" name="sex" value="male" /> Male
+<input type="radio" name="sex" value="female" /> Female
+
 
     <button type="submit"  value="Submitevaluation" name="action">Submit</button>
     </form>
