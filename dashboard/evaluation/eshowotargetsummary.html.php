@@ -6,8 +6,7 @@
   </head>
   <body>
     <p>target summaries page</p>
-
-    <form action="." method="post">
+    <form action="../page-evaluation.html.php" method="post">
 	<button type="submit"  name="action" value="Back">Back</button>
 	</form>
 
