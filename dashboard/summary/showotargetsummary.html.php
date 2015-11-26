@@ -6,7 +6,7 @@
   </head>
   <body>
 
-    <form action="." method="post">
+    <form action="../page-summary.html.php" method="post">
 	<button type="submit"  name="action" value="Back">Back</button>
 	</form>
   	

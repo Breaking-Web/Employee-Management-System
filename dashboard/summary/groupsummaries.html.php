@@ -35,7 +35,7 @@
 
     <?php foreach ($groupsummarypreview as $onesummary): ?>
 
-      <div style=cursor:pointer; onmouseover="this.style.cursor='hand'"; onclick="window.location.href= 'showotargetsummary.php?path=<?php echo $onesummary[3]; ?>';return false">
+      <div style=cursor:pointer; onmouseover="this.style.cursor='hand'"; onclick="window.location.href= 'summary/showotargetsummary.php?path=<?php echo $onesummary[3]; ?>';return false">
       <p><?php 
 
       // [0] username [1] year [2] month [3] path

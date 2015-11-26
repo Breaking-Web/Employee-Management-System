@@ -2,7 +2,7 @@
     // session_start();
     include '/home/jingyam/public_html/662/project/includes/db.inc.php';
 
-    $target_dir =  "uploadfile";
+    $target_dir =  "summary/uploadfile";
 
     $timefilter = $namefilter = $splitnum = array();
 
@@ -126,7 +126,7 @@
 	while($eachtitle = $s->fetch()){
 
 		$path = searchFileingsum($target_dir, $eachtitle["title"] ); 
-		echo "waht? " . $path .$eachtitle["title"] .$target_dir;
+
       	$year = substr($path,21,4); 
       	$month = substr($path,strrpos($path,'_')+1,-4); 
       	$groupsummarypreview[] = array($eachtitle["username"],$year,$month,$path);
