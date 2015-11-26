@@ -125,11 +125,51 @@
 	$groupsummarypreview = array();
 	while($eachtitle = $s->fetch()){
 
-		$path = searchFile($target_dir, $eachtitle["title"] ); 
+		$path = searchFileingsum($target_dir, $eachtitle["title"] ); 
+		echo "waht? " . $path .$eachtitle["title"] .$target_dir;
       	$year = substr($path,21,4); 
       	$month = substr($path,strrpos($path,'_')+1,-4); 
       	$groupsummarypreview[] = array($eachtitle["username"],$year,$month,$path);
 	}
 
 	include 'groupsummaries.html.php';
+
+
+
+	function searchFileingsum($dir, $keyword) {
+	  $sFile = getFileingsum($dir);
+	  if (count($sFile) <= 0) {
+	    return false;
+	  }
+	  // $sResult = array();
+	  foreach ($sFile as $file) {
+	    if(strstr($file, $keyword) !== false ){
+	      	// $sResult[] = $file;
+	    	$sResult = $file;
+	    }
+	  }
+	  if (count($sResult) <= 0) {
+	    return false;
+	  } else {
+	    return $sResult;
+	  }
+
+	}
+
+	function getFileingsum($dir){
+	  $dp = opendir($dir);
+	  $fileArr = array();
+	  while (!false == $curFile = readdir($dp)) {
+	    if ($curFile!="." && $curFile!=".." && $curFile!="") {
+	      if (is_dir($curFile)) {
+	        $fileArr = getFileingsum($dir."/".$curFile);
+	      } else {
+	        $fileArr[] = $dir."/".$curFile;
+	      }
+	    }
+	  }
+	  return $fileArr;
+	}
+
+
 ?>

@@ -26,6 +26,7 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+      chmod($target_file,0644);
         $_SESSION["states1"] = $_SESSION["states1"] . "<br>" . "The file ". basename( $_FILES["file"]["name"]). " has been uploaded.";
 
     } else {
@@ -50,7 +51,7 @@ if($uploadOk == 1){
     catch (PDOException $e)
     {
       $error = 'Error updating submitted user.';
-      include '/includes/error.html.php';
+      include '/home/jingyam/public_html/662/project/includes/error.html.php';
       exit();
     }
 
@@ -69,7 +70,7 @@ if($uploadOk == 1){
         catch (PDOException $e)
         {
           $error = 'Error updating submitted user.';
-          include '/includes/error.html.php';
+          include '/home/jingyam/public_html/662/project/includes/error.html.php';
           exit();
         }
 
@@ -87,7 +88,7 @@ if($uploadOk == 1){
         catch (PDOException $e)
         {
           $error = 'Error updating submitted user.';
-          include '/includes/error.html.php';
+          include '/home/jingyam/public_html/662/project/includes/error.html.php';
           exit();
         }
 
@@ -112,7 +113,7 @@ if($uploadOk == 1){
         catch (PDOException $e)
         {
           $error = 'Error updating submitted user.';
-          include '/includes/error.html.php';
+          include '/home/jingyam/public_html/662/project/includes/error.html.php';
           exit();
         }
     }
