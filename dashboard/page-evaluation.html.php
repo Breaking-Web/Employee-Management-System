@@ -161,7 +161,7 @@
 						<div class="pull-left">
 							<ol class="breadcrumb visible-sm visible-md visible-lg">								
 								<li><a href="index.php"><i class="icon fa fa-home"></i>Home</a></li>
-								<li class="active"><i class="fa fa-reddit"></i>Profile</li>
+								<li class="active"><i class="glyphicon glyphicon-eye-open"></i>Evalution</li>
 							</ol>						
 						</div>
 						<div class="pull-right">
