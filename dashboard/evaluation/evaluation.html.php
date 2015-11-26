@@ -23,7 +23,7 @@
       $content = " No summary yet.";
     }else{
       $fp = fopen($name[1], 'r'); $content = fread($fp, 30);
-      echo "<div style=cursor:pointer; onmouseover=\"this.style.cursor='hand'\"; onclick=\"window.location.href= 'eshowotargetsummary.php?path=" .$name[1] . "';return false\">";
+      echo "<div style=cursor:pointer; onmouseover=\"this.style.cursor='hand'\"; onclick=\"window.location.href= 'evaluation/eshowotargetsummary.php?path=" .$name[1] . "';return false\">";
     }
     ?>
     <p><?php 
