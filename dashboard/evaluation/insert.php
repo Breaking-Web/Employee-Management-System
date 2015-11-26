@@ -5,9 +5,7 @@
 
 	if(isset($_POST['action']) and $_POST['action'] == 'Submitevaluation'){
 
-		// echo $_POST['evaluation']."<br>";
-		// echo $_POST['evaluatedone']."<br>";
-    
+
 
     	$time = time();
     	$date = date("y-m-d h:i:s",$time);
@@ -42,7 +40,7 @@
           $s = $pdo->prepare($sql);
           $s->bindValue(':eid', $neweid);
           $s->bindValue(':userid', $_POST['evaluatedone']);
-          $s->bindValue(':evale', $_POST['evaluation']);
+          $s->bindValue(':evale', $_POST['evalue']);
           $s->bindValue(':userid2', $_SESSION["userid"]);
           $s->bindValue(':time', $date);
           $s->execute();
@@ -57,5 +55,5 @@
 
 
 	}	
-	// header("Location: .");
+	header("Location: ../page-evaluation.html.php");
 ?>
