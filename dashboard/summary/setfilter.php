@@ -3,7 +3,7 @@
 	$_SESSION["namefilter"] = $_POST['namefilter'];
 	$_SESSION["timefilter"] = $_POST['timefilter'];
 	$_SESSION["splitnum"] = $_POST['splitnum'];
-	header("Location: .");
+	header("Location: ../page-summary.html.php");
 ?>
 
 
