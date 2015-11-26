@@ -1,8 +1,8 @@
 <?php 
-session_start();
-	include '../../includes/db.inc.php';
+// session_start();
+	include '../includes/db.inc.php';
 
-	$target_dir =  "../icon";
+	$target_dir =  "icon";
 
 	try
 	{
@@ -14,7 +14,7 @@ session_start();
 	}
 	catch (PDOException $e){
 		echo $e;
-		header("Location: ../../includes/error.html.php");
+		header("Location: ../includes/error.html.php");
 		exit(); 
 	}
 
