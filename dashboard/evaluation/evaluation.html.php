@@ -8,15 +8,14 @@
     </script>
 
     <meta charset="utf-8">
-    <title>evaluation page</title>
   </head>
   <body>
-    <p>evaluation page</p>
+    <h4>evaluation page</h4>
 
 
     <?php foreach ($names as $name): ?>
     <?php 
-    echo $name[1]; 
+    echo "<h3>".$name[1]."<h3>"; 
     if($name[2] == ""){
       echo "<div>";
       $content = " No summary yet.";
@@ -29,7 +28,8 @@
     </div>
 
     <form name = "evaluationform" action="evaluation/insert.php" method="post" onsubmit="return confirm_info()">
-    <input hidden name = "evaluatedone" id = "evaluatedone" value = "<?php echo $name[0];?>">
+    <input hidden name = "evaluatedone" id = "evaluatedone" value = "<?php echo $name[0];?>" class="btn btn-primary hidden-xs">
+    <br/>
 <!--     <input name="evaluation" type="text" id="evaluation" value="evaluation 0-10" size="30"   
           onmouseover=this.focus();this.select();   
           onclick="if(value==defaultValue){value='';this.style.color='#000'}"   
