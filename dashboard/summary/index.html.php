@@ -11,6 +11,14 @@
 				<div>
 				<?php include 'uploadsummary.php';?>
 				</div>
+				<hr class="bk-margin-off"></hr>
+				<div>
+				<?php include 'selfsummaries.php';?>
+				</div>
+				<hr class="bk-margin-off"></hr>
+				<div>
+				<?php include 'groupsummaries.php';?>
+				</div>
 			</div>
 		</div>
 	</body>
