@@ -122,7 +122,7 @@
 												<?php echo $_SESSION["error1"]; $_SESSION["error1"] = ""; ?><br/>
 												<?php echo $_SESSION["error2"]; $_SESSION["error2"] = ""; ?><br/>
 												<?php echo $_SESSION["error3"]; $_SESSION["error3"] = ""; ?><br/>
-												<?php echo $_SESSION["error4"]; //$_SESSION["error4"] = ""; ?><br/>
+												<?php echo $_SESSION["error4"]; $_SESSION["error4"] = ""; ?><br/>
 												<?php echo $_SESSION["error5"]; $_SESSION["error5"] = ""; ?></h1>
 												<?php echo $_SESSION["states"]; $_SESSION["states"] = ""; ?></h1>
 											</div>
