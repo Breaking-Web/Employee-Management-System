@@ -10,12 +10,12 @@
     <meta charset="utf-8">
   </head>
   <body>
-    <h4>evaluation page</h4>
+    <h4>Evaluation</h4>
 
 
     <?php foreach ($names as $name): ?>
     <?php 
-    echo "<h3>".$name[1]."</h3>"; 
+    echo "<h5>".$name[1]."</h5>"; 
     if($name[2] == ""){
       echo "<div>";
       $content = " No summary yet.";
@@ -29,7 +29,6 @@
 
     <form name = "evaluationform" action="evaluation/insert.php" method="post" onsubmit="return confirm_info()">
     <input hidden name = "evaluatedone" id = "evaluatedone" value = "<?php echo $name[0];?>" >
-    <br/>
 <!--     <input name="evaluation" type="text" id="evaluation" value="evaluation 0-10" size="30"   
           onmouseover=this.focus();this.select();   
           onclick="if(value==defaultValue){value='';this.style.color='#000'}"   
@@ -48,6 +47,7 @@
     <input type="radio" name="evalue" value="10" /> 10
 
     <button type="submit"  value="Submitevaluation" name="action" class="btn btn-primary hidden-xs">Submit</button>
+    <br/>
     </form>
 
     <?php endforeach; ?>
