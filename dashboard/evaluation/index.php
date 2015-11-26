@@ -30,7 +30,7 @@
 
 	$names = $groupthismonthsummaries = array();
 	while($result = $s->fetch()){
-		$names[] = array($result['username'],searchFileineva($target_dir, $result["title"] ));
+		$names[] = array($result['userid'],$result['username'],searchFileineva($target_dir, $result["title"] ));
 	}
 
 
