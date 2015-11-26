@@ -11,12 +11,12 @@
 
     <!-- upload file form -->
     <?php echo $_SESSION["states1"]; $_SESSION["states1"] = ""; ?>
-    <form action="summary/upload_file.php" method="post"
+    <form class="form-inline"action="summary/upload_file.php" method="post"
     enctype="multipart/form-data">
     <label for="file">Filename:</label>
-    <div class="form-group form-inline">
+    <div class="form-group">
 		<input type="file" name="file" id="file" /> 
-		<div class="form-group pull-right" >
+		<div class="form-group" >
 			<input type="submit" name="submit" value="Submit" class="btn btn-primary hidden-xs" />
 		</div>
     </div>
