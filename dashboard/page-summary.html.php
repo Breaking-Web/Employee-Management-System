@@ -161,7 +161,6 @@
 						<div class="pull-left">
 							<ol class="breadcrumb visible-sm visible-md visible-lg">								
 								<li><a href="index.php"><i class="icon fa fa-home"></i>Home</a></li>
-								<li><a href="#"><i class="fa fa-file-text"></i>Pages</a></li>
 								<li class="active"><i class="glyphicon glyphicon-pencil"></i>Summary</li>
 							</ol>						
 						</div>
