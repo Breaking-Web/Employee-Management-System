@@ -3,7 +3,7 @@
     //session_start();
     include '/home/jingyam/public_html/662/project/includes/db.inc.php';
 
-    $target_dir =  "uploadfile";
+    $target_dir =  "summary/uploadfile";
 
   	// $summ = searchFile($target_dir, $_SESSION["userid"] ); 
 
@@ -24,6 +24,7 @@
 	}
 	$summarypreview = array();
 	while($eachtitle = $s->fetch()){
+
 		$summarypreview[] = searchFileinsum($target_dir, $eachtitle["title"] ); 
 	}
 
@@ -59,6 +60,7 @@
 	  while (!false == $curFile = readdir($dp)) {
 	    if ($curFile!="." && $curFile!=".." && $curFile!="") {
 	      if (is_dir($curFile)) {
+	        // $fileArr = getFileinsum($dir."/".$curFile);
 	        $fileArr = getFileinsum($dir."/".$curFile);
 	      } else {
 	        $fileArr[] = $dir."/".$curFile;

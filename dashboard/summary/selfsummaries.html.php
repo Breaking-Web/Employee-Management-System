@@ -11,7 +11,7 @@
 
     <?php foreach ($summarypreview as $onesummary): ?>
 
-      <div style=cursor:pointer; onmouseover="this.style.cursor='hand'"; onclick="window.location.href= 'showotargetsummary.php?path=<?php echo $onesummary; ?>';return false">
+      <div style=cursor:pointer; onmouseover="this.style.cursor='hand'"; onclick="window.location.href= 'summary/showotargetsummary.php?path=<?php echo $onesummary; ?>';return false">
       <p><?php 
 
 
