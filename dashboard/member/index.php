@@ -22,7 +22,7 @@ session_start();
 	while($result = $s->fetch()){
 		$memberinfo[] = array($result['userid'], $result['username'], $result['email'], searchFileinmem($target_dir, $result["userid"]));
 	}
-	include 'meminfo.html.php';
+	include 'index.html.php';
 
 	function searchFileinmem($dir, $keyword) {
 	  $sFile = getFileinmem($dir);
