@@ -1,7 +1,8 @@
 <?php 
-	include '../includes/db.inc.php';
+session_start();
+	include '../../includes/db.inc.php';
 
-	$target_dir =  "icon";
+	$target_dir =  "../icon";
 
 	try
 	{
@@ -13,14 +14,15 @@
 	}
 	catch (PDOException $e){
 		echo $e;
-		header("Location: /includes/error.html.php");
+		header("Location: ../../includes/error.html.php");
 		exit(); 
 	}
 
 	$memberinfo = array();
 	while($result = $s->fetch()){
-		$memberinfo[] = array($result['userid'], $result['username'], $result['email'] searchFileinmem($target_dir, $result["userid"]));
+		$memberinfo[] = array($result['userid'], $result['username'], $result['email'], searchFileinmem($target_dir, $result["userid"]));
 	}
+	include 'meminfo.html.php';
 
 	function searchFileinmem($dir, $keyword) {
 	  $sFile = getFileinmem($dir);
