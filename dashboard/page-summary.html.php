@@ -169,19 +169,8 @@
 						</div>					
 					</div>
 					<!-- End Page Header -->
-					<div class="row profile">
-						<div class="col-lg-5 col-md-5 col-sm-5">
-							<div class="panel">								
-							<?php include "./summary/index.php";?>
-							</div>							
-						</div>
-						
-						<div class="col-lg-7 col-md-7 col-sm-7">
-							
-
-							<?php include "./profileeditpanel/edit_info.php"; ?>
-
-						</div>
+					<div class="row profile">						
+							<?php include "./summary/index.php";?>						
 					</div>	
 				</div>
 				<!-- End Main Page -->		

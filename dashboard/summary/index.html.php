@@ -6,7 +6,7 @@
 		<meta charset="utf-8">
 	</head>
 	<body>
-		<div class="col-lg-13 col-md-7 col-sm-7">
+		<div class="col-lg-13 col-md-13 col-sm-13">
 			<div class="panel">
 				<div class="panel-body">
 					<div class="text-left bk-bg-white bk-padding-top-40 bk-padding-bottom-10">
