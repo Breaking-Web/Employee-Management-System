@@ -1,9 +1,11 @@
 <?php
-    //session_start();
+    session_start();
+
 	$_SESSION["namefilter"] = $_POST['namefilter'];
 	$_SESSION["timefilter"] = $_POST['timefilter'];
 	$_SESSION["splitnum"] = $_POST['splitnum'];
-	header("Location: .");
+
+	header("Location: ../page-summary.html.php");
 ?>
 
 
