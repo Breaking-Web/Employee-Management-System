@@ -13,13 +13,15 @@
 					<?php include 'uploadsummary.php';?>
 					</div>
 					<hr class="bk-margin-off"></hr>
+					<div class="panel-body">
 					<div class="text-left bk-bg-white bk-padding-top-20 bk-padding-bottom-10">
 					<?php include 'selfsummaries.php';?>
-					</div>
+					</div></div>
 					<hr class="bk-margin-off"></hr>
+					<div class="panel-body">
 					<div class="text-left bk-bg-white bk-padding-top-20 bk-padding-bottom-10">
 					<?php include 'groupsummaries.php';?>
-					</div>
+					</div></div>
 				</div>
 			</div>
 		</div>
