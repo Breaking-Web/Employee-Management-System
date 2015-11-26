@@ -66,7 +66,7 @@ unset($_SESSION["edit"]);
 				
 					if(test_input($_POST['login_psw']) == '123456'){
 					$_SESSION["firstlogin"] = "You need to edit your information first!";
-					header("Location: ./editinfo/newuser.php");
+					header("Location: ./newuser.php");
 						}else header("Location: ./dashboard");
 
 						}else{
