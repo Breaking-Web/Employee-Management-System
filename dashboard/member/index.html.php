@@ -41,15 +41,12 @@
 			</div>
 			<div class="panel-body bk-bg-very-light-gray bk-padding-top-5 bk-padding-bottom-5 ">
 				<div class="row">
-    				<?php 
-	    				if($page > 1){
-	    					echo " <div class=\"col-xs-6\"><a href=\"#\" class=\"bk-fg-textcolor\"><small><i class=\"fa fa-angle-left\"></i> PREVIOUS</small></a></div>";
-	    				}
-						if($page < $pages){
-							echo "<div class=\"col-xs-6 text-right\"><a href=\"#\" class=\"bk-fg-textcolor\"><small>NEXT <i class=\"fa fa-angle-right\"></i></small></a></div>";
-						}
-					?>
-				
+					<div class="col-xs-6">
+						<a href="index.php?page=<?php echo $prev;?>" class="bk-fg-textcolor"><small><i class="fa fa-angle-left"></i> PREVIOUS</small></a>
+					</div>
+					<div class="col-xs-6 text-right">
+						<a href="index.php?page=<?php echo $next;?>" class="bk-fg-textcolor"><small>NEXT <i class="fa fa-angle-right"></i></small></a>
+					</div>
 				</div>
 			</div>
 		</div>

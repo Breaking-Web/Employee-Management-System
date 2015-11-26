@@ -2,6 +2,8 @@
 // session_start();
 	include '../includes/db.inc.php';
 
+
+
 	$target_dir =  "icon";
 	$pagesize = 6;		// only show 6 icons
 	try
@@ -24,12 +26,24 @@
 	$pages = intval($numrows/$pagesize);
 	if($numrows%$pagesize) $pages++;		// reminding need one more page
 
-	$page =	intval($_SESSION["pagenum"]);
+   	if(isset($_GET['page'])){
+		$page =	$_GET['page'];
+   	}else{
+   		$page = 1;
+   	}
+
+	
 	$offset = $pagesize*($page - 1);
 
-	$prev=$page-1;
-	$next=$page+1;
+	if($pages == 1){
+		$prev = 1; $next = 1;
+	}else{
+		if($page == 1) $prev = $pages;
+		else $prev=$page-1;
 
+		if($page == $pages) $next = 1;
+		else $next=$page+1;
+	}
 
 	try
 	{
