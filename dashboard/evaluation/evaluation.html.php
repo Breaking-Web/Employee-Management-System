@@ -15,7 +15,7 @@
 
     <?php foreach ($names as $name): ?>
     <?php 
-    echo "<h3>".$name[1]."<h3>"; 
+    echo "<h3>".$name[1]."</h3>"; 
     if($name[2] == ""){
       echo "<div>";
       $content = " No summary yet.";
@@ -28,7 +28,7 @@
     </div>
 
     <form name = "evaluationform" action="evaluation/insert.php" method="post" onsubmit="return confirm_info()">
-    <input hidden name = "evaluatedone" id = "evaluatedone" value = "<?php echo $name[0];?>" class="btn btn-primary hidden-xs">
+    <input hidden name = "evaluatedone" id = "evaluatedone" value = "<?php echo $name[0];?>" >
     <br/>
 <!--     <input name="evaluation" type="text" id="evaluation" value="evaluation 0-10" size="30"   
           onmouseover=this.focus();this.select();   
@@ -47,7 +47,7 @@
     <input type="radio" name="evalue" value="9" /> 9
     <input type="radio" name="evalue" value="10" /> 10
 
-    <button type="submit"  value="Submitevaluation" name="action">Submit</button>
+    <button type="submit"  value="Submitevaluation" name="action" class="btn btn-primary hidden-xs">Submit</button>
     </form>
 
     <?php endforeach; ?>
