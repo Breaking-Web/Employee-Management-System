@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script language="JavaScript">
-    function confirm_info(){
-      return confirm("Confirm submission?");
-    }
-    </script>
-
     <meta charset="utf-8">
     <title>evaluation page</title>
   </head>
   <body>
-    <p>evaluation page</p>
+    <p>memberinfo page</p>
 
 
-    <?php foreach ($names as $name): ?>
+    <?php foreach ($memberinfo as $one): ?>
+    <?php  ?>
     <?php 
     echo $name[1]; 
     if($name[2] == ""){
@@ -25,7 +20,11 @@
       echo "<div style=cursor:pointer; onmouseover=\"this.style.cursor='hand'\"; onclick=\"window.location.href= 'evaluation/eshowotargetsummary.php?path=" .$name[2] . "';return false\">";
     }
     ?>
-    <p><?php echo "Preview: ".$content."<br>"; ?></p>
+    <p><?php 
+    
+      echo "Preview: ".$content."<br>";     // read limited bytes
+
+      ?></p>
     </div>
 
     <form name = "evaluationform" action="evaluation/insert.php" method="post" onsubmit="return confirm_info()">
