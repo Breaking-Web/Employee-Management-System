@@ -15,7 +15,6 @@
 
 
     <?php foreach ($names as $name): ?>
-    <?php  ?>
     <?php 
     echo $name[1]; 
     if($name[2] == ""){
@@ -26,11 +25,7 @@
       echo "<div style=cursor:pointer; onmouseover=\"this.style.cursor='hand'\"; onclick=\"window.location.href= 'evaluation/eshowotargetsummary.php?path=" .$name[2] . "';return false\">";
     }
     ?>
-    <p><?php 
-    
-      echo "Preview: ".$content."<br>";     // read limited bytes
-
-      ?></p>
+    <p><?php echo "Preview: ".$content."<br>"; ?></p>
     </div>
 
     <form name = "evaluationform" action="evaluation/insert.php" method="post" onsubmit="return confirm_info()">
