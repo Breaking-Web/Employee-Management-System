@@ -6,7 +6,7 @@
     <title>upload summary page</title>
   </head>
   <body>
-    <p>upload summary page</p>
+    <h4>Summary Upload<h4>
 
 
     <!-- upload file form -->
@@ -14,16 +14,16 @@
     <form action="summary/upload_file.php" method="post"
     enctype="multipart/form-data">
     <label for="file">Filename:</label>
-    <input type="file" name="file" id="file" /> 
-    <br />
-    <input type="submit" name="submit" value="Submit" />
+    <div class="form-group">
+		<input type="file" name="file" id="file" /> 
+		<div class="form-group pull-right" >
+			<input type="submit" name="submit" value="Submit" class="btn btn-primary hidden-xs" />
+		</div>
+    </div>
     </form>
 
 
     <!-- back form -->
-    <form action=" ../dashboard" method="post">
-    <button type="submit"  name="action" value="0">Back to dashboard</button>
-    </form>
 
   </body>
 </html>
