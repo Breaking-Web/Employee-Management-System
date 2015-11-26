@@ -6,10 +6,10 @@
 		<meta charset="utf-8">
 	</head>
 	<body>
-		<div class="col-lg-13 col-md-13 col-sm-13">
+		<div class="col-lg-12 col-md-13 col-sm-13">
 			<div class="panel">
 				<div class="panel-body">
-					<div class="text-left bk-bg-white bk-padding-top-40 bk-padding-bottom-10">
+					<div class="text-left bk-bg-white bk-padding-top-20 bk-padding-bottom-10">
 					<?php include 'uploadsummary.php';?>
 					</div>
 					<hr class="bk-margin-off"></hr>
