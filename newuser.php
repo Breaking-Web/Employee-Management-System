@@ -44,9 +44,7 @@ if (isset($_GET['editform']))
     $testusername = test_input($_POST["username"]);
     if (!preg_match("/^[a-zA-Z0-9 ]*$/",$testusername)) // check if name only contains letters and whitespace
       $_SESSION["error1"] = "Only letters, number and white space allowed!"; 
-  else{
-	  $_SESSION["error1"] ="";
-	  }
+      else{$_SESSION["error1"] ="";}
   }
 
   if (empty($_POST["userpwd"])) {
@@ -55,9 +53,7 @@ if (isset($_GET['editform']))
     $testuserpwd = test_input($_POST["userpwd"]);
     if( strtolower($testuserpwd) == $testuserpwd) 
       $_SESSION["error2"] = "Need at least one Capital letter in password!"; 
-  else{
-	  $_SESSION["error2"] = "";
-	  }
+      else{$_SESSION["error2"] ="";}
   }
 
   if (empty($_POST["confpwd"])) {
@@ -65,9 +61,7 @@ if (isset($_GET['editform']))
   }else{
     if($_POST["confpwd"] != $_POST["userpwd"]) 
       $_SESSION["error3"] = "Confirm password shoulb be the same!"; 
-  else{
-	  $_SESSION["error3"] = "";
-	  }
+      else{$_SESSION["error3"] ="";}
   }
 
   if (empty($_POST["phone"])) {
@@ -76,9 +70,7 @@ if (isset($_GET['editform']))
     $testphone = test_input($_POST["phone"]);
     if(!preg_match("/^[0-9]{10}$/",$testphone)) 
       $_SESSION["error4"] = "Invalid phone number!"; 
-  else{
-	  $_SESSION["error4"] = "";
-	  }
+      else{$_SESSION["error4"] ="";}
   }
 
   if (empty($_POST["email"])) {
@@ -87,10 +79,7 @@ if (isset($_GET['editform']))
     $testuseremail = test_input($_POST["email"]);
     if (!filter_var($testuseremail, FILTER_VALIDATE_EMAIL)) {
       $_SESSION["error5"] = "Invalid email format!"; 
-    else{
-	  $_SESSION["error5"] = "";
-	  }
-  }
+    }else{$_SESSION["error5"] ="";}
   }
 
 
