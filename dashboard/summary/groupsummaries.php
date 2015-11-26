@@ -19,10 +19,6 @@
 	$splitnum[] = 30;
 
 
-echo $_SESSION['namefilter'];
-echo $_SESSION['timefilter'];
-echo $_SESSION['splitnum'];
-
 	try
 	{
 		$sql = 'SELECT * FROM user_info WHERE groupid = :groupid and userid != :userid ORDER BY userid DESC';  	
@@ -131,8 +127,7 @@ echo $_SESSION['splitnum'];
 	while($eachtitle = $s->fetch()){
 
 		$path = searchFileingsum($target_dir, $eachtitle["title"] ); 
-		echo "path =". $path;
-      	$year = substr($path,30,4); 
+      	$year = substr($path,29,4); 
       	$month = substr($path,strrpos($path,'_')+1,-4); 
       	$groupsummarypreview[] = array($eachtitle["username"],$year,$month,$path);
 	}

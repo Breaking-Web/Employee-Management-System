@@ -15,7 +15,7 @@
       <p><?php 
 
 
-      $year = substr($onesummary,21,4); 
+      $year = substr($onesummary,29,4); 
       $month = substr($onesummary,strrpos($onesummary,'_')+1,-4); 
 
       echo "Year ".$year."  Month ".$month."<br>";
