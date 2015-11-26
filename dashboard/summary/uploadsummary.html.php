@@ -16,9 +16,10 @@
     <label for="file">Filename:</label>
     <div class="form-group">
 		<input type="file" name="file" id="file" /> 
-		<div class="form-group" >
-			<input type="submit" name="submit" value="Submit" class="btn btn-primary hidden-xs" />
-		</div>
+	</div>
+	<div class="form-group" >
+		<input type="submit" name="submit" value="Submit" class="btn btn-primary hidden-xs" />
+	</div>
     </div>
     </form>
 
