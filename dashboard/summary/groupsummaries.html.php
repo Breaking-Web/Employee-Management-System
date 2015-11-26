@@ -9,7 +9,7 @@
     <p>group summaries page</p>
 
 
-    <form action="setfilter.php" method="post">
+    <form action="summary/setfilter.php" method="post">
       <select  style="height:40px;width:300px" name = "timefilter", id = "timefilter">
 
         <?php foreach ($timefilter as $tf): ?>
