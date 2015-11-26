@@ -9,46 +9,7 @@
 
 
     <?php foreach ($memberinfo as $one): ?>
-    <?php  ?>
-    <?php 
-    echo $name[1]; 
-    if($name[2] == ""){
-      echo "<div>";
-      $content = " No summary yet.";
-    }else{
-      $fp = fopen($name[2], 'r'); $content = fread($fp, 30);
-      echo "<div style=cursor:pointer; onmouseover=\"this.style.cursor='hand'\"; onclick=\"window.location.href= 'evaluation/eshowotargetsummary.php?path=" .$name[2] . "';return false\">";
-    }
-    ?>
-    <p><?php 
-    
-      echo "Preview: ".$content."<br>";     // read limited bytes
-
-      ?></p>
-    </div>
-
-    <form name = "evaluationform" action="evaluation/insert.php" method="post" onsubmit="return confirm_info()">
-    <input hidden name = "evaluatedone" id = "evaluatedone" value = "<?php echo $name[0];?>">
-<!--     <input name="evaluation" type="text" id="evaluation" value="evaluation 0-10" size="30"   
-          onmouseover=this.focus();this.select();   
-          onclick="if(value==defaultValue){value='';this.style.color='#000'}"   
-          onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999" /> -->
-
-
-    <input type="radio" name="evalue" value="1" /> 1
-    <input type="radio" name="evalue" value="2" /> 2
-    <input type="radio" name="evalue" value="3" /> 3
-    <input type="radio" name="evalue" value="4" /> 4
-    <input type="radio" name="evalue" value="5" /> 5
-    <input type="radio" name="evalue" value="6" /> 6
-    <input type="radio" name="evalue" value="7" /> 7
-    <input type="radio" name="evalue" value="8" /> 8
-    <input type="radio" name="evalue" value="9" /> 9
-    <input type="radio" name="evalue" value="10" /> 10
-
-    <button type="submit"  value="Submitevaluation" name="action">Submit</button>
-    </form>
-
+    <img src="<?php echo $one[3]; ?>" onload='if (this.width>120 || this.height>120) if (this.width/this.height<120/120) this.width=120; else this.height=120;'  alt = "<?php echo $one[1]."'s icon"; ?>"  />
     <?php endforeach; ?>
 
   </body>
