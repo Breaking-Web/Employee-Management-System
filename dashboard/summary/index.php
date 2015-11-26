@@ -10,7 +10,7 @@
    	}else{
    		$_SESSION["pagenum"] = 1;
    	}
-	include 'uploadsummary.php';
+   	include 'index.html.php';
 	include 'selfsummaries.php';
 	include 'groupsummaries.php';
 

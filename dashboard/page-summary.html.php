@@ -171,7 +171,7 @@
 					<!-- End Page Header -->
 					<div class="row profile">
 						<div class="col-lg-5 col-md-5 col-sm-5">
-							<div class="panel">
+							<div class="panel">								
 							<?php include "./summary/index.php";?>
 							</div>							
 						</div>
