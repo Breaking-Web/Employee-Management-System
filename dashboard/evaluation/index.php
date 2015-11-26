@@ -5,12 +5,13 @@
 	// only evaluate this month
 	// can change evaluation for this month ( or can't?)
 	
-	session_start();
-    include $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
+	// session_start();
+
+    include '../includes/db.inc.php';
 	
 
 
-	$target_dir =  "../../summary/uploadfile";
+	$target_dir =  "summary/uploadfile";
 
 	try
 	{
@@ -29,7 +30,7 @@
 
 	$names = $groupthismonthsummaries = array();
 	while($result = $s->fetch()){
-		$names[] = array($result['username'],searchFile($target_dir, $result["title"] ));
+		$names[] = array($result['username'],searchFileineva($target_dir, $result["title"] ));
 	}
 
 
@@ -40,12 +41,12 @@
 
 
 
-	function searchFile($dir, $keyword) {
-	  $sFile = getFile($dir);
+	function searchFileineva($dir, $keyword) {
+	  $sFile = getFileineva($dir);
 	  if (count($sFile) <= 0) {
 	    return false;
 	  }
-	  // $sResult = array();
+	  $sResult = array();
 	  foreach ($sFile as $file) {
 	    if(strstr($file, $keyword) !== false ){
 	      	// $sResult[] = $file;
@@ -60,13 +61,13 @@
 
 	}
 
-	function getFile($dir){
+	function getFileineva($dir){
 	  $dp = opendir($dir);
 	  $fileArr = array();
 	  while (!false == $curFile = readdir($dp)) {
 	    if ($curFile!="." && $curFile!=".." && $curFile!="") {
 	      if (is_dir($curFile)) {
-	        $fileArr = getFile($dir."/".$curFile);
+	        $fileArr = getFileineva($dir."/".$curFile);
 	      } else {
 	        $fileArr[] = $dir."/".$curFile;
 	      }
