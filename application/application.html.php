@@ -23,7 +23,7 @@
     <select  style="height:40px;width:300px" name = "timeid", id = "timeid">
       <option value="">Please Select Time You want to leave</option>
       <?php foreach ($rows as $row): ?>
-      <option value="<?=$row[timeid]?>"><?=$row[timedate]," ",$row[starttime]," - ",$row[endtime]?></option>
+      <option value="<?=$row['timeid']?>"><?=$row['timedate']," ",$row['starttime']," - ",$row['endtime']?></option>
       <?php endforeach; ?>
     </select>
 

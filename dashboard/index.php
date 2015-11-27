@@ -2,7 +2,7 @@
 <html lang="en">
 
 	<head>
-	<?php session_start();?>
+	<?php session_start(); if($_SESSION["position"] == 'admin') header("Location: ..");?>
 		<!-- Basic -->
     	<meta charset="UTF-8" />
 

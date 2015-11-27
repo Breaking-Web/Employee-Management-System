@@ -83,8 +83,8 @@
 								<form action="?<?php htmlout($action); ?>" method="post">
 									<div class="form-group">
 										<div class="text-center">
-										<h2><?php  echo $_SESSION["firstlogin"];  $_SESSION["firstlogin"] = ""; ?>
-		    							<?php  echo $_SESSION["states"];  $_SESSION["states"] = ""; ?></h2>
+										<h2><?php  echo $_SESSION["firstlogin"];?>
+		    							<?php  echo $_SESSION["states"]; ?></h2>
 										</div>
 										<label>Userid</label>
 										<input type="text" name="userid" id="userid" value="<?php htmlout($id); ?>" class="form-control" disabled>

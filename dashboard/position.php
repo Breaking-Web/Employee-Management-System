@@ -1,10 +1,10 @@
 <?php
-    // session_start();
-    include '/home/jingyam/public_html/662/project/includes/db.inc.php';
+    // session_start();	//cwd =dashboard
+    include '../includes/db.inc.php';
 
 	$UID = $_SESSION["userid"];
 
-	if(!$UID) header("Location: index.php");
+	if(!$UID) header("Location: ../index.php");
 
     echo $_SESSION["status"] . "<br>"; $_SESSION["status"] = "";
 
@@ -17,7 +17,7 @@
 	}
 	catch (PDOException $e){
 	$error = 'Error select.';
-	header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+	header("Location: ../includes/error.html.php");
 	exit(); 
 	}
 

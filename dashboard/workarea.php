@@ -1,7 +1,7 @@
 
 <?php 
-    // session_start();
-    include '/home/jingyam/public_html/662/project/includes/db.inc.php';
+    // session_start();	//cwd =dashboard
+    include '../includes/db.inc.php';
 
 	$UID = $_SESSION["userid"];
 
@@ -15,7 +15,7 @@
 	}
 	catch (PDOException $e){
 	$error = 'Error select.';
-	header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+	header("Location: ../includes/error.html.php");
 	exit(); 
 	}
 
@@ -193,7 +193,7 @@
 		}
 		catch (PDOException $e){
 		$error = 'Error select.';
-		header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+		header("Location: ../includes/error.html.php");
 		exit(); 
 		}
 	}else{
@@ -228,7 +228,7 @@
 		}
 		catch (PDOException $e){
 		$error = 'Error select.';
-		header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+		header("Location: ../includes/error.html.php");
 		exit(); 
 		}
 	}else{

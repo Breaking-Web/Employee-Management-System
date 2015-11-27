@@ -1,7 +1,7 @@
 <?php
-session_start();
-  include_once '/home/jingyam/public_html/662/project/includes/magicquotes.inc.php';
-  include '/home/jingyam/public_html/662/project/includes/db.inc.php';
+  session_start();
+  include_once './includes/magicquotes.inc.php';
+  include './includes/db.inc.php';
   
 
   //edit someone
@@ -15,7 +15,7 @@ session_start();
   catch (PDOException $e)
   {
     $error = 'Error fetching user details.';
-    include '/includes/error.html.php';
+    include './includes/error.html.php';
     exit();
   }
   $row = $s->fetch();
@@ -33,44 +33,51 @@ session_start();
 
   
 
-if (isset($_GET['editform']))
-{
-  include '/home/jingyam/public_html/662/project/includes/db.inc.php';
+if (isset($_GET['editform'])){
+  include './includes/db.inc.php';
 
   // first check input form then check change or not? or other better algrithem
   if (empty($_POST["username"])) {
     $_SESSION["error1"] = "Username can't be empty!";
   }else{
     $testusername = test_input($_POST["username"]);
-    if (!preg_match("/^[a-zA-Z0-9 ]*$/",$testusername)) // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z0-9 ]*$/",$testusername)){ // check if name only contains letters and whitespace
       $_SESSION["error1"] = "Only letters, number and white space allowed!"; 
-      else{$_SESSION["error1"] ="";}
+    }else{
+      $_SESSION["error1"] ="";
+    }
   }
 
   if (empty($_POST["userpwd"])) {
     $_SESSION["error2"] = "Userpwd can't be empty!";
   }else{
     $testuserpwd = test_input($_POST["userpwd"]);
-    if( strtolower($testuserpwd) == $testuserpwd) 
+    if( strtolower($testuserpwd) == $testuserpwd){
       $_SESSION["error2"] = "Need at least one Capital letter in password!"; 
-      else{$_SESSION["error2"] ="";}
+    }else{
+      $_SESSION["error2"] ="";
+    }
   }
 
   if (empty($_POST["confpwd"])) {
     $_SESSION["error3"] = "Please confrim password!";
   }else{
-    if($_POST["confpwd"] != $_POST["userpwd"]) 
+    if($_POST["confpwd"] != $_POST["userpwd"]){
       $_SESSION["error3"] = "Confirm password shoulb be the same!"; 
-      else{$_SESSION["error3"] ="";}
+    }else{
+      $_SESSION["error3"] ="";
+    }
   }
 
   if (empty($_POST["phone"])) {
     $_SESSION["error4"] = "Phone can't be empty!";
   }else{
     $testphone = test_input($_POST["phone"]);
-    if(!preg_match("/^[0-9]{10}$/",$testphone)) 
+    if(!preg_match("/^[0-9]{10}$/",$testphone)){
       $_SESSION["error4"] = "Invalid phone number!"; 
-      else{$_SESSION["error4"] ="";}
+    }else{
+      $_SESSION["error4"] ="";
+    }
   }
 
   if (empty($_POST["email"])) {
@@ -79,7 +86,9 @@ if (isset($_GET['editform']))
     $testuseremail = test_input($_POST["email"]);
     if (!filter_var($testuseremail, FILTER_VALIDATE_EMAIL)) {
       $_SESSION["error5"] = "Invalid email format!"; 
-    }else{$_SESSION["error5"] ="";}
+    }else{
+      $_SESSION["error5"] ="";
+    }
   }
 
 
@@ -118,16 +127,26 @@ if (isset($_GET['editform']))
     catch (PDOException $e)
     {
       $error = 'Error updating submitted user.';
-      include '/includes/error.html.php';
+      include './includes/error.html.php';
       exit();
     }
     $_SESSION["states"] = "Welcome newuser! ";
     header("Location: ./dashboard");
     //header('Location: ./dashboard/');
-  }else header('Location: newuser.php');
+  }else{
+    $_SESSION["states"] = "";
+    header('Location: newuser.php');
+  }
 
   //header('Location: http://localhost/editinfosuc.php');
   // exit();
+}else{
+  $_SESSION["error1"] ="";
+  $_SESSION["error2"] ="";
+  $_SESSION["error3"] ="";
+  $_SESSION["error4"] ="";
+  $_SESSION["error5"] ="";
+  $_SESSION["states"] ="";
 }
 
 

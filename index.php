@@ -8,11 +8,11 @@ unset($_SESSION["userid"]);
 unset($_SESSION["edit"]);
 
 
-	include '/home/jingyam/public_html/662/project/includes/db.inc.php';
+	include './includes/db.inc.php';
 	
 	
 	if (!isset($_SESSION["logintimes"])) {
-    $_SESSION["logintimes"] = " ";
+    	$_SESSION["logintimes"] = "";
 	}
 	if(isset($_POST['action']) and $_POST['action'] == 'Signin'){
 	  	try
@@ -24,7 +24,7 @@ unset($_SESSION["edit"]);
 		}
 		catch (PDOException $e){
 		$error = 'Error select.';
-		header("Location: /includes/error.html.php");
+		header("Location: ./includes/error.html.php");
 		exit(); 
 		}
 		$row = $s->fetch();
@@ -36,47 +36,44 @@ unset($_SESSION["edit"]);
 		}else{
 			try
 			{
-
-			$sql = 'SELECT userid FROM user_info WHERE userid = :userid AND userpwd = :userpwd';
-			$s = $pdo->prepare($sql);
-			$s->bindValue(':userid',$_POST['login_name']);	
-			$s->bindValue(':userpwd',$_POST['login_psw']);	
-			$s->execute();
+				$sql = 'SELECT * FROM user_info WHERE userid = :userid AND userpwd = :userpwd';
+				$s = $pdo->prepare($sql);
+				$s->bindValue(':userid',$_POST['login_name']);	
+				$s->bindValue(':userpwd',$_POST['login_psw']);	
+				$s->execute();
 			}
 			catch (PDOException $e){
-			$error = 'Error select.';
-			header("Location: /includes/error.html.php");
-			exit(); 
+				$error = 'Error select.';
+				header("Location: ./includes/error.html.php");
+				exit(); 
 			}
 			$row = $s->fetch();
-			$_SESSION["groupid"] = $dashrow['groupid'] ;
-			$_SESSION["position"] = $dashrow['position'] ;
-			switch ($dashrow['position'])
-				{
+			if(!$row['userid']){
+				$_SESSION["logintimes"] = "Password isn't correct!";
+				header("Location: .");
+			}else{
+				$_SESSION["groupid"] = $row['groupid'] ;
+				$_SESSION["position"] = $row['position'] ;
+				switch ($row['position']){
 					case 'admin':
-					header("Location: ./dashboard/administ");
-					break;  
+						header("Location: ./dashboard/administ");
+						break;  
 					default:
-					if($row['userid']){
-					$_SESSION["userid"] = $row['userid'];
-					$_SESSION["namefilter"] = "all";
-					$_SESSION["timefilter"] = "36500";
-					$_SESSION["splitnum"] = 10;
-					$_SESSION["pagenum"] = 1;
-				
-					if(test_input($_POST['login_psw']) == '123456'){
-					$_SESSION["firstlogin"] = "You need to edit your information first!";
-					header("Location: ./newuser.php");
+						$_SESSION["userid"] = $row['userid'];
+						$_SESSION["namefilter"] = "all";
+						$_SESSION["timefilter"] = "36500";
+						$_SESSION["splitnum"] = 10;
+						$_SESSION["pagenum"] = 1;
+					
+						if(test_input($_POST['login_psw']) == '123456'){
+							$_SESSION["firstlogin"] = "You need to edit your information first!";
+							header("Location: ./newuser.php");
 						}else header("Location: ./dashboard");
-
-						}else{
-					$_SESSION["logintimes"] = "Password isn't correct!";
-					header("Location: .");
-					break;
+				}
 			}
 		}
 	}
-}
+
 include 'login.html.php';
 
 	function test_input($data) {

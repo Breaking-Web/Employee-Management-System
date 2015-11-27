@@ -1,7 +1,7 @@
 <?php
-	// session_start();
-  	include_once '/home/jingyam/public_html/662/project/includes/magicquotes.inc.php';
-  	include '/home/jingyam/public_html/662/project/includes/db.inc.php';
+	// session_start(); // cwd = dashboard
+  	include_once '../includes/magicquotes.inc.php';
+  	include '../includes/db.inc.php';
 
   	$target_dir =  "./icon";
   	$id = $_SESSION["userid"];
@@ -17,7 +17,7 @@
 	}
 	catch (PDOException $e){
 	    $error = 'Error fetching user details.';
-	    include '/home/jingyam/public_html/662/project/includes/error.html.php';
+	    include '../includes/error.html.php';
 	    exit();
 	}
   	$row = $s->fetch();

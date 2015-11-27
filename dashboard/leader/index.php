@@ -1,6 +1,6 @@
 <?php
-    // session_start();
-    include '/home/jingyam/public_html/662/project/includes/db.inc.php';
+    // session_start(); // getcwd=dashboard
+    include '../includes/db.inc.php';
 
     try
 	{
@@ -13,7 +13,7 @@
 	}
 	catch (PDOException $e){
 		$error = 'Error select.';
-		header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+		header("Location: ../includes/error.html.php");
 		exit(); 
 	}
 	
@@ -37,7 +37,7 @@
 	}
 	catch (PDOException $e){
 		$error = 'Error select.';
-		header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+		header("Location: ../includes/error.html.php");
 		exit(); 
 	}
 	
@@ -50,14 +50,15 @@
 	{
 
 		//$sql = 'SELECT * FROM group_time INNER JOIN time_info ON group_time.timeid = time_info.timeid ';
-		$sql = 'SELECT * FROM group_time INNER JOIN time_info ON group_time.timeid = time_info.timeid WHERE requestvalue >0 AND groupid = :groupid';
+		$sql = 'SELECT * FROM group_time INNER JOIN time_info ON group_time.timeid = time_info.timeid WHERE 
+			timedate > curdate() AND requestvalue >0 AND groupid = :groupid';
 		$s = $pdo->prepare($sql);
 		$s->bindValue(':groupid',$_SESSION["groupid"]);	
 		$s->execute();
 	}
 	catch (PDOException $e){
 		$error = 'Error select.';
-		header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+		header("Location: ../includes/error.html.php");
 		exit(); 
 	}
 	
@@ -80,7 +81,7 @@
 		}
 		catch (PDOException $e){
 			$error = 'Error select.';
-			header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+			header("Location: ../includes/error.html.php");
 			exit(); 
 		}
 		$moreemployees[] = array($moreemployee['timeid'],"root",$moreemployee['timedate']." ".$moreemployee['starttime']."-".$moreemployee['endtime']);
@@ -111,8 +112,8 @@
 	      	$s->execute();
 		}
 		catch (PDOException $e){
-			$error = 'Error select.';
-			header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+			$error = 'Error UPDATE.';
+			header("Location: ../includes/error.html.php");
 			exit(); 
 		}
 
@@ -126,8 +127,8 @@
 	      	$s->execute();
 		}
 		catch (PDOException $e){
-			$error = 'Error select.';
-			header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+			$error = 'Error DELETE.';
+			header("Location: ../includes/error.html.php");
 			exit(); 
 		}
 
@@ -142,8 +143,8 @@
 		}
 
 		catch (PDOException $e){
-			$error = 'Error select.';
-			header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+			$error = 'Error UPDATE.';
+			header("Location: ../includes/error.html.php");
 			exit(); 
 		}
 
@@ -170,7 +171,7 @@
 		}
 		catch (PDOException $e){
 			$error = 'Error select.';
-			header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+			header("Location: ../includes/error.html.php");
 			exit(); 
 		}
 
@@ -200,7 +201,7 @@
 
 		catch (PDOException $e){
 			$error = 'Error select.';
-			header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+			header("Location: ../includes/error.html.php");
 			exit(); 
 		}
 
@@ -220,7 +221,7 @@
 		}
 		catch (PDOException $e){
 			$error = 'Error select.';
-			header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+			header("Location:../includes/error.html.php");
 			exit(); 
 		}
 		try
@@ -237,7 +238,7 @@
 		}
 		catch (PDOException $e){
 			$error = 'Error select.';
-			header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+			header("Location: ../includes/error.html.php");
 			exit(); 
 		}
 
@@ -264,7 +265,7 @@
 
 		catch (PDOException $e){
 			$error = 'Error select.';
-			header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+			header("Location: ../includes/error.html.php");
 			exit(); 
 		}
 
@@ -291,7 +292,7 @@
 
 		catch (PDOException $e){
 			$error = 'Error select.';
-			header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+			header("Location: ../includes/error.html.php");
 			exit(); 
 		}
 
@@ -310,7 +311,7 @@
 
 		catch (PDOException $e){
 			$error = 'Error select.';
-			header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+			header("Location: ../includes/error.html.php");
 			exit(); 
 		}
 

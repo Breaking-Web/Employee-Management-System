@@ -17,12 +17,12 @@ if (!isset($_POST['action']) or isset($_POST['action']) and $_POST['action'] == 
 }
 if (isset($_POST['action']) and $_POST['action'] == 'request')
 {
-	  include '/home/jingyam/public_html/662/project/includes/db.inc.php';
+	  include '../includes/db.inc.php';
 
   try
   {
 	$sql = 'SELECT work_info.timeid, timedate, starttime, endtime FROM work_info INNER JOIN time_info on work_info.timeid = time_info.timeid 
-	WHERE userid = :userid AND NOT EXISTS ( SELECT 1 FROM   switch WHERE  switch.userid1 = work_info.userid AND work_info.timeid=switch.usertime1)
+	WHERE userid = :userid AND timedate > curdate() AND NOT EXISTS ( SELECT 1 FROM   switch WHERE  switch.userid1 = work_info.userid AND work_info.timeid=switch.usertime1)
 	AND NOT EXISTS ( SELECT 1 FROM   application WHERE  application.userid = work_info.userid AND work_info.timeid=application.timeid)';
 	$s = $pdo->prepare($sql);
 	$s->bindValue(':userid',$UID);	
@@ -30,7 +30,7 @@ if (isset($_POST['action']) and $_POST['action'] == 'request')
 	}
 	catch (PDOException $e){
 	$error = 'Error select.';
-	header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+	header("Location: ../includes/error.html.php");
 	exit(); 
 	}
 	$rows = $row = array();
@@ -45,17 +45,18 @@ if (isset($_POST['action']) and $_POST['action'] == 'switch')
 {
 	try
 	{
-	$sql = 'SELECT work_info.timeid, timedate, starttime, endtime FROM work_info INNER JOIN time_info on work_info.timeid = time_info.timeid 
-	WHERE userid = :userid AND NOT EXISTS ( SELECT 1 FROM switch WHERE switch.userid1 = work_info.userid AND work_info.timeid=switch.usertime1)
-	AND NOT EXISTS ( SELECT 1 FROM application WHERE application.userid = work_info.userid AND work_info.timeid=application.timeid)';
-	$s = $pdo->prepare($sql);
-	$s->bindValue(':userid',$UID);	
-	$s->execute();
+		$sql = 'SELECT work_info.timeid, timedate, starttime, endtime FROM work_info INNER JOIN time_info on 
+		work_info.timeid = time_info.timeid WHERE userid = :userid AND timedate > curdate() AND NOT EXISTS ( SELECT 1 FROM switch WHERE 
+		switch.userid1 = work_info.userid AND work_info.timeid=switch.usertime1) AND NOT EXISTS ( SELECT 1 FROM application WHERE 
+		application.userid = work_info.userid AND work_info.timeid=application.timeid)';
+		$s = $pdo->prepare($sql);
+		$s->bindValue(':userid',$UID);	
+		$s->execute();
 	}
 	catch (PDOException $e){
-	$error = 'Error select.';
-	header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
-	exit(); 
+		$error = 'Error select.';
+		header("Location: ../includes/error.html.php");
+		exit(); 
 	}
 	$rows = $row = array();
 	while(	$row = $s->fetch() ){	
@@ -65,19 +66,19 @@ if (isset($_POST['action']) and $_POST['action'] == 'switch')
 
 	try
 	{
-	$sql2 = 'SELECT DISTINCT work_info.timeid, timedate, starttime, endtime FROM work_info INNER JOIN 
-	time_info on work_info.timeid = time_info.timeid  INNER JOIN user_info WHERE work_info.userid != :userid AND user_info.position = "staff"
-	AND user_info.groupid = :groupid AND user_info.userid = work_info.userid AND work_info.timeid not in ( SELECT work_info.timeid 
-	FROM  work_info WHERE work_info.userid = :userid )';
-	$s2 = $pdo->prepare($sql2);
-	$s2->bindValue(':userid',$UID);	
-	$s2->bindValue(':groupid',$_SESSION["groupid"]);	
-	$s2->execute();
+		$sql2 = 'SELECT DISTINCT work_info.timeid, timedate, starttime, endtime FROM work_info INNER JOIN time_info 
+		on work_info.timeid = time_info.timeid INNER JOIN user_info WHERE work_info.userid != :userid AND timedate > curdate() 
+		AND user_info.position = "staff" AND user_info.groupid = :groupid AND user_info.userid = work_info.userid AND work_info.timeid 
+		not in ( SELECT work_info.timeid FROM  work_info WHERE work_info.userid = :userid )';
+		$s2 = $pdo->prepare($sql2);
+		$s2->bindValue(':userid',$UID);	
+		$s2->bindValue(':groupid',$_SESSION["groupid"]);	
+		$s2->execute();
 	}
 	catch (PDOException $e){
-	$error = 'Error select.';
-	header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
-	exit(); 
+		$error = 'Error select.';
+		header("Location: ../includes/error.html.php");
+		exit(); 
 	}
 
 	$rows2 = array();
@@ -103,7 +104,7 @@ if (isset($_POST['action']) and $_POST['action'] == 'switch')
 	}
 	catch (PDOException $e){
 	$error = 'Error select.';
-	header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+	header("Location: ../includes/error.html.php");
 	exit(); 
 	}
 

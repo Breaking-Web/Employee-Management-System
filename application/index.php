@@ -2,8 +2,8 @@
 
 session_start();
 
-  include_once '/home/jingyam/public_html/662/project/includes/magicquotes.inc.php';
-  include '/home/jingyam/public_html/662/project/includes/db.inc.php';
+  include_once '../includes/magicquotes.inc.php';
+  include '../includes/db.inc.php';
 
 
 	$UID = $_SESSION["userid"];
@@ -11,7 +11,7 @@ session_start();
 	try
 	{
 	$sql = 'SELECT work_info.timeid, timedate, starttime, endtime FROM work_info INNER JOIN time_info on work_info.timeid = time_info.timeid 
-	WHERE userid = :userid AND NOT EXISTS ( SELECT 1 FROM   switch WHERE  switch.userid1 = work_info.userid AND work_info.timeid=switch.usertime1)
+	WHERE timedate > curdate() AND userid = :userid AND NOT EXISTS ( SELECT 1 FROM   switch WHERE  switch.userid1 = work_info.userid AND work_info.timeid=switch.usertime1)
 	AND NOT EXISTS ( SELECT 1 FROM   application WHERE  application.userid = work_info.userid AND work_info.timeid=application.timeid)';
 	$s = $pdo->prepare($sql);
 	$s->bindValue(':userid',$UID);	
@@ -19,7 +19,7 @@ session_start();
 	}
 	catch (PDOException $e){
 	$error = 'Error select.';
-	header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+	header("Location: ../includes/error.html.php");
 	exit(); 
 	}
 	$rows = $row = array();
@@ -49,7 +49,7 @@ session_start();
 			}
 			catch (PDOException $e){
 			$error = 'Error select.';
-			header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+			header("Location: ../includes/error.html.php");
 			exit(); 
 			}
 		}else{
