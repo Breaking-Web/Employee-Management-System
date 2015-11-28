@@ -29,7 +29,7 @@
 							<table class="table table-bordered">
 								<thead>
 									<tr>
-										<th>ID</th>
+										<th>Name</th>
 										<th>Time</th>
 										<th>Reason</th>
 										<th>State</th>
@@ -39,11 +39,9 @@
 									<?php foreach ($applicationinfo as $one): ?>
 										<tr>
 											<td><?php echo $one['0'];?></td>
-											
 											<td><?php echo $one['1'];?></td>
 											<td><?php echo $one['2'];?></td>
-
-										                                
+											<td><?php echo $one['3'];?></td>                           
 										</tr>
 									<?php endforeach; ?>
 								</tbody>
@@ -58,10 +56,10 @@
 			<div class="panel-body bk-bg-very-light-gray bk-padding-top-5 bk-padding-bottom-5 ">
 				<div class="row">
 					<div class="col-xs-6">
-						<a href="index.php?page=<?php echo $prev;?>" class="bk-fg-textcolor"><small><i class="fa fa-angle-left"></i> PREVIOUS</small></a>
+						<a href="index.php?apphis=<?php echo $prev1;?>" class="bk-fg-textcolor"><small><i class="fa fa-angle-left"></i> PREVIOUS</small></a>
 					</div>
 					<div class="col-xs-6 text-right">
-						<a href="index.php?page=<?php echo $next;?>" class="bk-fg-textcolor"><small>NEXT <i class="fa fa-angle-right"></i></small></a>
+						<a href="index.php?apphis=<?php echo $next1;?>" class="bk-fg-textcolor"><small>NEXT <i class="fa fa-angle-right"></i></small></a>
 					</div>
 				</div>
 			</div>

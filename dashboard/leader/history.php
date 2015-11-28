@@ -5,7 +5,7 @@
 
 if($_SESSION["position"] == "leader")
 {
-	$pagesize = 6;		// only show 6 history
+	$pagesize1 = 6;		// only show 6 history
 	try
 	{
 		$sql = 'SELECT count(*) AS cnt FROM user_info WHERE groupid = :groupid AND userid != :userid';
@@ -20,58 +20,41 @@ if($_SESSION["position"] == "leader")
 		exit(); 
 	}
 
-	$myrow = $s->fetch();
-	$numrows=$myrow['cnt'];
+	$myrow1 = $s->fetch();
+	$numrows1=$myrow1['cnt'];
 
-	$pages = intval($numrows/$pagesize);
-	if($numrows%$pagesize) $pages++;		// reminding need one more page
+	$pages1 = intval($numrows1/$pagesize1);
+	if($numrows1%$pagesize1) $pages1++;		// reminding need one more page
 
-   	if(isset($_GET['page'])){
-		$page =	$_GET['page'];
+   	if(isset($_GET['apphis'])){
+		$page1 =	$_GET['apphis'];
    	}else{
-   		$page = 1;
+   		$page1 = 1;
    	}
 
 	
-	$offset = $pagesize*($page - 1);
+	$offset1 = $pagesize1*($page1 - 1);
 
-	if($pages == 1){
-		$prev = 1; $next = 1;
+	if($pages1 == 1){
+		$prev1 = 1; $next1 = 1;
 	}else{
-		if($page == 1) $prev = $pages;
-		else $prev=$page-1;
+		if($page1 == 1) $prev1 = $pages1;
+		else $prev1=$page1-1;
 
-		if($page == $pages) $next = 1;
-		else $next=$page+1;
+		if($page1 == $pages1) $next1 = 1;
+		else $next1=$page1+1;
 	}
 
-	try
-	{
-		$sql = 'SELECT * FROM user_info WHERE groupid = ? AND userid != ?';
-		$s = $pdo->prepare($sql);
-
-		$s->bindValue(1, $_SESSION['groupid'], PDO::PARAM_INT);
-		$s->bindValue(2, $_SESSION['userid'], PDO::PARAM_STR);
-		$s->execute();
-	}
-	catch (PDOException $e){
-		echo $e;
-		header("Location: ../includes/error.html.php");
-		exit(); 
-	}
-
-	$memberinfo = array();
-	while($result = $s->fetch()){
-		$memberinfo[] = array($result['userid']);
-	}
 	// select application user of the same group
 	try
 	{
-		$sql = 'SELECT * FROM user_info inner join application on user_info.userid=application.userid WHERE user_info.groupid = ? ORDER BY user_info.userid ASC LIMIT ?,?';
+		$sql = 'SELECT * FROM user_info inner join application on user_info.userid=application.userid 
+		inner join time_info on time_info.timeid=application.timeid WHERE user_info.groupid = ? 
+		ORDER BY user_info.userid ASC LIMIT ?,?';
 		$s = $pdo->prepare($sql);
 		$s->bindValue(1, $_SESSION['groupid'], PDO::PARAM_INT);
-		$s->bindValue(2, intval($offset), PDO::PARAM_INT);
-		$s->bindValue(3, intval($pagesize), PDO::PARAM_INT);
+		$s->bindValue(2, intval($offset1), PDO::PARAM_INT);
+		$s->bindValue(3, intval($pagesize1), PDO::PARAM_INT);
 		$s->execute();
 	}
 	catch (PDOException $e){
@@ -82,7 +65,7 @@ if($_SESSION["position"] == "leader")
 	
 	$applicationinfo = array();
 	while($result = $s->fetch()){
-		$applicationinfo[] = array($result['userid'],$result['reason'],$result['state']);
+		$applicationinfo[] = array($result['username'],$result['timedate'],$result['reason'],$result['state']);
 	}
 	
 	
