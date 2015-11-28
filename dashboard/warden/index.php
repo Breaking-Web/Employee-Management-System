@@ -248,7 +248,7 @@ try
 				if(!$_POST['username'])	$_SESSION["error1"] = "Please input username!";
 				if(!$_POST['groupid'])	$_SESSION["error2"] = "Please choose a group!";
 			}
-	  	//header('Location: .');
+	  	header('Location: ../index.php');
 	}
 // add group
 	try
@@ -292,7 +292,7 @@ try
 			exit(); 
 		}
 
-	  	//header('Location: .');
+	  	header('Location: ../index.php');
 	}
 
 
@@ -510,7 +510,7 @@ try
 			if(!$_POST['a2'])	$_SESSION["error3"] = "This field can't be empty!";
 		}
 
-	  	header('Location: .');
+	  	header('Location: ../index.php');
 	}
 
 
@@ -693,7 +693,7 @@ try
 			if(!$_POST['x3']) $_SESSION["error3"] = "Please choose a new leader!";
 		}
 
-	  	header('Location: .');
+	  	header('Location: ../index.php');
 	}
 
 	include 'wardensettime.html.php';

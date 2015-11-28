@@ -149,7 +149,7 @@
 		}
 
 
-	  	header('Location: .');
+	  	header('Location: ../index.php');
 	}
 
 	if(isset($_POST['action3']) and $_POST['action3'] == 'apreject')
@@ -177,7 +177,7 @@
 
 		//second do nothing
 
-	  	header('Location: .');
+	  	header('Location: ../index.php');
 	}
 
 	if(isset($_POST['action3']) and $_POST['action3'] == 'swagree')
@@ -242,7 +242,7 @@
 			exit(); 
 		}
 
-	  	header('Location: .');
+	  	header('Location: ../index.php');
 	}
 
 	if(isset($_POST['action3']) and $_POST['action3'] == 'swreject')
@@ -271,7 +271,7 @@
 
 		//second do nothing
 
-	  	header('Location: .');
+	  	header('Location: ../index.php');
 	}
 
 	if(isset($_POST['action3']) and $_POST['action3'] == 'Addemployee')
@@ -315,7 +315,7 @@
 			exit(); 
 		}
 
-	  	header('Location: .');
+	  	header('Location: ../index.php');
 	}	
 	include 'leader.html.php';
 
