@@ -67,10 +67,9 @@ if($_SESSION["position"] == "leader")
 	// select application user of the same group
 	try
 	{
-		$sql = 'SELECT * FROM application WHERE userid = ? ORDER BY userid ASC LIMIT ?,?';
+		$sql = 'SELECT * FROM user_info inner join application on user_info.userid=application.userid WHERE user_info.groupid = ? ORDER BY user_info.userid ASC LIMIT ?,?';
 		$s = $pdo->prepare($sql);
-
-		$s->bindValue(1, $memberinfo, PDO::PARAM_INT);
+		$s->bindValue(1, $_SESSION['groupid'], PDO::PARAM_INT);
 		$s->bindValue(2, intval($offset), PDO::PARAM_INT);
 		$s->bindValue(3, intval($pagesize), PDO::PARAM_INT);
 		$s->execute();
@@ -83,7 +82,7 @@ if($_SESSION["position"] == "leader")
 	
 	$applicationinfo = array();
 	while($result = $s->fetch()){
-		$applicationinfo[] = array($result['userid'],$result['reason'],$reason['state']);
+		$applicationinfo[] = array($result['userid'],$result['reason'],$result['state']);
 	}
 	
 	

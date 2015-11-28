@@ -20,18 +20,39 @@
 			<div class="panel-body bk-bg-white bk-padding-off-top bk-padding-off-bottom">
 
 
-				<?php foreach ($applicationinfo as $one): ?>
+				
 
 				<div class="row">
 					<div class="col-xs-9 bk-vcenter">
 						<h5 class="bk-fg-primary bk-margin-off-bottom"></h5>
-						<p>
-							<?php echo "UserID: ".$one[1]."<br/>Reason:".$one[2]."State:".$one[3];?>                                    
-						</p>
+						<div class="table-responsive">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>ID</th>
+										<th>Time</th>
+										<th>Reason</th>
+										<th>State</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php foreach ($applicationinfo as $one): ?>
+										<tr>
+											<td><?php echo $one['0'];?></td>
+											
+											<td><?php echo $one['1'];?></td>
+											<td><?php echo $one['2'];?></td>
+
+										                                
+										</tr>
+									<?php endforeach; ?>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 
-   			 	<?php endforeach; ?>
+   			 	
 
 			</div>
 			<div class="panel-body bk-bg-very-light-gray bk-padding-top-5 bk-padding-bottom-5 ">
