@@ -105,7 +105,7 @@
 
 
 
-	  	header('Location: .');
+	  	header('Location: ../index.php');
 	}
 
 	if(isset($_POST['action']) and $_POST['action'] == 'swreject')
@@ -135,7 +135,7 @@
 			exit(); 
 		}
 
-	  	header('Location: .');
+	  	header('Location: ../index.php');
 	}
 
 ?>
