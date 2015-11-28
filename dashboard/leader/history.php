@@ -71,9 +71,8 @@ if($_SESSION["position"] == "leader")
 		$s = $pdo->prepare($sql);
 
 		$s->bindValue(1, $memberinfo[], PDO::PARAM_INT);
-		$s->bindValue(2, $_SESSION['userid'], PDO::PARAM_STR);
-		$s->bindValue(3, intval($offset), PDO::PARAM_INT);
-		$s->bindValue(4, intval($pagesize), PDO::PARAM_INT);
+		$s->bindValue(2, intval($offset), PDO::PARAM_INT);
+		$s->bindValue(3, intval($pagesize), PDO::PARAM_INT);
 		$s->execute();
 	}
 	catch (PDOException $e){
