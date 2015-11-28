@@ -231,6 +231,7 @@
 							</div>
 						</div>	
 						<?php include 'member/index.php';?>
+						<?php include 'leader/history.php';?>
 					</div>
 					<div class="row">
 						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
