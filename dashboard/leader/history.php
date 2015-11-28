@@ -70,7 +70,7 @@ if($_SESSION["position"] == "leader")
 		$sql = 'SELECT * FROM application WHERE userid = ? ORDER BY userid ASC LIMIT ?,?';
 		$s = $pdo->prepare($sql);
 
-		$s->bindValue(1, $memberinfo[], PDO::PARAM_INT);
+		$s->bindValue(1, $memberinfo, PDO::PARAM_INT);
 		$s->bindValue(2, intval($offset), PDO::PARAM_INT);
 		$s->bindValue(3, intval($pagesize), PDO::PARAM_INT);
 		$s->execute();

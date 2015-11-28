@@ -6,7 +6,7 @@
 
 	if(!$UID) header("Location: ../index.php");
 
-    echo $_SESSION["status"] . "<br>"; $_SESSION["status"] = "";
+    //echo $_SESSION["status"] . "<br>"; $_SESSION["status"] = "";
 
 	try
 	{
