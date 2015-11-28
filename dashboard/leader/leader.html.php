@@ -33,9 +33,9 @@
       <h4 class="bk-margin-off-bottom"> Work Arrangement </h4>
       <small>Work Arrangement</small>
       </button>
-      <button type="submit" name="action2" value="Save_For_Later" class="btn btn-primary btn-lg hidden-xs col-lg-4 col-md-4 col-sm-4 col-xs-12 bk-bg-lighten bk-padding-top-10 bk-padding-bottom-10">
-      <h4 class="bk-margin-off-bottom"> Save For Later </h4>
-      <small>Wait! Let me think about it for a while</small>
+      <button type="submit" name="action2" value="Evaluation_of_this_month" class="btn btn-primary btn-lg hidden-xs col-lg-4 col-md-4 col-sm-4 col-xs-12 bk-bg-lighten bk-padding-top-10 bk-padding-bottom-10">
+      <h4 class="bk-margin-off-bottom"> Evaluation of this month </h4>
+      <small>Evaluation of this month </small>
       </button>
     </div>
     </form>
