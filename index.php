@@ -6,7 +6,14 @@ session_start();
 //$_SESSION["userid"]=0;
 unset($_SESSION["userid"]);
 unset($_SESSION["edit"]);
-
+$_SESSION["states2"] = "";
+$_SESSION["firstlogin"] = "";
+$_SESSION["states"] = "";
+$_SESSION["error1"] = "";
+$_SESSION["error2"] = "";
+$_SESSION["error3"] = "";
+$_SESSION["error4"] = "";
+$_SESSION["error5"] = "";
 
 	include './includes/db.inc.php';
 	
