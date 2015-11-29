@@ -30,9 +30,16 @@
 					</div>
 					<div class="col-xs-9 bk-vcenter">
 						<h5 class="bk-fg-primary bk-margin-off-bottom"><div class="point point-success point-lg"></div><?php echo $one[1];?></h5>
+						<div class="row">
 						<p>
-							<?php echo "email: ".$one[2];?>                                    
+							<div class="col-xs-6">
+							<?php echo "email: ".$one[2] ;?>   
+							</div><div class="col-xs-6">
+							<?php echo "phone: ".$one[4];?>      
+							</div>                           
 						</p>
+
+						</div>
 					</div>
 				</div>
 
