@@ -177,7 +177,7 @@ try
 		$groupids[] = $groupid;
 	}
 
-	if(isset($_POST['action']) and $_POST['action'] == 'AddStaff')
+	if(isset($_POST['action4']) and $_POST['action4'] == 'AddStaff')
 	{
 		
 			if($_POST['username'] && $_POST['groupid']){	  	
@@ -268,7 +268,7 @@ try
 
 	$maxgroupid = $s->fetch();	// this is the max groupid right now, we should create this+1 
 
-	if(isset($_POST['action']) and $_POST['action'] == 'Creategroup')
+	if(isset($_POST['action4']) and $_POST['action4'] == 'Creategroup')
 	{
 
 	  	$_SESSION["states"] = "Create new group ". $_POST['groupname'] ;
@@ -363,7 +363,7 @@ try
 	}
 
 
-	if(isset($_POST['action']) and $_POST['action'] == 'Assign')
+	if(isset($_POST['action4']) and $_POST['action4'] == 'Assign')
 	{
 
 		// echo $_POST['a1']; 	// original groupid
@@ -586,7 +586,7 @@ try
 
 
 
-	if(isset($_POST['action']) and $_POST['action'] == 'SwitchLeader')
+	if(isset($_POST['action4']) and $_POST['action4'] == 'SwitchLeader')
 	{
 		//	x1 groupid  x2 leaderid  x3 newleaderid
 		if($_POST['x1']&&$_POST['x2']&&$_POST['x3']){	
