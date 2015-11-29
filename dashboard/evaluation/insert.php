@@ -5,10 +5,10 @@
 
 	if(isset($_POST['action']) and $_POST['action'] == 'Submitevaluation'){
 
-
-
     	$time = time();
     	$date = date("y-m-d h:i:s",$time);
+      $temp = $_POST['evalue'];
+      $evaluatedoneinfo = explode("-", $temp);
         try
         {
           $sql = 'SELECT MAX(eid) AS maxeid FROM evaluation'; 
@@ -39,15 +39,15 @@
                     time = :time'; 
           $s = $pdo->prepare($sql);
           $s->bindValue(':eid', $neweid);
-          $s->bindValue(':userid', $_POST['evaluatedone']);
-          $s->bindValue(':evale', $_POST['evalue']);
+          $s->bindValue(':userid', $evaluatedoneinfo[1]);
+          $s->bindValue(':evale', $evaluatedoneinfo[0]);
           $s->bindValue(':userid2', $_SESSION["userid"]);
           $s->bindValue(':time', $date);
           $s->execute();
         }
         catch (PDOException $e)
         {
-          echo $e;
+          echo $e; 
           $error = 'Error updating submitted user.';
           include '../../includes/error.html.php';
           exit();
@@ -55,5 +55,5 @@
 
 
 	}	
-	header("Location: ../page-evaluation.html.php");
+	// header("Location: ../page-evaluation.html.php");
 ?>
