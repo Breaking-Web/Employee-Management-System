@@ -7,8 +7,6 @@
 
     	$time = time();
     	$date = date("y-m-d h:i:s",$time);
-      $temp = $_POST['evalue'];
-      $evaluatedoneinfo = explode("-", $temp);
         try
         {
           $sql = 'SELECT MAX(eid) AS maxeid FROM evaluation'; 
@@ -39,8 +37,8 @@
                     time = :time'; 
           $s = $pdo->prepare($sql);
           $s->bindValue(':eid', $neweid);
-          $s->bindValue(':userid', $evaluatedoneinfo[1]);
-          $s->bindValue(':evale', $evaluatedoneinfo[0]);
+          $s->bindValue(':userid', $_POST['evaluatedone']);
+          $s->bindValue(':evale', $_POST['evalue']);
           $s->bindValue(':userid2', $_SESSION["userid"]);
           $s->bindValue(':time', $date);
           $s->execute();
@@ -55,5 +53,5 @@
 
 
 	}	
-	// header("Location: ../page-evaluation.html.php");
+	header("Location: ../page-evaluation.html.php");
 ?>

@@ -28,23 +28,23 @@
     </div>
 
     <form name = "evaluationform" action="evaluation/insert.php" method="post" onsubmit="return confirm_info()">
-    <!-- <input hidden name = "evaluatedone" id = "evaluatedone" value = "<?php echo $name[0];?>" > -->
+    <input hidden name = "evaluatedone" id = "evaluatedone" value = "<?php echo $name[0];?>" >
 <!--     <input name="evaluation" type="text" id="evaluation" value="evaluation 0-10" size="30"   
           onmouseover=this.focus();this.select();   
           onclick="if(value==defaultValue){value='';this.style.color='#000'}"   
           onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999" /> -->
 
 
-    <input type="radio" name="evalue" value="1-<?php echo $name[0];?>" /> 1
-    <input type="radio" name="evalue" value="2-<?php echo $name[0];?>" /> 2
-    <input type="radio" name="evalue" value="3-<?php echo $name[0];?>" /> 3
-    <input type="radio" name="evalue" value="4-<?php echo $name[0];?>" /> 4
-    <input type="radio" name="evalue" value="5-<?php echo $name[0];?>" /> 5
-    <input type="radio" name="evalue" value="6-<?php echo $name[0];?>" /> 6
-    <input type="radio" name="evalue" value="7-<?php echo $name[0];?>" /> 7
-    <input type="radio" name="evalue" value="8-<?php echo $name[0];?>" /> 8
-    <input type="radio" name="evalue" value="9-<?php echo $name[0];?>" /> 9
-    <input type="radio" name="evalue" value="10-<?php echo $name[0];?>" /> 10
+    <input type="radio" name="evalue" value="1" /> 1
+    <input type="radio" name="evalue" value="2" /> 2
+    <input type="radio" name="evalue" value="3" /> 3
+    <input type="radio" name="evalue" value="4" /> 4
+    <input type="radio" name="evalue" value="5" /> 5
+    <input type="radio" name="evalue" value="6" /> 6
+    <input type="radio" name="evalue" value="7" /> 7
+    <input type="radio" name="evalue" value="8" /> 8
+    <input type="radio" name="evalue" value="9" /> 9
+    <input type="radio" name="evalue" value="10" /> 10
 
     <button type="submit"  value="Submitevaluation" name="action" class="btn btn-primary hidden-xs">Submit</button>
     <br/>
