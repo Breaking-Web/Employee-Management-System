@@ -222,11 +222,6 @@
 							<div class="panel bk-widget bk-border-off">					
 									<?php include 'workarea.php';?>
 							</div>
-							
-							<div class="panel bk-widget bk-border-off">
-								<div class="panel-body bk-ltr">
-								</div>
-							</div>
 						</div>	
 						<?php include 'member/index.php';?>
 					</div>
