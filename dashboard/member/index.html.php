@@ -18,10 +18,7 @@
 				</div>
 			</div>
 			<div class="panel-body bk-bg-white bk-padding-off-top bk-padding-off-bottom">
-
-
 				<?php foreach ($memberinfo as $one): ?>
-
 				<div class="row">
 					<div class="col-xs-3 bk-vcenter text-center bk-padding-top-10 bk-padding-bottom-10">
 						<a href="#" class="bk-avatar">
@@ -44,7 +41,6 @@
 				</div>
 
    			 	<?php endforeach; ?>
-
 			</div>
 			<div class="panel-body bk-bg-very-light-gray bk-padding-top-5 bk-padding-bottom-5 ">
 				<div class="row">
