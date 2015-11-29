@@ -27,7 +27,7 @@
         <span class="error"> * <?php echo $_SESSION["error2"]; $_SESSION["error2"] = ""; ?></span>
         </div>
         <div class="text-right">
-      <button type="submit"  name="action" class="btn btn-primary hidden-xs" value="AddStaff">Submit</button><br/><br/>
+      <button type="submit"  name="action4" class="btn btn-primary hidden-xs" value="AddStaff">Submit</button><br/><br/>
      </form>
     </div>
 

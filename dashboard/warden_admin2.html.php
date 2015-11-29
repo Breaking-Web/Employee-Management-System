@@ -87,7 +87,7 @@
     </select>
     <span class="error"> * <?php echo $_SESSION["error3"]; $_SESSION["error3"] = ""; ?></span>  
 
-    <button type="submit"  name="action" class="btn btn-primary hidden-xs" value="SwitchLeader">Submit</button>
+    <button type="submit"  name="action4" class="btn btn-primary hidden-xs" value="SwitchLeader">Submit</button>
     </form>
 
 
