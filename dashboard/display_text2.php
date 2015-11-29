@@ -9,9 +9,9 @@ if (isset($_POST['action2']) and $_POST['action2'] == 'Work_Arrangement')
 	$title= "Work Arrangement";
 	include 'display_text.html.php';
 }
-if (isset($_POST['action2']) and $_POST['action2'] == 'Save_For_Later')
+if (isset($_POST['action2']) and $_POST['action2'] == 'Leaving_History')
 {
-	$title= "Save For Late";
+	$title= "Leaving History";
 	include 'display_text.html.php';
 }
 ?>
