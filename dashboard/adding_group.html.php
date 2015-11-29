@@ -16,7 +16,7 @@
             id="groupname" value="Please name groupname"></label>
     </div>	
     <div class="text-right">
-    <button type="submit"  name="action" class="btn btn-primary hidden-xs" value="Creategroup">Submit</button>
+    <button type="submit"  name="action4" class="btn btn-primary hidden-xs" value="Creategroup">Submit</button>
 	</form>
   </div>
   </body>
