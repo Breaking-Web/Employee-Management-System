@@ -232,6 +232,7 @@
 						</div>	
 						<?php include 'member/index.php';?>
 						<?php include 'display_evaluation.php';?>
+						<?php include 'delete_employee.php';?>
 					</div>
 					<div class="row">
 						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
