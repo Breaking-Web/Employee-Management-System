@@ -1,16 +1,17 @@
 <?php
     // session_start();
-    include '/home/jingyam/public_html/662/project/includes/db.inc.php';
+	// echo "show here ".getcwd();
+    include '../includes/db.inc.php';
     // set group_time
     try
 	{
-		$sql = 'SELECT * FROM time_info';
+		$sql = 'SELECT * FROM time_info WHERE timedate > curdate()';
 		$s = $pdo->prepare($sql);
 		$s->execute();
 	}
 	catch (PDOException $e){
 		$error = 'Error select.';
-		header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+		header("Location: ../includes/error.html.php");
 		exit(); 
 	}
 	
@@ -28,7 +29,7 @@
 	}
 	catch (PDOException $e){
 		$error = 'Error select.';
-		header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+		header("Location: ../includes/error.html.php");
 		exit(); 
 	}
 
@@ -62,7 +63,7 @@
 			}
 			catch (PDOException $e){
 				$error = 'Error select.';
-				header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+				header("Location: ../includes/error.html.php");
 				exit(); 
 			}
 
@@ -71,19 +72,21 @@
 				{
 
 			      	$sql = 'UPDATE group_time SET
-			        neednum = :neednum
+			        positionvalue = :positionvalue,
+			        requestvalue = :requestvalue
 			        WHERE groupid = :groupid AND timeid = :timeid';
 					$s = $pdo->prepare($sql);
 					$s->bindValue(':groupid',$_POST['s1']);
 					$s->bindValue(':timeid',$_POST['timeid']);	
-					$s->bindValue(':neednum',$_POST['s2']);
+					$s->bindValue(':positionvalue',$_POST['s2']);
+					$s->bindValue(':requestvalue',$_POST['s2']-$row['positionvalue']+$row['requestvalue']);
 					$s->execute();
 
 
 				}
 				catch (PDOException $e){
-				$error = 'Error select.';
-				header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+				$error = 'Error UPDATE.';
+				header("Location: ../includes/error.html.php");
 				exit(); 
 				}
 
@@ -94,16 +97,17 @@
 					$sql = 'INSERT INTO group_time SET
 					groupid = :groupid,
 					timeid = :timeid,
-					neednum = :neednum';
+					positionvalue = :positionvalue,
+					requestvalue = :requestvalue';
 					$s = $pdo->prepare($sql);
 					$s->bindValue(':groupid',$_POST['s1']);
 					$s->bindValue(':timeid',$_POST['timeid']);	
-					$s->bindValue(':neednum',$_POST['s2']);
+					$s->bindValue(':positionvalue',$_POST['s2']);
+					$s->bindValue(':requestvalue',$_POST['s2']);
 					$s->execute();
 				}
 				catch (PDOException $e){
-				$error = 'Error select.';
-				header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+				$error = 'Error INSERT.';
 				exit(); 
 				}
 			}
@@ -112,8 +116,8 @@
 			if(!$_POST['s1']) $_SESSION["error2"] = "Please choose group.";
 			if(!$_POST['s2']) $_SESSION["error3"] = "Please choose number.";
 		}
-
-	  	//header('Location: .');
+	  	header('Location: .');
+	  	// exit(); 
 	  	//echo "<script>alert('修改成功');location.href='.';</script>";
 	}
 
@@ -128,7 +132,7 @@ try
 	}
 	catch (PDOException $e){
 		$error = 'Error select.';
-		header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+		header("Location: ../includes/error.html.php");
 		exit(); 
 	}
 
@@ -151,7 +155,7 @@ try
 	}
 	catch (PDOException $e){
 		$error = 'Error select.';
-		header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+		header("Location: ../includes/error.html.php");
 		exit(); 
 	}
 	$groupidsum = $s->fetch();
@@ -191,7 +195,7 @@ try
 				}
 				catch (PDOException $e){
 					$error = 'Error select.';
-					header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+					header("Location: ../includes/error.html.php");
 					exit(); 
 				}
 				$numofstaff=$s2->fetch();
@@ -224,7 +228,7 @@ try
 				}
 				catch (PDOException $e){
 					$error = 'Error select.';
-					header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+					header("Location: ../includes/error.html.php");
 					exit(); 
 				}
 				if($numofstaff['membernumber'] == 0 ){
@@ -248,7 +252,8 @@ try
 				if(!$_POST['username'])	$_SESSION["error1"] = "Please input username!";
 				if(!$_POST['groupid'])	$_SESSION["error2"] = "Please choose a group!";
 			}
-	  	header('Location: ../index.php');
+	  	header('Location: .');
+	  	// exit();
 	}
 // add group
 	try
@@ -259,7 +264,7 @@ try
 	}
 	catch (PDOException $e){
 		$error = 'Error select.';
-		header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+		header("Location: ../includes/error.html.php");
 		exit(); 
 	}
 
@@ -288,7 +293,7 @@ try
 		}
 		catch (PDOException $e){
 			$error = 'Error select.';
-			header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+			header("Location: ../includes/error.html.php");
 			exit(); 
 		}
 
@@ -305,7 +310,7 @@ try
 	}
 	catch (PDOException $e){
 		$error = 'Error select.';
-		header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+		header("Location: ../includes/error.html.php");
 		exit(); 
 	}
 	$groupidsum = $s->fetch();
@@ -382,7 +387,7 @@ try
 			}
 			catch (PDOException $e){
 				$error = 'Error select.';
-				header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+				header("Location: ../includes/error.html.php");
 				exit(); 
 			}		
 			$originalgroupname = $s2->fetch(); 
@@ -397,7 +402,7 @@ try
 			}
 			catch (PDOException $e){
 				$error = 'Error select.';
-				header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+				header("Location: ../includes/error.html.php");
 				exit(); 
 			}		
 			$username = $s2->fetch(); 		
@@ -411,7 +416,7 @@ try
 			}
 			catch (PDOException $e){
 				$error = 'Error select.';
-				header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+				header("Location: ../includes/error.html.php");
 				exit(); 
 			}		
 			$newgroupname = $s2->fetch(); 
@@ -437,7 +442,7 @@ try
 			}
 			catch (PDOException $e){
 				$error = 'Error select.';
-				header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+				header("Location: ../includes/error.html.php");
 				exit(); 
 			}
 
@@ -454,7 +459,7 @@ try
 			}
 			catch (PDOException $e){
 				$error = 'Error select.';
-				header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+				header("Location: ../includes/error.html.php");
 				exit(); 
 			}
 
@@ -499,7 +504,7 @@ try
 			}
 			catch (PDOException $e){
 				$error = 'Error select.';
-				header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+				header("Location: ../includes/error.html.php");
 				exit(); 
 			}
 
@@ -524,7 +529,7 @@ try
 	}
 	catch (PDOException $e){
 		$error = 'Error select.';
-		header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+		header("Location: ../includes/error.html.php");
 		exit(); 
 	}
 	$groupidsum = $s->fetch();
@@ -600,7 +605,7 @@ try
 			}
 			catch (PDOException $e){
 				$error = 'Error select.';
-				header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+				header("Location: ../includes/error.html.php");
 				exit(); 
 			}		
 			$groupname = $s2->fetch(); 
@@ -615,7 +620,7 @@ try
 			}
 			catch (PDOException $e){
 				$error = 'Error select.';
-				header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+				header("Location: ../includes/error.html.php");
 				exit(); 
 			}		
 			$oldleadername = $s2->fetch(); 	
@@ -630,7 +635,7 @@ try
 			}
 			catch (PDOException $e){
 				$error = 'Error select.';
-				header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+				header("Location: ../includes/error.html.php");
 				exit(); 
 			}		
 			$newleadername = $s2->fetch(); 	
