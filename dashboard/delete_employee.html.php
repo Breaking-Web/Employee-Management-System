@@ -71,13 +71,13 @@
 
     <form action="" method="post" onsubmit="return confirm_del()">
 
-    <select style="height:40px;width:300px" id="x1" name="x1"  >
+    <select style="height:40px;width:300px" id="y1" name="y1"  >
     <option selected></option>
     </select>
     <span class="error"> * <?php echo $_SESSION["error2"]; $_SESSION["error2"] = ""; ?></span>
     <br>
 
-    <select style="height:40px;width:300px" id="x2" name="x2"  >
+    <select style="height:40px;width:300px" id="y2" name="y2"  >
     <option selected></option>
     </select>
     <span class="error"> * <?php echo $_SESSION["error3"]; $_SESSION["error3"] = ""; ?></span>
@@ -95,7 +95,7 @@
 
   var delarray = <?php echo json_encode($del_employee); ?>;
   var del_em=new CLASS_del(delarray);         // Set data array
-  del_em.firstSelectChangedel("root","x1");      // Set first SELECT column
-  del_em.subSelectChangedel("x1","x2");          // Set second level SELECT column
+  del_em.firstSelectChangedel("root","y1");      // Set first SELECT column
+  del_em.subSelectChangedel("y1","y2");          // Set second level SELECT column
   </script>
 </html>
