@@ -35,7 +35,17 @@
 		while(	$del_member = $s->fetch() ){	
 			$del_employee[] = array($del_member['userid'],$del_member['groupid'],$del_member['username']);
 		}
-		
+
+		if(isset($_POST['actiondel']) and $_POST['actiondel'] == 'Submit')
+		{	
+			// x1 groupid x2 userid
+			// echo $_POST['x1']." ".$_POST['x2'];
+			// first  delete future work  ( like swith this staff to another group)
+			// second 
+
+		}
+
+
 		include "delete_employee.html.php";
 	}
 ?>
