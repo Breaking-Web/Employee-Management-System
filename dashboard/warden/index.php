@@ -116,7 +116,6 @@
 			if(!$_POST['s1']) $_SESSION["error2"] = "Please choose group.";
 			if(!$_POST['s2']) $_SESSION["error3"] = "Please choose number.";
 		}
-	  	header('Location: .');
 	  	// exit(); 
 	  	//echo "<script>alert('修改成功');location.href='.';</script>";
 	}
@@ -252,7 +251,6 @@ try
 				if(!$_POST['username'])	$_SESSION["error1"] = "Please input username!";
 				if(!$_POST['groupid'])	$_SESSION["error2"] = "Please choose a group!";
 			}
-	  	header('Location: .');
 	  	// exit();
 	}
 // add group
@@ -297,7 +295,6 @@ try
 			exit(); 
 		}
 
-	  	header('Location: ../index.php');
 	}
 
 
@@ -515,7 +512,6 @@ try
 			if(!$_POST['a2'])	$_SESSION["error3"] = "This field can't be empty!";
 		}
 
-	  	header('Location: ../index.php');
 	}
 
 
@@ -698,7 +694,6 @@ try
 			if(!$_POST['x3']) $_SESSION["error3"] = "Please choose a new leader!";
 		}
 
-	  	header('Location: ../index.php');
 	}
 
 	include 'wardensettime.html.php';
