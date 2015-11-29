@@ -67,25 +67,44 @@
 
   </head>
   <body>
+  <div class="col-lg-4 col-md-12">
+    <div class="panel bk-widget bk-border-off bk-noradius">
+      <div class="panel-heading bk-bg-warning">
+        <div class="row">
+          <div class="col-xs-8 text-left bk-vcenter">
+            <h6 class="bk-margin-off">Fire Employee</h6>
+          </div>
+          <div class="col-xs-4 bk-vcenter text-right">
+            <i class="fa fa-users"></i>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body bk-bg-white bk-padding-off-top bk-padding-off-bottom">
+        <div class="col-xs-8 bk-vcenter text-center bk-padding-top-10 bk-padding-bottom-10">
+        <form action="" method="post" onsubmit="return confirm_del()">
 
+        <select style="height:40px;width:300px" id="y1" name="y1"  >
+        <option selected></option>
+        </select>
+        <span class="error"> * <?php echo $_SESSION["error2"]; $_SESSION["error2"] = ""; ?></span>
+        <br>
 
-    <form action="" method="post" onsubmit="return confirm_del()">
+        <select style="height:40px;width:300px" id="y2" name="y2"  >
+        <option selected></option>
+        </select>
+        <span class="error"> * <?php echo $_SESSION["error3"]; $_SESSION["error3"] = ""; ?></span>
+        <br><br><br>    
+        <div align="center">
+        <!-- <input style="height:40px;width:300px" type="text" name="reason"> -->
+        <button type="submit"  name="actiondel" value="Submit" class="btn btn-primary hidden-xs">Submit</button>
+      </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <select style="height:40px;width:300px" id="y1" name="y1"  >
-    <option selected></option>
-    </select>
-    <span class="error"> * <?php echo $_SESSION["error2"]; $_SESSION["error2"] = ""; ?></span>
-    <br>
-
-    <select style="height:40px;width:300px" id="y2" name="y2"  >
-    <option selected></option>
-    </select>
-    <span class="error"> * <?php echo $_SESSION["error3"]; $_SESSION["error3"] = ""; ?></span>
-    <br><br><br>    
-
-    <!-- <input style="height:40px;width:300px" type="text" name="reason"> -->
-    <button type="submit"  name="actiondel" value="Submit">Submit</button>
-    </form>
+    
 
   </body>
 
