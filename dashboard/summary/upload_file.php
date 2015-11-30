@@ -1,8 +1,7 @@
 <?php
 
 session_start();
-include '/home/jingyam/public_html/662/project/includes/db.inc.php';
-
+include '../../includes/db.inc.php';
 $target_dir =  "uploadfile/";
 $target_file = $target_dir . basename($_FILES["file"]["name"]);
 
@@ -51,7 +50,7 @@ if($uploadOk == 1){
     catch (PDOException $e)
     {
       $error = 'Error updating submitted user.';
-      include '/home/jingyam/public_html/662/project/includes/error.html.php';
+      include '../../includes/error.html.php';
       exit();
     }
 
@@ -70,7 +69,7 @@ if($uploadOk == 1){
         catch (PDOException $e)
         {
           $error = 'Error updating submitted user.';
-          include '/home/jingyam/public_html/662/project/includes/error.html.php';
+          include '../../includes/error.html.php';
           exit();
         }
 
@@ -88,7 +87,7 @@ if($uploadOk == 1){
         catch (PDOException $e)
         {
           $error = 'Error updating submitted user.';
-          include '/home/jingyam/public_html/662/project/includes/error.html.php';
+          include '../../includes/error.html.php';
           exit();
         }
 
@@ -113,7 +112,7 @@ if($uploadOk == 1){
         catch (PDOException $e)
         {
           $error = 'Error updating submitted user.';
-          include '/home/jingyam/public_html/662/project/includes/error.html.php';
+          include '../../includes/error.html.php';
           exit();
         }
     }

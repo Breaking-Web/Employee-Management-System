@@ -10,7 +10,6 @@
     include '../includes/db.inc.php';
 	
 
-
 	$target_dir =  "summary/uploadfile";
 
 	try
@@ -24,7 +23,7 @@
 	}
 	catch (PDOException $e){
 		echo $e;
-		header("Location: /includes/error.html.php");
+		header("Location: ../includes/error.html.php");
 		exit(); 
 	}
 

@@ -1,7 +1,7 @@
 <?php
     // session_start();
-    include '/home/jingyam/public_html/662/project/includes/db.inc.php';
-
+    include '../includes/db.inc.php';
+   
     // auto reject switch request with time user working at
 
     try
@@ -16,7 +16,7 @@
 	}
 	catch (PDOException $e){
 		$error = 'Error select.';
-		header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+		header("Location: ../includes/error.html.php");
 		exit(); 
 	}
 	
@@ -34,7 +34,7 @@
 		}
 		catch (PDOException $e){
 			$error = 'Error select.';
-			header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+			header("Location: ../includes/error.html.php");
 			exit(); 
 		}
 		if($temp = $s2->fetch()){
@@ -58,16 +58,10 @@
 				// header("Location: /includes/error.html.php");
 				exit(); 
 			}
-
-
 		}else{
-
 			$switchapps[] = $switchapp;			
-
 		}
-
 	}
-
 
 
 
@@ -79,9 +73,9 @@
 
 	if(isset($_POST['action']) and $_POST['action'] == 'swagree')
 	{
-		echo $_POST['userid1']."<br>";
-		echo $_POST['timeid1']."<br>";
-		echo $_POST['timeid2']."<br>";
+		// echo $_POST['userid1']."<br>";
+		// echo $_POST['timeid1']."<br>";
+		// echo $_POST['timeid2']."<br>";
 		// update the switch
 
 		try
@@ -99,22 +93,22 @@
 		}
 		catch (PDOException $e){
 			$error = 'Error select.';
-			header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+			header("Location: ../includes/error.html.php");
 			exit(); 
 		}
 
+		// header('Location .');
 
-
-	  	header('Location: ../index.php');
+	  	// header('Location: ../index.php');
 	}
 
 	if(isset($_POST['action']) and $_POST['action'] == 'swreject')
 	{
 		//first update the application table
 
-		echo $_POST['userid1']."<br>";
-		echo $_POST['timeid1']."<br>";
-		echo $_POST['timeid2']."<br>";
+		// echo $_POST['userid1']."<br>";
+		// echo $_POST['timeid1']."<br>";
+		// echo $_POST['timeid2']."<br>";
 
 		try
 		{
@@ -131,11 +125,11 @@
 		}
 		catch (PDOException $e){
 			$error = 'Error select.';
-			header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+			header("Location: ../includes/error.html.php");
 			exit(); 
 		}
 
-	  	header('Location: ../index.php');
+	  	// header('Location: ../index.php');
 	}
 
 ?>

@@ -1,8 +1,8 @@
 <?php
 	
 	// session_start();
-  	include_once '/home/jingyam/public_html/662/project/includes/magicquotes.inc.php';
-  	include '/home/jingyam/public_html/662/project/includes/db.inc.php';
+  	include_once '../includes/magicquotes.inc.php'; // cwd = /home/jingyam/public_html/662/project/dashboard
+  	include '../includes/db.inc.php';
 
 //icon display
 
@@ -17,7 +17,7 @@
   catch (PDOException $e)
   {
     $error = 'Error fetching user details.';
-    include '/home/jingyam/public_html/662/project/includes/error.html.php';
+    include '../includes/error.html.php';
     exit();
   }
   $row = $s->fetch();
@@ -48,7 +48,7 @@
 	}
 	catch (PDOException $e){
 	    $error = 'Error fetching user details.';
-	    include '/home/jingyam/public_html/662/project/includes/error.html.php';
+	    include '../includes/error.html.php';
 	    exit();
 	}
   	$row = $s->fetch();

@@ -62,7 +62,7 @@
 				}
 				catch (PDOException $e){
 					$error = 'Error select.';
-					header("Location: /includes/error.html.php");
+					header("Location: ../includes/error.html.php");
 					exit(); 
 				}
 
@@ -79,7 +79,7 @@
 				}
 				catch (PDOException $e){
 					$error = 'Error select.';
-					header("Location: /includes/error.html.php");
+					header("Location: ../includes/error.html.php");
 					exit(); 
 				}
 
@@ -96,7 +96,7 @@
 				}
 				catch (PDOException $e){
 					$error = 'Error select.';
-					header("Location: /includes/error.html.php");
+					header("Location: ../includes/error.html.php");
 					exit(); 
 				}
 				// delete userinfo
@@ -111,7 +111,7 @@
 				}
 				catch (PDOException $e){
 					$error = 'Error select.';
-					header("Location: /includes/error.html.php");
+					header("Location: ../includes/error.html.php");
 					exit(); 
 				}
 

@@ -1,9 +1,8 @@
 <?php
 // session_start();
-  include_once '/home/jingyam/public_html/662/project/includes/magicquotes.inc.php';
-  include '/home/jingyam/public_html/662/project/includes/db.inc.php';
+  include_once '../includes/magicquotes.inc.php';
+  include '../includes/db.inc.php';
   
-
   //edit someone
   try
   {
@@ -15,7 +14,7 @@
   catch (PDOException $e)
   {
     $error = 'Error fetching user details.';
-    include '/home/jingyam/public_html/662/project/includes/error.html.php';
+    include '../includes/error.html.php';
     exit();
   }
   $row = $s->fetch();
@@ -35,7 +34,7 @@
 // 
 if (isset($_GET['editform']))
 {
-  include '/home/jingyam/public_html/662/project/includes/db.inc.php';
+  include '../includes/db.inc.php';
   // echo "!!!!!!!!!!!!!!!";
   // first check input form then check change or not? or other better algrithem
   if (empty($_POST["username"])) {
@@ -114,7 +113,7 @@ if (isset($_GET['editform']))
     catch (PDOException $e)
     {
       $error = 'Error updating submitted user.';
-      include '/home/jingyam/public_html/662/project/includes/error.html.php';
+      include '../includes/error.html.php';
       exit();
     }
   }

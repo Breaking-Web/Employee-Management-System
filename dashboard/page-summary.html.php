@@ -157,7 +157,7 @@
 							<li><a href="index.php#">About</a></li>
 						</ul>
 						<div class="copyright text-center">
-							<small> <i class="fa fa-coffee"></i> Collect from <a href="http://www.clemson.com/" title="clemson" target="_blank">Clemson University</a></small>
+							<small> <i class="fa fa-coffee"></i> Collect from <a href="http://www.clemson.edu/" title="clemson" target="_blank">Clemson University</a></small>
 						</div>					
 					</div>
 					<!-- End Sidebar Footer-->
@@ -175,7 +175,7 @@
 							</ol>						
 						</div>
 						<div class="pull-right">
-							<h2>Profile</h2>
+							<h2>Summary</h2>
 						</div>					
 					</div>
 					<!-- End Page Header -->

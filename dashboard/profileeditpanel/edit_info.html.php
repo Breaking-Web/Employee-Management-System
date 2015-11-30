@@ -1,5 +1,5 @@
 
-<?php include_once '/home/jingyam/public_html/662/project/includes/helpers.inc.php'; ?>
+<?php include_once '../includes/helpers.inc.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -10,76 +10,11 @@
 			<div class="panel-body">
 				<div class="tabs">
 					<ul class="nav nav-tabs">
-						<li >
-							<a href="#overview" data-toggle="tab">Overview</a>
-						</li>
 						<li class="active">
 							<a href="#edit" data-toggle="tab">Edit</a>
 						</li>
 					</ul>
 					<div class="tab-content">
-						<div id="overview" class="tab-pane">										
-							<div class="bk-bg-white bk-padding-top-10 bk-padding-bottom-10">
-								<h4>Update Status</h4>
-								<div class="bk-bg-white">
-									<form role="form" action="javascript:">                           
-										<input type="email" class="form-control" placeholder="What's on your mind?" />
-									</form>
-								</div>					  	
-								<div class="bk-bg-white bk-margin-15">
-									<div class="btn-group">
-										<button type="button" class="btn btn-link"><i class="fa fa-map-marker"></i></button>
-										<button type="button" class="btn btn-link"><i class="fa fa-camera"></i></button>
-										<button type="button" class="btn btn-link"><i class="fa fa-video-camera"></i></button>						
-									</div>									
-									<div class="pull-right">
-										<button type="button" class="btn btn-primary"><i class="fa fa-lightbulb-o"></i> Post</button>
-									</div>							
-								</div>
-							</div>
-							<h5>Timeline</h5>
-							<div class="timelineProfile timeline-profile">
-								<div class="timeline-body">
-									<div class="timeline-title">
-										<h5 class="text-uppercase">September 2014</h5>
-									</div>
-									<ol class="timeline-items">
-										<li>
-											<div class="timeline-box">
-												<p class="text-muted">5 months ago.</p>
-												<p>
-													It's awesome when we find a good solution for our projects, Nadhif Admin is <span class="text-primary">#awesome</span>
-												</p>
-											</div>
-										</li>
-										<li>
-											<div class="timeline-box">
-												<p class="text-muted">5 months ago.</p>
-												<p>
-													What is your greatest projects for your Administrator?
-												</p>
-											</div>
-										</li>
-										<li>
-											<div class="timeline-box">
-												<p class="text-muted">5 months ago.</p>
-												<p>
-													Checkout! How cool is that!
-												</p>
-												<div class="img-timeline">
-													<a class="img-thumbnail lightbox" href="assets/img/gallery/photo5.jpg" data-plugin-options='{ "type":"image" }'>
-														<img class="img-responsive" width="215" src="assets/img/gallery/photo5.jpg">
-														<span class="zoom">
-															<i class="fa fa-search"></i>
-														</span>
-													</a>
-												</div>
-											</div>
-										</li>
-									</ol>
-								</div>
-							</div>
-						</div>
 						<div id="edit" class="tab-pane updateProfile active">
 							<form action="?<?php htmlout($editform); ?>" class="form-horizontal" method="post" >
 								<div class="bk-bg-white bk-padding-top-10 bk-padding-bottom-10">

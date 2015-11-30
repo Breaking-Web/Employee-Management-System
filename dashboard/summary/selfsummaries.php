@@ -1,7 +1,8 @@
 <?php
 
     //session_start();
-    include '/home/jingyam/public_html/662/project/includes/db.inc.php';
+
+    include '../includes/db.inc.php';
 
     $target_dir =  "summary/uploadfile";
 
@@ -19,7 +20,7 @@
 	}
 	catch (PDOException $e){
 		$error = 'Error select.';
-		header("Location: /home/jingyam/public_html/662/project/includes/error.html.php");
+		header("Location: ../includes/error.html.php");
 		exit(); 
 	}
 	$summarypreview = array();
