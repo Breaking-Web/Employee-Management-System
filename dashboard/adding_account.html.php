@@ -1,5 +1,5 @@
 
-<?php include_once '/home/jingyam/public_html/662/project/includes/helpers.inc.php'; ?>
+<?php include_once '../includes/helpers.inc.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">

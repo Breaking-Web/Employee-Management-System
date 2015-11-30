@@ -51,13 +51,14 @@
     <?php echo "<div align='center'>Total " . $page . " pages (" . $page."/".$pages.")";
 
     if($page > 1){
-      echo "<h4><a href='index.php?page=" . $first ."'>[first]</a> ";
-      echo "<a href='index.php?page=" . $prev ."'>[prev]</a></h4>  ";
+      echo "<h4><a href='page-summary.html.php?page=" . $first ."' style='color: #CC0000' >[first]</a> ";
+      echo "<a href='page-summary.html.php??page=" . $prev ."' style='color: #CC0000'>[prev]</a></h4>  ";
     }
     if($page < $pages){
-      echo "<h4><a href='index.php?page=" . $next ."'>[next]</a>  ";
-      echo "<a href='index.php?page=" . $last ."'>[last]</a></h4>  ";
+      echo "<h4><a href='page-summary.html.php?page=" . $next ."' style='color: #CC0000'>[next]</a>  ";
+      echo "<a href='page-summary.html.php??page=" . $last ."' style='color: #CC0000'>[last]</a></h4>  ";
     }
+
     ?>
 
 

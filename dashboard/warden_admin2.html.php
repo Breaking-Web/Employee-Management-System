@@ -89,15 +89,7 @@
 
     <button type="submit"  name="action4" class="btn btn-primary hidden-xs" value="SwitchLeader">Submit</button>
     </form>
-
-
-
-
-
   </body>
-
-   
-
   <script language="javascript">
 
   var switchleaderarray = <?php echo json_encode($switchleaders); ?>;

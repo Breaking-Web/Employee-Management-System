@@ -90,6 +90,16 @@
 		</div>
 		<!-- End: Header -->
 		
+		<?php 
+		   	if(isset($_GET['page'])){
+
+				$_SESSION["pagenum"] = $_GET['page'];
+		   	}else{
+		   		$_SESSION["pagenum"] = 1;
+		   	}
+		?>
+
+
 		<!-- Start: Content -->
 		<div class="container-fluid content">	
 			<div class="row">
