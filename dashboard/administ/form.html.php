@@ -77,7 +77,7 @@
               <div class="panel-title-login text-right">
                 <h2 class="title"><i class="fa fa-user"></i> Admin Panel</h2>
               </div>
-              <div class="panel-body">
+              <div class="panel-body"><input type="button" onclick="location.href='../../index.php';" value="Log Out" class="btn btn-primary hidden-xs pull-right" />
                 <form action="" method="post">
                   <div class="form-group">
                     <label> Instruction:<br/>Press backup button to backup database <br/>Press file name to choose file to restore</label>
