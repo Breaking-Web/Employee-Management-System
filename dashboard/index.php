@@ -225,16 +225,16 @@
 						</div>	
 						<?php include 'member/index.php';?>
 					</div>
-					<div class="row">
-						<div class="panel bk-widget bk-border-off">	
-							<div class="col-lg-8 col-md-12">				
-								<?php include 'position.php';?>
+
+
+					<div class="row">	
+						<div class="col-lg-8 col-md-12">
+							<div class="panel bk-widget bk-border-off">					
+									<?php include 'position.php';?>
 							</div>
-							<div>
-								<?php include 'display_evaluation.php';?>
-								<?php include 'delete_employee.php';?>
-							</div>
-						</div>
+						</div>	
+						<?php include 'display_evaluation.php';?>
+						<?php include 'delete_employee.php';?>
 					</div>
 
 					<div class="row">

@@ -9,6 +9,7 @@ unset($_SESSION["edit"]);
 $_SESSION["states2"] = "";
 $_SESSION["firstlogin"] = "";
 $_SESSION["states"] = "";
+$_SESSION["states1"] = "";
 $_SESSION["error1"] = "";
 $_SESSION["error2"] = "";
 $_SESSION["error3"] = "";
