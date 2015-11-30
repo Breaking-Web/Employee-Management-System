@@ -10,7 +10,7 @@
 			<div class="panel-heading bk-bg-primary">
 				<div class="row">
 					<div class="col-xs-8 text-left bk-vcenter">
-						<h6 class="bk-margin-off">MEMBER ONLINE</h6>
+						<h6 class="bk-margin-off">TEAMMATE</h6>
 					</div>
 					<div class="col-xs-4 bk-vcenter text-right">
 						<i class="fa fa-users"></i>
