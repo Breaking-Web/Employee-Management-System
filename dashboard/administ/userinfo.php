@@ -143,12 +143,12 @@
 							<nav id="menu" class="nav-main" role="navigation">
 								<ul class="nav nav-sidebar">
 									<div class="divider2"></div>
-									<li class="active">
+									<li >
 										<a href="index.php">
 											<i class="fa fa-laptop" aria-hidden="true"></i><span>Backup and Restore</span>
 										</a>
 									</li>
-									<li >
+									<li class="active">
 										<a href="userinfo.php">
 											<i class="fa fa-tasks" aria-hidden="true"></i><span>User Information</span>
 										</a>
@@ -197,7 +197,7 @@
 					<div class="row">	
 						<div class="col-lg-13 col-md-13">
 							<div class="panel bk-widget bk-border-off">					
-									<?php include 'index~.php';?>
+									<?php include 'viewuserinfo.php';?>
 							</div>
 						</div>	
 						
