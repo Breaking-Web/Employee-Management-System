@@ -26,7 +26,8 @@
             <tr>
               <td><?php echo $oneuser['userid'];?></td>
               <td> <input type="text" id="username" name="<?php echo $oneuser['userid']."username"?>" value="<?php echo $oneuser['username'];?>"></td>
-              <td> <input type="text" id="userpwd" name="<?php echo $oneuser['userid']."userpwd"?>" value="<?php echo $oneuser['userpwd'];?>"></td>
+              
+              <td> <input type="radio" name="<?php echo $oneuser['userid']."userpwd"?>" value="resetpsw">Reset password</td>
               <td> <input type="text" id="phone" name="<?php echo $oneuser['userid']."phone"?>" value="<?php echo $oneuser['phone'];?>"></td>
               <td> <input type="text" id="email" name="<?php echo $oneuser['userid']."email"?>" value="<?php echo $oneuser['email'];?>"></td>
               <td> <input type="text" id="address" name="<?php echo $oneuser['userid']."address"?>" value="<?php echo $oneuser['address'];?>"></td>   

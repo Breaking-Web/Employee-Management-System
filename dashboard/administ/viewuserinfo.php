@@ -23,11 +23,41 @@
 
         	echo $oneuser['userid']."<br>";
         	echo $_POST[$oneuser['userid'].'username']."<br>";
-        	echo $_POST[$oneuser['userid'].'userpwd']."<br>";
+        	if(isset($_POST[$oneuser['userid'].'userpwd'])) echo "Reset"."<br>";
+        	else echo "Don't reset"."<br>";
         	echo $_POST[$oneuser['userid'].'phone']."<br>";
         	echo $_POST[$oneuser['userid'].'email']."<br>";
         	echo $_POST[$oneuser['userid'].'address']."<br>";
-			// header("Location: .");
+			
+			// update user_info table
+		    try
+		    {
+		      $sql = 'UPDATE user_info SET
+		          username = :username,
+		          userpwd = :userpwd,
+		          phone = :phone,
+		          email = :email,
+		          address = :address
+		          WHERE userid = :userid';
+		      $s = $pdo->prepare($sql);
+		      $s->bindValue(':userid', $id);
+		      $s->bindValue(':username', $_POST['username']);
+		      $s->bindValue(':userpwd', $_POST['userpwd']);
+		      $s->bindValue(':phone', $_POST['phone']);
+		      $s->bindValue(':email', $_POST['email']);
+		      $s->bindValue(':address', $_POST['address']);
+		      $s->execute();
+		      
+		    }
+		    catch (PDOException $e)
+		    {
+		      $error = 'Error updating submitted user.';
+		      include '../includes/error.html.php';
+		      exit();
+		    }
+
+
+
 	    }
 	}
   
