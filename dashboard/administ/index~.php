@@ -44,6 +44,21 @@ body{
     $files1 = scandir('./backup/');
     $files1 = array_diff($files1, array(".",".."));
     //print_r($files1);
+    try
+	{
+		$sql = 'show tables';
+		$s = $pdo->prepare($sql);
+		$s->execute();
+	}
+	catch (PDOException $e){
+		$error = 'Error select.';
+		header("Location: ../includes/error.html.php");
+		exit(); 
+	}
+	$tablenames = array();
+	while(	$table_name = $s->fetch() ){	
+		$tablenames[] = $table_name;
+	}
     include 'form.html.php';
         // if (isset($_GET['backup']))
     $db = new DBManage ( 'mysql1.cs.clemson.edu', 'admin662', '662admin', 'My662Project', 'utf8' );

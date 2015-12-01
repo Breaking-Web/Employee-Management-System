@@ -149,8 +149,13 @@
 										</a>
 									</li>
 									<li >
-										<a href="userinfo.html.php">
+										<a href="viewuserinfo.php">
 											<i class="fa fa-tasks" aria-hidden="true"></i><span>User Information</span>
+										</a>
+									</li>
+									<li >
+										<a href="../../index.php">
+											<i class="fa fa-tasks" aria-hidden="true"></i><span>Log Out</span>
 										</a>
 									</li>
 								</ul>
@@ -185,7 +190,7 @@
 							</ol>						
 						</div>
 						<div class="pull-right">
-							<h2>Dashboard</h2>
+							<h2>Backup and Restore</h2>
 						</div>					
 					</div>
 					<!-- End Page Header -->								
