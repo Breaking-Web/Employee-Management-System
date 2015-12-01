@@ -85,6 +85,11 @@
                         <button type="submit"  name="action" value="backup" class='btn btn-primary hidden-xs'>Backup</button>
                     </div>
                   </div>
+					<div>
+						<?php foreach ($tablenames as $table_name): ?>
+							<option value="<?=$table_name?>"><?=$table_name ?></option>
+						<?php endforeach; ?>
+					</div>
 
                   <div class="form-group">
                     <label>Restore</label>                 
