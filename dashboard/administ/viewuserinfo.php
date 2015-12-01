@@ -17,17 +17,23 @@
 		$allusers[] = $oneuser;
 	}
 
-	
-    if(isset($_POST['action']) and $_POST['action'] == $file1)
-        {
-        //The values below are host address, username, password, name of database, charset respectively
-        //$db->backup ('','','');
-        $db->restore ( './backup/'.$file1);
-        }
-    }
+	foreach( $allusers as $oneuser)
+    {
+	    if(isset($_POST['action']) and $_POST['action'] == $oneuser['userid']){
+	    	
+	        	echo $oneuser['userid']."<br>";
+	        	echo $_POST['username']."<br>";
+	        	echo $_POST['userpwd']."<br>";
+	        	echo $_POST['phone']."<br>";
+	        	echo $_POST['email']."<br>";
+	        	echo $_POST['address']."<br>";
+
+	    }
+	}
+  
 
 
-	
+
 	include "viewuserinfo.html.php";
 
 ?>
