@@ -23,10 +23,10 @@
 
         	echo $oneuser['userid']."<br>";
         	echo $_POST[$oneuser['userid'].'username']."<br>";
-        	echo $_POST['userpwd']."<br>";
-        	echo $_POST['phone']."<br>";
-        	echo $_POST['email']."<br>";
-        	echo $_POST['address']."<br>";
+        	echo $_POST[$oneuser['userid'].'userpwd']."<br>";
+        	echo $_POST[$oneuser['userid'].'phone']."<br>";
+        	echo $_POST[$oneuser['userid'].'email']."<br>";
+        	echo $_POST[$oneuser['userid'].'address']."<br>";
 			// header("Location: .");
 	    }
 	}
