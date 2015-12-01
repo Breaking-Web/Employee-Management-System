@@ -75,10 +75,7 @@ if (isset($_GET['changeicon']))
       }
   }
 
-  // Check if file already exists
-  if ( $tmp = searchFile($target_dir, $_SESSION["userid"] )) {
-    unlink($tmp);
-  }
+
   // Check file size
   if ($_FILES["fileToUpload"]["size"] > 500000) {
       $_SESSION["states2"] = $_SESSION["states2"] . "<br>" . "Sorry, your file is too large.";
@@ -95,6 +92,10 @@ if (isset($_GET['changeicon']))
       $_SESSION["states2"] = $_SESSION["states2"] . "<br>" ."Sorry, your file was not uploaded.";
   // if everything is ok, try to upload file
   } else {
+      // Check if file already exists
+      if ( $tmp = searchFile($target_dir, $_SESSION["userid"] )) {
+        unlink($tmp);
+      }
       if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         chmod($target_file,0644);
           $_SESSION["states2"] = $_SESSION["states2"] . "<br>" . "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
