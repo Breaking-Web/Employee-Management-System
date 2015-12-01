@@ -81,9 +81,6 @@
                 <form action="" method="post">
                   <div class="form-group">
                     <label> Instruction:<br/>Press backup button to backup database <br/>Press file name to choose file to restore</label>
-                    <div class="input-group input-group-icon">
-                        <button type="submit"  name="action" value="backup" class='btn btn-primary hidden-xs'>Backup</button>
-                    </div>
                   </div>
 					<div>
 						<select  style="height:40px;width:300px" name = "tablename", id = "tablename">
@@ -95,6 +92,7 @@
 					</div>
 					<div class="input-group input-group-icon">
                         <button type="submit"  name="action" value="backup" class='btn btn-primary hidden-xs'>Backup</button>
+                        <div class="panel-body"><input type="button" onclick="location.href='./index.php';" value="Refresh" class="btn btn-primary hidden-xs pull-right" />
                     </div>
 
                   <div class="form-group">
