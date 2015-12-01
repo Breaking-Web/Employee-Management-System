@@ -77,7 +77,7 @@
               <div class="panel-title-login text-right">
                 <h2 class="title"><i class="fa fa-user"></i> Admin Panel</h2>
               </div>
-              <div class="panel-body"><input type="button" onclick="location.href='../../index.php';" value="Log Out" class="btn btn-primary hidden-xs pull-right" />
+              <div class="panel-body">
                 <form action="" method="post">
                   <div class="form-group">
                     <label> Instruction:<br/>Press backup button to backup database <br/>Press file name to choose file to restore</label>
@@ -89,10 +89,10 @@
 							<option value="<?=$table_name['Tables_in_My662Project']?>"><?=$table_name['Tables_in_My662Project']?></option>
 							<?php endforeach; ?>
 						</select>
-					</div>
+					</div><br/>
 					<div class="input-group input-group-icon">
                         <button type="submit"  name="action" value="backup" class='btn btn-primary hidden-xs'>Backup</button>
-                        <div class="panel-body"><input type="button" onclick="location.href='./index.php';" value="Refresh" class="btn btn-primary hidden-xs pull-right" />
+                        <input type="button" onclick="location.href='./index.php';" value="Refresh" class="btn btn-primary hidden-xs pull-right" />
                     </div>
 
                   <div class="form-group">

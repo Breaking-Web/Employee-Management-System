@@ -195,7 +195,7 @@
 					</div>
 					<!-- End Page Header -->								
 					<div class="row">	
-						<div class="col-lg-8 col-md-12">
+						<div class="col-lg-13 col-md-13">
 							<div class="panel bk-widget bk-border-off">					
 									<?php include 'index~.php';?>
 							</div>
