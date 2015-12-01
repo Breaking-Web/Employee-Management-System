@@ -69,13 +69,7 @@ body{
         echo "you have no access to this page";
       break;
     }   
-    /**
-     * Created by yanue.
-     * User: yansueh
-     * Date: 12-10-27
-     * Time: 上午11:24
-     * To change this template use File | Settings | File Templates.
-     */
+
 
 
 ?>

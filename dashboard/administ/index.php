@@ -6,7 +6,7 @@
 		<!-- Basic -->
     	<meta charset="UTF-8" />
 
-		<title>Dashboard | Nadhif - Responsive Admin Template</title>
+		<title>Admin Back Up</title>
 		<!-- Mobile Metas -->
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		
@@ -142,7 +142,6 @@
 						<div class="sidebar-menu">						
 							<nav id="menu" class="nav-main" role="navigation">
 								<ul class="nav nav-sidebar">
-									<?php include "icon/index.php"; ?>
 									<div class="divider2"></div>
 									<li class="active">
 										<a href="index.php">
@@ -182,7 +181,7 @@
 						<div class="pull-left">
 							<ol class="breadcrumb visible-sm visible-md visible-lg">								
 								<li><a href="index.php"><i class="icon fa fa-home"></i>Home</a></li>
-								<li class="active"><i class="fa fa-laptop"></i>Dashboard</li>
+								<li class="active"><i class="fa fa-laptop"></i>Back and Restore</li>
 							</ol>						
 						</div>
 						<div class="pull-right">
@@ -196,73 +195,9 @@
 									<?php include 'index~.php';?>
 							</div>
 						</div>	
-						<?php include 'member/index.php';?>
+						
 					</div>
 
-
-					<div class="row">	
-						<div class="col-lg-8 col-md-12">
-							<div class="panel bk-widget bk-border-off">					
-									<?php include 'position.php';?>
-							</div>
-						</div>	
-						<?php include 'display_evaluation.php';?>
-						<?php include 'delete_employee.php';?>
-					</div>
-
-					<div class="row">
-						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-							<div class="panel bk-widget bk-webkit-fix">
-								<div class="panel-heading bk-bg-primary bk-border-info">
-									<div class="row">
-										<div class="col-xs-8 text-left bk-vcenter">
-											<h6 class="bk-margin-off">GOOGLE MAP</h6>
-										</div>							
-									</div>
-								</div>
-								<div class="panel-body bk-bg-white bk-border-white text-center bk-padding-off">
-									<div id="googleMap" class="bk-radius-top" style="height: 237px"></div>
-								</div>
-								<div class="panel-body bk-bg-white bk-border-white bk-padding-off-top bk-padding-off-bottom">
-									<div class="row">
-										<div class="col-xs-8 bk-vcenter bk-padding-20">
-											<h6 class="bk-margin-off bk-docs-font-weight-300">Clemson University jail, clemson, South Carolina</h6>
-											<h4 class="bk-fg-info bk-padding-top-10 bk-margin-off bk-docs-font-weight-300">Clemson Jail</h4>
-										</div>
-										<div class="col-xs-4 text-right bk-vcenter bk-padding-20 bk-fg-danger">
-											<i class="fa fa-map-marker fa-3x"></i>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-							<div class="panel bk-widget bk-webkit-fix">
-								<div class="panel-heading bk-bg-primary bk-border-info">
-									<div class="row">
-										<div class="col-xs-8 text-left bk-vcenter">
-											<h6 class="bk-margin-off">SWITCH REQUEST</h6>
-										</div>							
-									</div>
-								</div>
-								<div class="panel-body bk-bg-white bk-border-white text-center bk-padding-off">
-									<?php include "user/index.php"; ?>
-								</div>
-								<div class="panel-body bk-bg-white bk-border-white bk-padding-off-top bk-padding-off-bottom">
-									<div class="row">
-										<div class="col-xs-8 bk-vcenter bk-padding-20">
-											<h6 class="bk-margin-off bk-docs-font-weight-300">Clemson University jail, clemson, South Carolina</h6>
-											<h4 class="bk-fg-info bk-padding-top-10 bk-margin-off bk-docs-font-weight-300"></h4>
-										</div>
-										<div class="col-xs-4 text-right bk-vcenter bk-padding-20 bk-fg-danger">
-											
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>				
-				</div>
 				<!-- End Main Page -->			
 		
 			

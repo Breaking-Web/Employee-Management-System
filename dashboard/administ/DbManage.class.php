@@ -1,6 +1,5 @@
 <?php
-    session_start();
-    include '/home/jingyam/public_html/662/project/includes/db.inc.php';
+    include '../../includes/db.inc.php';
     // echo "administ"."<br>";
 /**
  * ------1. database backup (output)------------------------------------------------------------
