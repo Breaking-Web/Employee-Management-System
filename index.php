@@ -19,9 +19,9 @@ $_SESSION["error5"] = "";
 	include './includes/db.inc.php';
 	
 	
-	if (!isset($_SESSION["logintimes"])) {
-    	$_SESSION["logintimes"] = "";
-	}
+	// if (!isset($_SESSION["logintimes"])) {
+ //    	$_SESSION["logintimes"] = "";
+	// }
 	if(isset($_POST['action']) and $_POST['action'] == 'Signin'){
 	  	try
 		{
@@ -80,6 +80,8 @@ $_SESSION["error5"] = "";
 				}
 			}
 		}
+	}else{
+		$_SESSION["logintimes"] = "";
 	}
 
 include 'login.html.php';
