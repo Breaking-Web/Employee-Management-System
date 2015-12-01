@@ -4,7 +4,7 @@
 -- My 662 Database Project 
 --
 -- Host: mysql1.cs.clemson.edu
--- generated date: 12 / 01 / 2015 /  11:19
+-- generated date: 12 / 01 / 2015 /  11:28
 -- MySQL Version: 5.5.41-0ubuntu0.12.04.1
 -- PHP Version: 5.3.10-1ubuntu3.21
 
@@ -27,9 +27,10 @@ CREATE TABLE `jailblock` (
   KEY `groupid` (`groupid`),
   KEY `groupid_2` (`groupid`),
   CONSTRAINT `jailblock_ibfk_1` FOREIGN KEY (`groupid`) REFERENCES `group_info` (`groupid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=latin1;
 
 --
 -- resave the result of table jailblock
 --
 
+INSERT INTO `jailblock` VALUES('123','123123','8');

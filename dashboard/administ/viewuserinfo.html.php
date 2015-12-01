@@ -7,6 +7,27 @@
   <body>
     <h4>admin view</h4>
 
+    <form action="setfilter.php" method="post">
+      <select  style="height:40px;width:300px" name = "groupfilter", id = "groupfilter">
+
+        <?php foreach ($groupfilter as $gf): ?>
+        <option value="<?=$gf[0]?>"  <?php if($_SESSION["groupfilter"] == $gf[0]) echo "selected";?> ><?=$gf[1]?></option>
+        <?php endforeach; ?>
+      </select>
+
+      Begin_WorkId:<input type="text" id="beginuserid" name="beginuserid" value="Cxxxxxxxx" onfocus="javascript:if(this.value=='Cxxxxxxxx')this.value='';">
+      End_WorkId:<input type="text" id="enduserid" name="enduserid" value="Cxxxxxxxx" onfocus="javascript:if(this.value=='Cxxxxxxxx')this.value='';">
+
+      <select  style="height:40px;width:300px" name = "viewusersplitnum", id = "viewusersplitnum">
+        <?php foreach ($viewusersplitnum as $vsn): ?>
+        <option value="<?=$vsn?>" <?php if($_SESSION["viewusersplitnum"] == $vsn) echo "selected";?> ><?=$vsn?></option>
+        <?php endforeach; ?>
+      </select>
+
+      <input type="submit" name="changefilter" value="changefilter" class="btn btn-primary hidden-xs" />
+    </form>
+
+
     <form action="?" method="post">
 
       <table class="table table-bordered">
@@ -40,7 +61,18 @@
 
     </form>
 
+    <?php echo "<div align='center'>Total " . $page . " pages (" . $page."/".$pages.")";
 
+    if($page > 1){
+      echo "<h4><a href='page-summary.html.php?page=" . $first ."' style='color: #CC0000' >[first]</a> ";
+      echo "<a href='page-summary.html.php??page=" . $prev ."' style='color: #CC0000'>[prev]</a></h4>  ";
+    }
+    if($page < $pages){
+      echo "<h4><a href='page-summary.html.php?page=" . $next ."' style='color: #CC0000'>[next]</a>  ";
+      echo "<a href='page-summary.html.php??page=" . $last ."' style='color: #CC0000'>[last]</a></h4>  ";
+    }
+
+    ?>
 
 
   </body>
