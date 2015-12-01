@@ -86,9 +86,12 @@
                     </div>
                   </div>
 					<div>
-						<?php foreach ($tablenames as $table_name): ?>
-							<option value="<?=$table_name?>"><?=$table_name ?></option>
-						<?php endforeach; ?>
+						<select  style="height:40px;width:300px" name = "tablename", id = "tablename">
+							<option value="">Please Select table You want to backup</option>
+							<?php foreach ($tablenames as $table_name): ?>
+							<option value="<?=$table_name['Tables_in_My662Project']?>"><?=$table_name['Tables_in_My662Project']?></option>
+							<?php endforeach; ?>
+						</select>
 					</div>
 
                   <div class="form-group">
