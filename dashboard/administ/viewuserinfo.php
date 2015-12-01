@@ -8,7 +8,7 @@
 	}
 	catch (PDOException $e){
 		$error = 'Error select.';
-		header("Location: ../includes/error.html.php");
+		header("Location: ../../includes/error.html.php");
 		exit(); 
 	}
 	
@@ -20,14 +20,14 @@
 	foreach( $allusers as $oneuser)
     {
 	    if(isset($_POST['action']) and $_POST['action'] == $oneuser['userid']){
-	    	
-	        	echo $oneuser['userid']."<br>";
-	        	echo $_POST['username']."<br>";
-	        	echo $_POST['userpwd']."<br>";
-	        	echo $_POST['phone']."<br>";
-	        	echo $_POST['email']."<br>";
-	        	echo $_POST['address']."<br>";
 
+        	echo $oneuser['userid']."<br>";
+        	echo $_POST[$oneuser['userid'].'username']."<br>";
+        	echo $_POST['userpwd']."<br>";
+        	echo $_POST['phone']."<br>";
+        	echo $_POST['email']."<br>";
+        	echo $_POST['address']."<br>";
+			// header("Location: .");
 	    }
 	}
   
