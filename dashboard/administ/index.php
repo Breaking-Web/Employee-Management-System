@@ -2,7 +2,12 @@
 <html lang="en">
 
 	<head>
-	<?php session_start(); if($_SESSION["position"] != 'admin') header("Location: ..");?>
+	<?php session_start(); if($_SESSION["position"] != 'admin') header("Location: ../../"); 
+		if(!isset($_SESSION["viewusersplitnum"])) $_SESSION["viewusersplitnum"] = 10;
+		if(!isset($_SESSION["targetgroup"])) $_SESSION["targetgroup"] = "all";
+		if(!isset($_SESSION["beginuserid"])) $_SESSION["beginuserid"] = "Cxxxxxxxx";
+		if(!isset($_SESSION["enduserid"])) $_SESSION["enduserid"] = "Cxxxxxxxx";
+	?>
 		<!-- Basic -->
     	<meta charset="UTF-8" />
 
@@ -136,7 +141,7 @@
 					<div class="sidebar-collapse">
 						<!-- Sidebar Header Logo-->
 						<div class="sidebar-header">
-							<img src="assets/img/logo.png" class="img-responsive" alt="" />
+							<img src="../assets/img/logo.png" class="img-responsive" alt="" />
 						</div>
 						<!-- Sidebar Menu-->
 						<div class="sidebar-menu">						
