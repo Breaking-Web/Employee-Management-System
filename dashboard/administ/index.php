@@ -5,8 +5,8 @@
 	<?php session_start(); if($_SESSION["position"] != 'admin') header("Location: ../../"); 
 		if(!isset($_SESSION["viewusersplitnum"])) $_SESSION["viewusersplitnum"] = 10;
 		if(!isset($_SESSION["targetgroup"])) $_SESSION["targetgroup"] = "all";
-		if(!isset($_SESSION["beginuserid"])) $_SESSION["beginuserid"] = "MIN";
-		if(!isset($_SESSION["enduserid"])) $_SESSION["enduserid"] = "MAX";
+		if(!isset($_SESSION["beginuserid"])) $_SESSION["beginuserid"] = "Cxxxxxxxx";
+		if(!isset($_SESSION["enduserid"])) $_SESSION["enduserid"] = "Cxxxxxxxx";
 	?>
 		<!-- Basic -->
     	<meta charset="UTF-8" />

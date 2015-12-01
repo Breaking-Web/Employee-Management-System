@@ -35,7 +35,7 @@
 	$enduserid = $_SESSION["enduserid"];
 
 	// reset MAX, MIN value
-	if($beginuserid == "MIN"){
+	if($beginuserid == "Cxxxxxxxx"){
 		try
 		{
 			$sql = 'SELECT MIN(userid) AS userid FROM user_info';  	
@@ -52,7 +52,7 @@
 		$beginuserid = $temp['userid'];
 		// $beginuserid = $s->fetch();
 	}
-	if($enduserid == "MAX"){
+	if($enduserid == "Cxxxxxxxx"){
 		try
 		{
 			$sql = 'SELECT MAX(userid) AS userid FROM user_info';  	
@@ -97,7 +97,12 @@
 	$pages = intval($numrows/$pagesize);
 	if($numrows%$pagesize) $pages++;		// reminding need one more page
 
-	$page =	intval($_SESSION["pagenum"]);
+   	if(isset($_GET['page'])){
+		$page = intval($_GET['page']);
+   	}else{
+   		$page = 1;
+   	}
+
 	$offset = $pagesize*($page - 1);
 
 	$first=1;

@@ -15,7 +15,8 @@
 	try
 	{
 		$sql = 'SELECT user_info.userid, username, title FROM user_info LEFT JOIN (SELECT * FROM summary WHERE datediff(last_day(curdate()),time)<31 AND datediff(last_day(curdate() ),time )>0)AS T1 ON 
-				user_info.userid = T1.userid WHERE user_info.userid != :userid AND groupid =:groupid AND user_info.userid NOT IN (SELECT userid FROM evaluation WHERE userid2 = :userid)';
+				user_info.userid = T1.userid WHERE user_info.userid != :userid AND groupid =:groupid AND user_info.userid NOT IN (SELECT userid FROM evaluation WHERE userid2 = :userid AND 
+					datediff(last_day(curdate()),time)<31 AND datediff(last_day(curdate() ),time )>0)';
 		$s = $pdo->prepare($sql);
 		$s->bindValue(':userid',$_SESSION['userid']);	
 		$s->bindValue(':groupid',$_SESSION['groupid']);	
