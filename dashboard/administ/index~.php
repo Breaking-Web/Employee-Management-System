@@ -59,6 +59,8 @@ body{
 	while(	$table_name = $s->fetch() ){	
 		$tablenames[] = $table_name;
 	}
+	
+	
     include 'form.html.php';
         // if (isset($_GET['backup']))
     $db = new DBManage ( 'mysql1.cs.clemson.edu', 'admin662', '662admin', 'My662Project', 'utf8' );
@@ -66,7 +68,8 @@ body{
         {
         //------1. database backup------------------------------------------------------------
         //The values below are host address, username, password, name of database, charset respectively
-            $db->backup ('','','');
+            //$db->backup ('','','');
+            echo $_POST['tablename'];
             header('Location: .');
         }
         // if (isset($_GET['restore']))
