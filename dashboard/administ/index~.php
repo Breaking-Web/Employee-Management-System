@@ -68,9 +68,9 @@ body{
         {
         //------1. database backup------------------------------------------------------------
         //The values below are host address, username, password, name of database, charset respectively
-            //$db->backup ('','','');
+            $db->backup ($_POST['tablename'],'','');
             echo $_POST['tablename'];
-            header('Location: ./index.php');
+            //header('Location: ./index.php');
         }
         // if (isset($_GET['restore']))
     foreach( $files1 as &$file1)

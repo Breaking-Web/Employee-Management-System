@@ -93,6 +93,9 @@
 							<?php endforeach; ?>
 						</select>
 					</div>
+					<div class="input-group input-group-icon">
+                        <button type="submit"  name="action" value="backup" class='btn btn-primary hidden-xs'>Backup</button>
+                    </div>
 
                   <div class="form-group">
                     <label>Restore</label>                 
