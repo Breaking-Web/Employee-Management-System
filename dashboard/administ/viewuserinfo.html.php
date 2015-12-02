@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>admin view</title>
   </head>
   <body>
     <h4>admin view</h4>
@@ -62,16 +60,14 @@
     </form>
 
     <?php echo "<div align='center'>Total " . $page . " pages (" . $page."/".$pages.")";
-
     if($page > 1){
-      echo "<h4><a href='viewuserinfo.php?page=" . $first ."' style='color: #CC0000' >[first]</a> ";
-      echo "<a href='viewuserinfo.php?page=" . $prev ."' style='color: #CC0000'>[prev]</a></h4>  ";
+      echo "<h4><a href='index2.php?page=" . $first ."' style='color: #CC0000' >[first]</a> ";
+      echo "<a href='index2.php?page=" . $prev ."' style='color: #CC0000'>[prev]</a></h4>  ";
     }
     if($page < $pages){
-      echo "<h4><a href='viewuserinfo.php?page=" . $next ."' style='color: #CC0000'>[next]</a>  ";
-      echo "<a href='viewuserinfo.php?page=" . $last ."' style='color: #CC0000'>[last]</a></h4>  ";
+      echo "<h4><a href='index2.php?page=" . $next ."' style='color: #CC0000'>[next]</a>  ";
+      echo "<a href='index2.php?page=" . $last ."' style='color: #CC0000'>[last]</a></h4>  ";
     }
-
     ?>
 
 

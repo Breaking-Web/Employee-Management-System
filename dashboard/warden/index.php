@@ -43,11 +43,6 @@
 		}
 	}
 
-
-
-	//include 'wardendelete.php';
-	// include 'wardendelete.html.php';
-
 	// set time
 	if(isset($_POST['action4']) and $_POST['action4'] == 'Submit')
 	{

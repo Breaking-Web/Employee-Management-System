@@ -7,6 +7,7 @@
 		if(!isset($_SESSION["targetgroup"])) $_SESSION["targetgroup"] = "all";
 		if(!isset($_SESSION["beginuserid"])) $_SESSION["beginuserid"] = "Cxxxxxxxx";
 		if(!isset($_SESSION["enduserid"])) $_SESSION["enduserid"] = "Cxxxxxxxx";
+		if(!isset($_SESSION["currentpage"])) $_SESSION["currentpage"] = 1;
 	?>
 		<!-- Basic -->
     	<meta charset="UTF-8" />
@@ -154,13 +155,13 @@
 										</a>
 									</li>
 									<li >
-										<a href="userinfo.php">
+										<a href="index2.php">
 											<i class="fa fa-tasks" aria-hidden="true"></i><span>User Information</span>
 										</a>
 									</li>
 									<li >
-										<a href="../../index.php">
-											<i class="fa fa-tasks" aria-hidden="true"></i><span>Log Out</span>
+										<a href="../../logout.php">
+											<i class="fa fa-power-off" aria-hidden="true"></i><span>Log Out</span>
 										</a>
 									</li>
 								</ul>

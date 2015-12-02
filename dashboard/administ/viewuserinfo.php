@@ -1,5 +1,5 @@
 <?php 
-	session_start();
+
 	include '../../includes/db.inc.php'; // cwd = dashboard/admin
 
 	//  gourp filter,  userid filter( from xxx to yyy ) , splitnum
@@ -97,11 +97,9 @@
 	$pages = intval($numrows/$pagesize);
 	if($numrows%$pagesize) $pages++;		// reminding need one more page
 
-   	if(isset($_GET['page'])){
-		$page = intval($_GET['page']);
-   	}else{
-   		$page = 1;
-   	}
+
+
+   	$page = $_SESSION['currentpage'];
 
 	$offset = $pagesize*($page - 1);
 

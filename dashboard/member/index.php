@@ -6,6 +6,7 @@
 
 	$target_dir =  "icon";
 	$pagesize = 6;		// only show 6 icons
+	//In warden dashboard, show leaders
 	if($_SESSION["position"] == 'warden'){
 		try
 		{
@@ -21,6 +22,7 @@
 			exit(); 
 		}
 	}else{
+		// In leader dashboard, show group members
 		try
 		{
 			$sql = 'SELECT count(*) AS cnt FROM user_info WHERE position = "leader"';

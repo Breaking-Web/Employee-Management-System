@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
-	
 		<!-- Basic -->
     	<meta charset="UTF-8" />
     	<?php session_start();?>
@@ -117,18 +115,10 @@
 											<i class="fa fa-tasks" aria-hidden="true"></i><span>Profile</span>
 										</a>
 									</li>
+									<?php if($_SESSION["position"] != 'warden') echo "<li ><a href='page-summary.html.php'><i class='glyphicon glyphicon-pencil' aria-hidden='true'></i><span>Summary</span></a></li>"; ?>
+									<?php if($_SESSION["position"] != 'warden') echo "<li ><a href='page-evaluation.html.php'><i class='glyphicon glyphicon-eye-open' aria-hidden='true'></i><span>Evaluation</span></a></li>"; ?>									
 									<li >
-										<a href="page-summary.html.php">
-											<i class="glyphicon glyphicon-pencil" aria-hidden="true"></i><span>Summary</span>
-										</a>
-									</li>
-									<li class="active">
-										<a href="page-evaluation.html.php">
-											<i class="glyphicon glyphicon-eye-open" aria-hidden="true"></i><span>Evaluation</span>
-										</a>
-									</li>									
-									<li >
-										<a href="../index.php">
+										<a href="../logout.php">
 											<i class="glyphicon glyphicon-off" aria-hidden="true"></i><span>Log Out</span>
 										</a>
 									</li>
