@@ -154,71 +154,121 @@
     {
 	    if(isset($_POST['action']) and $_POST['action'] == $oneuser['userid']){
 
-        	echo $oneuser['userid']."<br>";
-        	echo $_POST[$oneuser['userid'].'username']."<br>";
-        	if(isset($_POST[$oneuser['userid'].'userpwd'])) echo "Reset"."<br>";
-        	else echo "Don't reset"."<br>";
-        	echo $_POST[$oneuser['userid'].'phone']."<br>";
-        	echo $_POST[$oneuser['userid'].'email']."<br>";
-        	echo $_POST[$oneuser['userid'].'address']."<br>";
+        	// echo $oneuser['userid']."<br>";
+        	// echo $_POST[$oneuser['userid'].'username']."<br>";
+        	// if(isset($_POST[$oneuser['userid'].'userpwd'])) echo "Reset"."<br>";
+        	// else echo "Don't reset"."<br>";
+        	// echo $_POST[$oneuser['userid'].'phone']."<br>";
+        	// echo $_POST[$oneuser['userid'].'email']."<br>";
+        	// echo $_POST[$oneuser['userid'].'address']."<br>";
 			
-			//update user_info table
-			if(isset($_POST[$oneuser['userid'].'userpwd'])){  //reset psw
-			    try
-			    {
-			      $sql = 'UPDATE user_info SET
-			          username = :username,
-			          userpwd = :userpwd,
-			          phone = :phone,
-			          email = :email,
-			          address = :address
-			          WHERE userid = :userid';
-			      $s = $pdo->prepare($sql);
-			      $s->bindValue(':userid', $oneuser['userid']);
-			      $s->bindValue(':username', $_POST[$oneuser['userid'].'username']);
-			      $s->bindValue(':userpwd', "123456");
-			      $s->bindValue(':phone', $_POST[$oneuser['userid'].'phone']);
-			      $s->bindValue(':email', $_POST[$oneuser['userid'].'email']);
-			      $s->bindValue(':address', $_POST[$oneuser['userid'].'address']);
-			      $s->execute();
-			      
-			    }
-			    catch (PDOException $e)
-			    {
-			      $error = 'Error updating submitted user.';
-			      include '../includes/error.html.php';
-			      exit();
-			    }
 
+	    	// check input 
+
+	    	if (empty($_POST[$oneuser['userid'].'username'])) {
+			    $_SESSION["error1"] = "Username can't be empty!";
 			}else{
-			    try
-			    {
-			      $sql = 'UPDATE user_info SET
-			          username = :username,
-			          phone = :phone,
-			          email = :email,
-			          address = :address
-			          WHERE userid = :userid';
-			      $s = $pdo->prepare($sql);
-			      $s->bindValue(':userid', $oneuser['userid']);
-			      $s->bindValue(':username', $_POST[$oneuser['userid'].'username']);
-			      $s->bindValue(':phone', $_POST[$oneuser['userid'].'phone']);
-			      $s->bindValue(':email', $_POST[$oneuser['userid'].'email']);
-			      $s->bindValue(':address', $_POST[$oneuser['userid'].'address']);
-			      $s->execute();
-			      
-			    }
-			    catch (PDOException $e)
-			    {
-			      $error = 'Error updating submitted user.';
-			      include '../includes/error.html.php';
-			      exit();
+				$testusername = substr($_POST[$oneuser['userid'].'username'],10);
+			    $testusername = test_input($_POST[$oneuser['userid'].'username']);
+			    $testusername =  substr($testusername,10);
+			    if (!preg_match("/^[a-zA-Z0-9 ]*$/",$testusername)) // check if name only contains letters and whitespace
+			      $_SESSION["error1"] = "Only letters, number and white space allowed!"; 
+			}
+
+			if (empty($_POST[$oneuser['userid'].'phone'])) {
+			    $_SESSION["error2"] = "Phone can't be empty!";
+			}else{
+			    $testphone = test_input($_POST[$oneuser['userid'].'phone']);
+			    $testphone =  substr($testphone,10);
+			    if(!preg_match("/^[0-9]{10}$/",$testphone)) 
+			      $_SESSION["error2"] = "Invalid phone number!"; 
+			}
+
+			if (empty($_POST[$oneuser['userid'].'email'])) {
+			    $_SESSION["error3"] = "Email can't be empty!";
+			}else{
+			    $testuseremail = test_input($_POST[$oneuser['userid'].'email']);
+			    $testuseremail =  substr($testuseremail,10);
+			    if (!filter_var($testuseremail, FILTER_VALIDATE_EMAIL)) {
+			      $_SESSION["error3"] = "Invalid email format!"; 
 			    }
 			}
-			header("Location: viewuserinfo.php");
+
+
+			if($_SESSION["error1"] || $_SESSION["error2"] || $_SESSION["error3"] )  // if something wrong
+			    $_SESSION["states"] = "";
+			else   $_SESSION["states"] = "Edit success! ";
+
+			  
+			if($_SESSION["error1"] || $_SESSION["error2"] || $_SESSION["error3"] ){  // if something wrong
+			    $_SESSION["states"] = "";
+			}
+			echo $_SESSION["error1"]." ".$_SESSION["error2"]." ".$_SESSION["error3"];
+			if($_SESSION["states"]){ 
+				//update user_info table
+				if(isset($_POST[$oneuser['userid'].'userpwd'])){  //reset psw
+				    try
+				    {
+				      $sql = 'UPDATE user_info SET
+				          username = :username,
+				          userpwd = :userpwd,
+				          phone = :phone,
+				          email = :email,
+				          address = :address
+				          WHERE userid = :userid';
+				      $s = $pdo->prepare($sql);
+				      $s->bindValue(':userid', $oneuser['userid']);
+				      $s->bindValue(':username', $_POST[$oneuser['userid'].'username']);
+				      $s->bindValue(':userpwd', "123456");
+				      $s->bindValue(':phone', $_POST[$oneuser['userid'].'phone']);
+				      $s->bindValue(':email', $_POST[$oneuser['userid'].'email']);
+				      $s->bindValue(':address', $_POST[$oneuser['userid'].'address']);
+				      $s->execute();
+				      
+				    }
+				    catch (PDOException $e)
+				    {
+				      $error = 'Error updating submitted user.';
+				      include '../includes/error.html.php';
+				      exit();
+				    }
+
+				}else{
+				    try
+				    {
+				      $sql = 'UPDATE user_info SET
+				          username = :username,
+				          phone = :phone,
+				          email = :email,
+				          address = :address
+				          WHERE userid = :userid';
+				      $s = $pdo->prepare($sql);
+				      $s->bindValue(':userid', $oneuser['userid']);
+				      $s->bindValue(':username', $_POST[$oneuser['userid'].'username']);
+				      $s->bindValue(':phone', $_POST[$oneuser['userid'].'phone']);
+				      $s->bindValue(':email', $_POST[$oneuser['userid'].'email']);
+				      $s->bindValue(':address', $_POST[$oneuser['userid'].'address']);
+				      $s->execute();
+				      
+				    }
+				    catch (PDOException $e)
+				    {
+				      $error = 'Error updating submitted user.';
+				      include '../includes/error.html.php';
+				      exit();
+				    }
+				}
+			}
+
+			// header("Location: viewuserinfo.php");
 	    }
 	}
   
 	include "viewuserinfo.html.php";
-
+	function test_input($data) {
+	   $data = trim($data);
+	   $data = stripslashes($data);
+	   $data = htmlspecialchars($data);
+	   return $data;
+	}
 ?>

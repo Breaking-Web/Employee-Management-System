@@ -8,6 +8,10 @@
 		if(!isset($_SESSION["beginuserid"])) $_SESSION["beginuserid"] = "Cxxxxxxxx";
 		if(!isset($_SESSION["enduserid"])) $_SESSION["enduserid"] = "Cxxxxxxxx";
 		if(!isset($_SESSION["currentpage"])) $_SESSION["currentpage"] = 1;
+		if(!isset($_SESSION["error1"])) $_SESSION["error1"] = "";
+		if(!isset($_SESSION["error2"])) $_SESSION["error2"] = "";
+		if(!isset($_SESSION["error3"])) $_SESSION["error3"] = "";
+		if(!isset($_SESSION["states"])) $_SESSION["states"] = "";
 	?>
 		<!-- Basic -->
     	<meta charset="UTF-8" />
