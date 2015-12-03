@@ -199,7 +199,7 @@
 	}else{
 		$_SESSION["error1"] = "Please choose a time";
 	}
-
+	// echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">';   
   	//header('Location: .');
 }
 

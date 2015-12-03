@@ -71,7 +71,7 @@
 
 
 
-	if(isset($_POST['action']) and $_POST['action'] == 'swagree')
+	if(isset($_POST['action99']) and $_POST['action99'] == 'swagree')
 	{
 		// echo $_POST['userid1']."<br>";
 		// echo $_POST['timeid1']."<br>";
@@ -98,11 +98,11 @@
 		}
 
 		// header('Location .');
-
+		echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">';  
 	  	// header('Location: ../index.php');
 	}
 
-	if(isset($_POST['action']) and $_POST['action'] == 'swreject')
+	if(isset($_POST['action99']) and $_POST['action99'] == 'swreject')
 	{
 		//first update the application table
 
@@ -128,7 +128,7 @@
 			header("Location: ../includes/error.html.php");
 			exit(); 
 		}
-
+		echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">';  
 	  	// header('Location: ../index.php');
 	}
 

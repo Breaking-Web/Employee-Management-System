@@ -46,7 +46,6 @@
 
 			if($_POST['y1'] && $_POST['y2'])
 			{		
-
 			  	// first delete all future work time  1. increase the group_time requestvalue 2. delete all work_info with userid future work_time
 			  	try
 				{
@@ -120,7 +119,7 @@
 				if(!$_POST['y1'])	$_SESSION["error1"] = "This field can't be empty!";
 				if(!$_POST['y2'])	$_SESSION["error2"] = "This field can't be empty!";
 			}
-
+			echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">'; 
 		}
 
 

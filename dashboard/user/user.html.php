@@ -16,9 +16,9 @@
       		with your time : <input type="hidden" name="timeid2" value="<?=$switchapp['usertime2']?>"><?=$switchapp['td2']," ",$switchapp['ts2']," - ",$switchapp['te2']?><br>
       Reason: <input type="hidden" name="reason" value=""><?=$switchapp['reason']?><br><br/>
       <div style="float:left">
-      <button type="submit"  name="action" class="btn btn-primary hidden-xs" value="swagree">Agree</button></div>
+      <button type="submit"  name="action99" class="btn btn-primary hidden-xs" value="swagree">Agree</button></div>
       <div class="text-right">
-      <button type="submit"  name="action" class="btn btn-danger hidden-xs" value="swreject">Reject</button>
+      <button type="submit"  name="action99" class="btn btn-danger hidden-xs" value="swreject">Reject</button>
     </div>
 		  </form>	
     <?php endforeach; ?>

@@ -210,7 +210,7 @@
 			header("Location: ../includes/error.html.php");
 			exit(); 
 		}
-
+		echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">';   
 
 	}
 
@@ -238,7 +238,7 @@
 		}
 
 		//second do nothing
-
+		echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">';   
 
 	}
 
@@ -303,7 +303,7 @@
 			header("Location: ../includes/error.html.php");
 			exit(); 
 		}
-
+		echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">';  
 	}
 
 	if(isset($_POST['action3']) and $_POST['action3'] == 'swreject')
@@ -331,7 +331,7 @@
 		}
 
 		//second do nothing
-
+		echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">';  
 	}
 
 	if(isset($_POST['action3']) and $_POST['action3'] == 'Addemployee')
@@ -374,7 +374,7 @@
 			header("Location: ../includes/error.html.php");
 			exit(); 
 		}
-
+		echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">';  
 	}	
 	include 'leader.html.php';
 

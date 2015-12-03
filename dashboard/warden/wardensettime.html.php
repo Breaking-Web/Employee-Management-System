@@ -32,7 +32,7 @@
       </button>
       <button type="submit" name="action2" value="Deleting_Account" class="btn btn-primary btn-lg hidden-xs col-lg-4 col-md-4 col-sm-4 col-xs-12 bk-bg-lighten bk-padding-top-10 bk-padding-bottom-10">
       <h4 class="bk-margin-off-bottom"> Leader Switch </h4>
-      <small>From Ireland To Khitan</small>
+      <small> Leader Switch </small>
       </button>
     </div>
     </form>

@@ -61,7 +61,7 @@
 				header("Location: ../includes/error.html.php");
 				exit(); 
 			}
-
+			// if exist, update
 		  	if($row = $s->fetch() ){
 				try
 				{
@@ -77,7 +77,6 @@
 					$s->bindValue(':requestvalue',$_POST['s2']-$row['positionvalue']+$row['requestvalue']);
 					$s->execute();
 
-
 				}
 				catch (PDOException $e){
 				$error = 'Error UPDATE.';
@@ -85,8 +84,7 @@
 				exit(); 
 				}
 
-
-		  	}else{
+		  	}else{	// else insert
 				try
 				{
 					$sql = 'INSERT INTO group_time SET
@@ -112,7 +110,7 @@
 			if(!$_POST['s2']) $_SESSION["error3"] = "Please choose number.";
 		}
 	  	// exit(); 
-	  	//echo "<script>alert('修改成功');location.href='.';</script>";
+	  	echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">';  
 	}
 
 //add staff ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -193,7 +191,7 @@ try
 					exit(); 
 				}
 				$numofstaff=$s2->fetch();
-	
+				// insert new staff
 			  	try
 				{
 					$sql2 = 'INSERT INTO user_info SET
@@ -225,6 +223,7 @@ try
 					header("Location: ../includes/error.html.php");
 					exit(); 
 				}
+				// if he is the only one in that group, set him leader
 				if($numofstaff['membernumber'] == 0 ){
 					try
 					{
@@ -246,7 +245,7 @@ try
 				if(!$_POST['username'])	$_SESSION["error1"] = "Please input username!";
 				if(!$_POST['groupid'])	$_SESSION["error2"] = "Please choose a group!";
 			}
-	  	// exit();
+	  	echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">';  
 	}
 // add group
 	try
@@ -289,7 +288,7 @@ try
 			header("Location: ../includes/error.html.php");
 			exit(); 
 		}
-
+		echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">';  
 	}
 
 
@@ -455,35 +454,6 @@ try
 				exit(); 
 			}
 
-			// move this staff to new group 1.update group_info in ori and new about membernumber  2. update user_info about groupid
-		 //  	try
-			// {
-
-			// 	$sql2 = 'UPDATE group_info SET membernumber = membernumber - 1 WHERE groupid = :groupid';  	
-		 //      	$s2 = $pdo->prepare($sql2);
-		 //      	$s2->bindValue(':groupid',$_POST['a1']);	// original group
-		 //      	$s2->execute();
-
-			// }
-			// catch (PDOException $e){
-			// 	$error = 'Error select.';
-			// 	header("Location: /includes/error.html.php");
-			// 	exit(); 
-			// }
-		 //  	try
-			// {
-
-			// 	$sql2 = 'UPDATE group_info SET membernumber = membernumber + 1 WHERE groupid = :groupid';  	
-		 //      	$s2 = $pdo->prepare($sql2);
-		 //      	$s2->bindValue(':groupid',$_POST['a3']);	// new group
-		 //      	$s2->execute();
-
-			// }
-			// catch (PDOException $e){
-			// 	$error = 'Error select.';
-			// 	header("Location: /includes/error.html.php");
-			// 	exit(); 
-			// }
 		  	try
 			{
 
@@ -506,7 +476,7 @@ try
 			if(!$_POST['a2'])	$_SESSION["error2"] = "This field can't be empty!";
 			if(!$_POST['a2'])	$_SESSION["error3"] = "This field can't be empty!";
 		}
-
+		echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">';  
 	}
 
 
@@ -688,7 +658,7 @@ try
 			if(!$_POST['x2']) $_SESSION["error2"] = "Please choose the leader!";
 			if(!$_POST['x3']) $_SESSION["error3"] = "Please choose a new leader!";
 		}
-
+		echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">';  
 	}
 
 	include 'wardensettime.html.php';
