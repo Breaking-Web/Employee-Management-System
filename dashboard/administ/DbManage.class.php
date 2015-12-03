@@ -249,7 +249,7 @@ class DbManage {
     private function _insert_record($table, $num_fields, $record) {
         $insert = '';
         $comma = "";
-        $insert .= "INSERT INTO `" . $table . "` VALUES(";
+        $insert .= "REPLACE INTO `" . $table . "` VALUES(";
         for($i = 0; $i < $num_fields; $i ++) {
             $insert .= ($comma . "'" . mysql_real_escape_string ( $record [$i] ) . "'");
             $comma = ",";

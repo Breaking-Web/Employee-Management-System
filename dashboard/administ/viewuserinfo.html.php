@@ -3,7 +3,10 @@
   <head>
   </head>
   <body>
+    
+    <?php echo $_SESSION["error1"]." ".$_SESSION["error2"]." ".$_SESSION["error3"]." ".$_SESSION["states"];?>
     <h4>admin view</h4>
+
 
     <form action="setfilter.php" method="post">
       <select  style="height:40px;width:300px" name = "groupfilter", id = "groupfilter">
@@ -24,6 +27,7 @@
 
       <input type="submit" name="changefilter" value="changefilter" class="btn btn-primary hidden-xs" />
     </form>
+
 
 
     <form action="?" method="post">

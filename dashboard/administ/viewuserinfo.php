@@ -168,29 +168,32 @@
 	    	if (empty($_POST[$oneuser['userid'].'username'])) {
 			    $_SESSION["error1"] = "Username can't be empty!";
 			}else{
-				$testusername = substr($_POST[$oneuser['userid'].'username'],10);
+				// $testusername = substr($_POST[$oneuser['userid'].'username'],10);
 			    $testusername = test_input($_POST[$oneuser['userid'].'username']);
-			    $testusername =  substr($testusername,10);
 			    if (!preg_match("/^[a-zA-Z0-9 ]*$/",$testusername)) // check if name only contains letters and whitespace
 			      $_SESSION["error1"] = "Only letters, number and white space allowed!"; 
+			    else $_SESSION["error1"] = ""; 
 			}
 
 			if (empty($_POST[$oneuser['userid'].'phone'])) {
 			    $_SESSION["error2"] = "Phone can't be empty!";
 			}else{
+				// $testphone = substr($_POST[$oneuser['userid'].'phone'],10);
 			    $testphone = test_input($_POST[$oneuser['userid'].'phone']);
-			    $testphone =  substr($testphone,10);
 			    if(!preg_match("/^[0-9]{10}$/",$testphone)) 
 			      $_SESSION["error2"] = "Invalid phone number!"; 
+			  	else $_SESSION["error2"] = ""; 
 			}
 
 			if (empty($_POST[$oneuser['userid'].'email'])) {
 			    $_SESSION["error3"] = "Email can't be empty!";
 			}else{
+				// $testuseremail = substr($_POST[$oneuser['userid'].'email'],10);
 			    $testuseremail = test_input($_POST[$oneuser['userid'].'email']);
-			    $testuseremail =  substr($testuseremail,10);
 			    if (!filter_var($testuseremail, FILTER_VALIDATE_EMAIL)) {
-			      $_SESSION["error3"] = "Invalid email format!"; 
+			      	$_SESSION["error3"] = "Invalid email format!"; 
+			    }else{
+			    	$_SESSION["error3"] = ""; 
 			    }
 			}
 
@@ -203,7 +206,7 @@
 			if($_SESSION["error1"] || $_SESSION["error2"] || $_SESSION["error3"] ){  // if something wrong
 			    $_SESSION["states"] = "";
 			}
-			echo $_SESSION["error1"]." ".$_SESSION["error2"]." ".$_SESSION["error3"];
+			
 			if($_SESSION["states"]){ 
 				//update user_info table
 				if(isset($_POST[$oneuser['userid'].'userpwd'])){  //reset psw
@@ -229,7 +232,7 @@
 				    catch (PDOException $e)
 				    {
 				      $error = 'Error updating submitted user.';
-				      include '../includes/error.html.php';
+				      include '../../includes/error.html.php';
 				      exit();
 				    }
 
@@ -254,16 +257,14 @@
 				    catch (PDOException $e)
 				    {
 				      $error = 'Error updating submitted user.';
-				      include '../includes/error.html.php';
+				      include '../../includes/error.html.php';
 				      exit();
 				    }
 				}
 			}
-
-			// header("Location: viewuserinfo.php");
+			header("Location: viewuserinfo.php");
 	    }
 	}
-  
 	include "viewuserinfo.html.php";
 	function test_input($data) {
 	   $data = trim($data);
