@@ -4,7 +4,7 @@
   </head>
   <body>
     
-    <?php echo $_SESSION["error1"]." ".$_SESSION["error2"]." ".$_SESSION["error3"]." ".$_SESSION["states"];?>
+    <?php echo $_SESSION["error1"]." ".$_SESSION["error2"]." ".$_SESSION["error3"]." ".$_SESSION["states"]; $_SESSION["states"]="";?>
     <h4>admin view</h4>
 
 

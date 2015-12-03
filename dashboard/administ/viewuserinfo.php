@@ -262,7 +262,10 @@
 				    }
 				}
 			}
-			header("Location: viewuserinfo.php");
+			// ob_start();
+			// header("Location: index2.php");
+			echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index2.php">';    
+    		exit(); 
 	    }
 	}
 	include "viewuserinfo.html.php";
