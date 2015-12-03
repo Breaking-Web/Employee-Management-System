@@ -4,7 +4,7 @@
 -- My 662 Database Project 
 --
 -- Host: mysql1.cs.clemson.edu
--- generated date: 12 / 02 / 2015 /  21:59
+-- generated date: 12 / 02 / 2015 /  23:19
 -- MySQL Version: 5.5.41-0ubuntu0.12.04.1
 -- PHP Version: 5.3.10-1ubuntu3.21
 
@@ -26,8 +26,8 @@ CREATE TABLE `application` (
   `state` enum('Y','N') DEFAULT NULL,
   PRIMARY KEY (`timeid`,`userid`),
   KEY `userid` (`userid`),
-  CONSTRAINT `application_ibfk_3` FOREIGN KEY (`timeid`) REFERENCES `time_info` (`timeid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `application_ibfk_2` FOREIGN KEY (`userid`) REFERENCES `user_info` (`userid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `application_ibfk_3` FOREIGN KEY (`timeid`) REFERENCES `time_info` (`timeid`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `application_ibfk_2` FOREIGN KEY (`userid`) REFERENCES `user_info` (`userid`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -52,8 +52,8 @@ CREATE TABLE `evaluation` (
   PRIMARY KEY (`eid`),
   KEY `userid` (`userid`),
   KEY `userid2` (`userid2`),
-  CONSTRAINT `evaluation_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `user_info` (`userid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `evaluation_ibfk_2` FOREIGN KEY (`userid2`) REFERENCES `user_info` (`userid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `evaluation_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `user_info` (`userid`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `evaluation_ibfk_2` FOREIGN KEY (`userid2`) REFERENCES `user_info` (`userid`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=latin1;
 
 --
@@ -172,8 +172,8 @@ CREATE TABLE `group_info` (
   `membernumber` int(11) NOT NULL,
   PRIMARY KEY (`groupid`),
   KEY `leader` (`leaderid`),
-  CONSTRAINT `group_info_ibfk_1` FOREIGN KEY (`leaderid`) REFERENCES `user_info` (`userid`) ON DELETE SET NULL ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
+  CONSTRAINT `group_info_ibfk_1` FOREIGN KEY (`leaderid`) REFERENCES `user_info` (`userid`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=latin1;
 
 --
 -- resave the result of table group_info
@@ -2085,7 +2085,7 @@ CREATE TABLE `salary` (
   `userid` char(9) NOT NULL,
   PRIMARY KEY (`salaryid`),
   KEY `userid` (`userid`),
-  CONSTRAINT `salary_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `user_info` (`userid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `salary_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `user_info` (`userid`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
@@ -2105,7 +2105,7 @@ CREATE TABLE `summary` (
   `time` datetime NOT NULL,
   PRIMARY KEY (`sid`),
   KEY `userid` (`userid`),
-  CONSTRAINT `summary_ibfk_2` FOREIGN KEY (`userid`) REFERENCES `user_info` (`userid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `summary_ibfk_2` FOREIGN KEY (`userid`) REFERENCES `user_info` (`userid`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
@@ -2143,10 +2143,10 @@ CREATE TABLE `switch` (
   KEY `userid2` (`userid2`),
   KEY `usertime1` (`usertime1`),
   KEY `usertime2` (`usertime2`),
-  CONSTRAINT `switch_ibfk_4` FOREIGN KEY (`usertime2`) REFERENCES `time_info` (`timeid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `switch_ibfk_1` FOREIGN KEY (`userid1`) REFERENCES `user_info` (`userid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `switch_ibfk_2` FOREIGN KEY (`userid2`) REFERENCES `user_info` (`userid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `switch_ibfk_3` FOREIGN KEY (`usertime1`) REFERENCES `time_info` (`timeid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `switch_ibfk_4` FOREIGN KEY (`usertime2`) REFERENCES `time_info` (`timeid`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `switch_ibfk_1` FOREIGN KEY (`userid1`) REFERENCES `user_info` (`userid`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `switch_ibfk_2` FOREIGN KEY (`userid2`) REFERENCES `user_info` (`userid`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `switch_ibfk_3` FOREIGN KEY (`usertime1`) REFERENCES `time_info` (`timeid`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -2570,7 +2570,7 @@ CREATE TABLE `work_info` (
   PRIMARY KEY (`userid`,`timeid`),
   KEY `timeid` (`timeid`),
   CONSTRAINT `work_info_ibfk_2` FOREIGN KEY (`timeid`) REFERENCES `time_info` (`timeid`),
-  CONSTRAINT `work_info_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `user_info` (`userid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `work_info_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `user_info` (`userid`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

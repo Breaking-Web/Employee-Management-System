@@ -225,8 +225,8 @@ class DbManage {
         $sql = '';
         $sql .= "--" . $this->ds;
         $sql .= "-- structure" . $table . $this->ds;
-        $sql .= "--" . $this->ds . $this->ds;
-        $sql .= "DROP TABLE IF EXISTS `" . $table . '`' . $this->sqlEnd . $this->ds;
+        $sql .= "--" . $this->ds  . $this->sqlEnd. $this->ds;
+        // $sql .= "DROP TABLE IF EXISTS `" . $table . '`' . $this->sqlEnd . $this->ds;
         $res = mysql_query ( 'SHOW CREATE TABLE `' . $table . '`' );
         $row = mysql_fetch_array ( $res );
         $sql .= $row [1];

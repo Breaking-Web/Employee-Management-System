@@ -4,7 +4,7 @@
 -- My 662 Database Project 
 --
 -- Host: mysql1.cs.clemson.edu
--- generated date: 12 / 02 / 2015 /  21:59
+-- generated date: 12 / 02 / 2015 /  23:53
 -- MySQL Version: 5.5.41-0ubuntu0.12.04.1
 -- PHP Version: 5.3.10-1ubuntu3.21
 
@@ -17,8 +17,7 @@
 --
 -- structureapplication
 --
-
-DROP TABLE IF EXISTS `application`;
+;
 CREATE TABLE `application` (
   `timeid` int(11) NOT NULL,
   `userid` char(9) NOT NULL,
@@ -26,8 +25,8 @@ CREATE TABLE `application` (
   `state` enum('Y','N') DEFAULT NULL,
   PRIMARY KEY (`timeid`,`userid`),
   KEY `userid` (`userid`),
-  CONSTRAINT `application_ibfk_3` FOREIGN KEY (`timeid`) REFERENCES `time_info` (`timeid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `application_ibfk_2` FOREIGN KEY (`userid`) REFERENCES `user_info` (`userid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `application_ibfk_3` FOREIGN KEY (`timeid`) REFERENCES `time_info` (`timeid`),
+  CONSTRAINT `application_ibfk_2` FOREIGN KEY (`userid`) REFERENCES `user_info` (`userid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -41,8 +40,7 @@ REPLACE INTO `application` VALUES('184','C00000003','','Y');
 --
 -- structureevaluation
 --
-
-DROP TABLE IF EXISTS `evaluation`;
+;
 CREATE TABLE `evaluation` (
   `eid` int(11) NOT NULL AUTO_INCREMENT,
   `userid` char(9) NOT NULL,
@@ -52,8 +50,8 @@ CREATE TABLE `evaluation` (
   PRIMARY KEY (`eid`),
   KEY `userid` (`userid`),
   KEY `userid2` (`userid2`),
-  CONSTRAINT `evaluation_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `user_info` (`userid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `evaluation_ibfk_2` FOREIGN KEY (`userid2`) REFERENCES `user_info` (`userid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `evaluation_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `user_info` (`userid`),
+  CONSTRAINT `evaluation_ibfk_2` FOREIGN KEY (`userid2`) REFERENCES `user_info` (`userid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=latin1;
 
 --
@@ -163,8 +161,7 @@ REPLACE INTO `evaluation` VALUES('100','C00001018','8','2015-12-02 09:57:58','C0
 --
 -- structuregroup_info
 --
-
-DROP TABLE IF EXISTS `group_info`;
+;
 CREATE TABLE `group_info` (
   `groupid` int(11) NOT NULL AUTO_INCREMENT,
   `gname` varchar(20) NOT NULL,
@@ -172,8 +169,8 @@ CREATE TABLE `group_info` (
   `membernumber` int(11) NOT NULL,
   PRIMARY KEY (`groupid`),
   KEY `leader` (`leaderid`),
-  CONSTRAINT `group_info_ibfk_1` FOREIGN KEY (`leaderid`) REFERENCES `user_info` (`userid`) ON DELETE SET NULL ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
+  CONSTRAINT `group_info_ibfk_1` FOREIGN KEY (`leaderid`) REFERENCES `user_info` (`userid`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
 
 --
 -- resave the result of table group_info
@@ -191,8 +188,7 @@ REPLACE INTO `group_info` VALUES('8','testgroup3','','0');
 --
 -- structuregroup_time
 --
-
-DROP TABLE IF EXISTS `group_time`;
+;
 CREATE TABLE `group_time` (
   `groupid` int(11) NOT NULL,
   `timeid` int(11) NOT NULL,
@@ -2035,8 +2031,7 @@ REPLACE INTO `group_time` VALUES('7','270','2','1');
 --
 -- structurejailblock
 --
-
-DROP TABLE IF EXISTS `jailblock`;
+;
 CREATE TABLE `jailblock` (
   `jid` int(11) NOT NULL AUTO_INCREMENT,
   `jname` varchar(20) NOT NULL,
@@ -2055,8 +2050,7 @@ REPLACE INTO `jailblock` VALUES('123','123123','7');
 --
 -- structureprisoner_info
 --
-
-DROP TABLE IF EXISTS `prisoner_info`;
+;
 CREATE TABLE `prisoner_info` (
   `pid` char(9) NOT NULL COMMENT '9bit Pxxxxxxxx',
   `pname` char(50) NOT NULL,
@@ -2074,8 +2068,7 @@ CREATE TABLE `prisoner_info` (
 --
 -- structuresalary
 --
-
-DROP TABLE IF EXISTS `salary`;
+;
 CREATE TABLE `salary` (
   `salaryid` int(11) NOT NULL AUTO_INCREMENT,
   `level` tinyint(4) NOT NULL,
@@ -2085,7 +2078,7 @@ CREATE TABLE `salary` (
   `userid` char(9) NOT NULL,
   PRIMARY KEY (`salaryid`),
   KEY `userid` (`userid`),
-  CONSTRAINT `salary_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `user_info` (`userid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `salary_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `user_info` (`userid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
@@ -2095,8 +2088,7 @@ CREATE TABLE `salary` (
 --
 -- structuresummary
 --
-
-DROP TABLE IF EXISTS `summary`;
+;
 CREATE TABLE `summary` (
   `sid` int(11) NOT NULL AUTO_INCREMENT,
   `userid` char(9) NOT NULL,
@@ -2105,7 +2097,7 @@ CREATE TABLE `summary` (
   `time` datetime NOT NULL,
   PRIMARY KEY (`sid`),
   KEY `userid` (`userid`),
-  CONSTRAINT `summary_ibfk_2` FOREIGN KEY (`userid`) REFERENCES `user_info` (`userid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `summary_ibfk_2` FOREIGN KEY (`userid`) REFERENCES `user_info` (`userid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
@@ -2129,8 +2121,7 @@ REPLACE INTO `summary` VALUES('14','C00001004','C00001004_2015_12.txt','uploadfi
 --
 -- structureswitch
 --
-
-DROP TABLE IF EXISTS `switch`;
+;
 CREATE TABLE `switch` (
   `userid1` char(9) NOT NULL,
   `userid2` char(9) NOT NULL,
@@ -2143,10 +2134,10 @@ CREATE TABLE `switch` (
   KEY `userid2` (`userid2`),
   KEY `usertime1` (`usertime1`),
   KEY `usertime2` (`usertime2`),
-  CONSTRAINT `switch_ibfk_4` FOREIGN KEY (`usertime2`) REFERENCES `time_info` (`timeid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `switch_ibfk_1` FOREIGN KEY (`userid1`) REFERENCES `user_info` (`userid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `switch_ibfk_2` FOREIGN KEY (`userid2`) REFERENCES `user_info` (`userid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `switch_ibfk_3` FOREIGN KEY (`usertime1`) REFERENCES `time_info` (`timeid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `switch_ibfk_4` FOREIGN KEY (`usertime2`) REFERENCES `time_info` (`timeid`),
+  CONSTRAINT `switch_ibfk_1` FOREIGN KEY (`userid1`) REFERENCES `user_info` (`userid`),
+  CONSTRAINT `switch_ibfk_2` FOREIGN KEY (`userid2`) REFERENCES `user_info` (`userid`),
+  CONSTRAINT `switch_ibfk_3` FOREIGN KEY (`usertime1`) REFERENCES `time_info` (`timeid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -2160,8 +2151,7 @@ REPLACE INTO `switch` VALUES('C00001018','C00000010','164','143','How can people
 --
 -- structuretime_info
 --
-
-DROP TABLE IF EXISTS `time_info`;
+;
 CREATE TABLE `time_info` (
   `timeid` int(11) NOT NULL AUTO_INCREMENT,
   `timedate` date NOT NULL,
@@ -2447,8 +2437,7 @@ REPLACE INTO `time_info` VALUES('270','2016-01-29','16:00:00','23:59:59');
 --
 -- structureuser_info
 --
-
-DROP TABLE IF EXISTS `user_info`;
+;
 CREATE TABLE `user_info` (
   `userid` char(9) NOT NULL COMMENT '9 bits user id',
   `username` varchar(50) NOT NULL DEFAULT 'noname' COMMENT 'user name(at most 50 chars) unique',
@@ -2543,8 +2532,7 @@ REPLACE INTO `user_info` VALUES('C00001020','LouJie2','123456','','','hh@g.clems
 --
 -- structureusertype
 --
-
-DROP TABLE IF EXISTS `usertype`;
+;
 CREATE TABLE `usertype` (
   `typeid` int(11) NOT NULL AUTO_INCREMENT,
   `typename` varchar(20) NOT NULL,
@@ -2562,15 +2550,14 @@ REPLACE INTO `usertype` VALUES('4','staff');
 --
 -- structurework_info
 --
-
-DROP TABLE IF EXISTS `work_info`;
+;
 CREATE TABLE `work_info` (
   `userid` varchar(9) NOT NULL,
   `timeid` int(11) NOT NULL,
   PRIMARY KEY (`userid`,`timeid`),
   KEY `timeid` (`timeid`),
   CONSTRAINT `work_info_ibfk_2` FOREIGN KEY (`timeid`) REFERENCES `time_info` (`timeid`),
-  CONSTRAINT `work_info_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `user_info` (`userid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `work_info_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `user_info` (`userid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
