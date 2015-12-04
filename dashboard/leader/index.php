@@ -157,7 +157,7 @@
 	
 
 
-
+	// argee leaving
 
 	if(isset($_POST['action3']) and $_POST['action3'] == 'apagree')
 	{
@@ -213,7 +213,7 @@
 		echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">';   
 
 	}
-
+	// reject leaving
 	if(isset($_POST['action3']) and $_POST['action3'] == 'apreject')
 	{
 		//first update the application table
@@ -241,7 +241,7 @@
 		echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">';   
 
 	}
-
+	// argee switch
 	if(isset($_POST['action3']) and $_POST['action3'] == 'swagree')
 	{
 		//first update the switch table
@@ -305,7 +305,7 @@
 		}
 		echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">';  
 	}
-
+	// reject switch
 	if(isset($_POST['action3']) and $_POST['action3'] == 'swreject')
 	{
 
@@ -333,7 +333,7 @@
 		//second do nothing
 		echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">';  
 	}
-
+	// add new staff to work
 	if(isset($_POST['action3']) and $_POST['action3'] == 'Addemployee')
 	{
 		// echo $_POST['s1']."<br>"; //timeid
