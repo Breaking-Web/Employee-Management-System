@@ -27,7 +27,7 @@ WEB SITE
 
 Visit our web site of clemson jail for lastest update:
 
-http:\\\people.cs.clemson.edu/~jingyam/662/project/
+http://people.cs.clemson.edu/~jingyam/662/project/
 
 LICENCE
 
